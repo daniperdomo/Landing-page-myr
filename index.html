@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototipo #1</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+    <a class="navbar-brand" href="#">
+      <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#servicios">Servicios</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle nav-text" href="propiedades.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Propiedades
+          </a>
+          <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item dropdown-text" href="propiedades.html">Venta</a>
+            <a class="dropdown-item dropdown-text" href="#">Alquiler</a>
+            <a class="dropdown-item dropdown-text" href="#">Todas</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#nosotros">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="#equipo">Equipo</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="header-image-container" id="inicio">
+    <div class="overlay-box fade-in">
+      
+      <h1 class="overlay-text">¡Bienvenido!</h1>
+      <hr class="overlay-hr">
+      <h2 class="overlay-text sub-text">Somos Inversiones y Desarrollos M&R.</h2>
+      <h1 class="overlay-text lower-text">Hacemos de tus sueños <br> inmobiliarios una realidad.</h1>
+      <button class="overlay-button">Nuestra oferta inmobiliaria.</button>
+    </div>
+  </div>
+
+  <div class="nosotros" id="nosotros">
+    <div class="nosotros-title-card">
+      <h2>ACERCA DE M&R</h2>
+    </div>
+    <div class="text-container">
+      <p id="nosotros-text">
+        Somos una organización innovadora dedicada a ofrecer servicios inmobiliarios de calidad y asesoramiento a nuestros clientes y empresas afines. Nos enorgullece brindar seguridad, bienestar y calidad de vida a través de un equipo de profesionales altamente calificados en el área.
+        <br>En M&R Inversiones y Desarrollo, nos esforzamos por ser líderes en el sector inmobiliario a nivel regional y expandir nuestros servicios a nivel nacional e internacional. Para lograrlo, utilizamos las tecnologías más avanzadas para ofrecer calidad y exclusividad en todos nuestros servicios.
+        <br>Orientamos nuestros esfuerzos a conocer y satisfacer las necesidades de cada uno de nuestros clientes, priorizando la orientación al cliente en todo momento.
+      </p>
+    </div>
+    <button id="toggle-button">Leer más</button>
+  </div>  
+
+
+  <div class="services" id="servicios">
+    <div class="services-title-card">
+      <h2 class="services-title">Nuestros Servicios</h2>
+    </div>
+    <div class="servicios">
+      <div class="servicio">
+        <div class="icon">
+          <img src="imagenes/edificio.jpg" alt="Asesoría en Ventas y Arrendamiento">
+
+
+        </div>
+        <h3>Asesoría en Ventas y Arrendamiento</h3>
+        <p>Tenemos toda la experiencia para hacer la diferencia entre el éxito y el fracaso</p>
+      </div>
+      <div class="servicio">
+        <div class="icon">
+          <img src="imagenes/maletin.jpg" alt="Estudios de Mercado">
+        </div>
+        <h3>Estudios de Mercado</h3>
+        <p>Ponemos a tu disposición la información que necesitas para tomar decisiones</p>
+      </div>
+      <div class="servicio">
+        <div class="icon">
+          <img src="imagenes/estrellas.jpg" alt="Valoración de Inmuebles">
+        </div>
+        <h3>Valoración de Inmuebles</h3>
+        <p>Nuestro análisis de costo te genera la tranquilidad de saber que estás pagando el precio justo</p>
+      </div>
+      <div class="servicio">
+        <div class="icon">
+          <img src="imagenes/lista.jpg" alt="Amplio Inventario de Inmuebles">
+        </div>
+        <h3>Amplio Inventario de Inmuebles</h3>
+        <p>Nuestro inventario de inmuebles te da la confianza de que encontrarás lo que buscas</p>
+      </div>
+      <div class="servicio">
+        <div class="icon">
+          <img src="imagenes/pregunta.jpg" alt="Servicios Adicionales">
+        </div>
+        <h3>Consultoría</h3>
+        <p>Podemos ayudarlo con todo, desde la planificación de inversiones inmobiliarias hasta la gestión de propiedades</p>
+      </div>
+      <div class="servicio">
+        <div class="icon">
+          <img src="imagenes/circulo.jpg" alt="Servicios Adicionales">
+        </div>
+        <h3>Servicios Adicionales</h3>
+        <p>Nuestra asesoría en seguros y los servicios posventa te dan la tranquilidad de saber que estás en buenas manos</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Solicitar Información</h5>
+          <form>
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido:</label>
+              <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+            </div>
+            <div class="form-group">
+              <label for="tema">Selecciona el tema de tu interés:</label>
+              <select class="form-control" id="tema">
+                <option value="compra">Compra</option>
+                <option value="venta">Venta</option>
+                <option value="alquiler">Alquiler</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+          </form>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+          <div class="static-message">
+            <h5>Información Importante</h5>
+            <p>Aquí puedes escribir un mensaje fijo para que el usuario lo lea. Este texto puede contener información importante sobre el formulario o instrucciones adicionales. Puedes personalizar este mensaje según tus necesidades.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  
+  <footer class="footer bg-purple text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Contacto</h5>
+          <p>Teléfono 1: +58 4249477865</p>
+          <p>Teléfono 2: +58 4140950342</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Dirección</h5>
+          <p>Piso 3, Oficina 3 Centro Empresarial Ferrocasa</p>
+          <p>Ciudad Guayana 8050, </br>
+            Bolívar, Venezuela</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Síguenos</h5>
+          <a href="https://www.facebook.com/invedesamr" target="_blank" class="social-icon">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://x.com/invedesamr?lang=es" target="_blank" class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/invedesamr/?hl=es" target="_blank" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCHJIFebG6MXZrWwpnNPOeuw" target="_blank" class="social-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/jesus-rondon-5467132b/?originalSubdomain=ve" target="_blank" class="social-icon">
+            </i><i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="nosotros.js"></script>
+  
+
+
+</body>
+</html>
