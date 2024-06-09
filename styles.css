@@ -517,3 +517,64 @@ body {
 .property-section button:hover {
   background-color: #0056b3;
 }
+
+/* Estilos para el formulario de inicio de sesión */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #AB5DA8;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-container form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container form button {
+  padding: 10px;
+  background-color: #AB5DA8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container form button:hover {
+  background-color: #923e8a;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-container form input {
+    padding: 8px;
+  }
+
+  .login-container form button {
+    padding: 8px;
+  }
+}
