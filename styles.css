@@ -37,7 +37,7 @@
     position: relative;
     width: 100%;
     height: 550px;
-    background: url('imagenes/pzo.png') no-repeat center center;
+    background: url('imagenes/pzo.webp') no-repeat center center;
     background-size: cover;
     font-family: "Mulish", sans-serif;
   }
@@ -272,7 +272,7 @@
     width: 100%;
     box-sizing: border-box;
     overflow: hidden; 
-    background-image: url('imagenes/Fondo.png');
+    background-image: url('imagenes/Fondo.webp');
     background-size: cover;
     background-position: center;
   }
@@ -375,7 +375,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('imagenes/Formulario1.png'); /* Cambié la ruta de la imagen de fondo */
+    background-image: url('imagenes/Formulario1.webp'); /* Cambié la ruta de la imagen de fondo */
     background-size: cover;
     background-position: center;
     opacity: 0.5;
