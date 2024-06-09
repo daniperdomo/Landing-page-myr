@@ -37,7 +37,7 @@
     position: relative;
     width: 100%;
     height: 550px;
-    background: url('imagenes/pzo.webp') no-repeat center center;
+    background: url('imagenes/pzo.png') no-repeat center center;
     background-size: cover;
     font-family: "Mulish", sans-serif;
   }
