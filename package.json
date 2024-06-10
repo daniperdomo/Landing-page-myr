@@ -1,0 +1,25 @@
+{
+  "name": "landing-page-myr",
+  "version": "1.0.0",
+  "main": "Back.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniperdomo/Landing-page-myr.git"
+  },
+  "author": "Stalin Franco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniperdomo/Landing-page-myr/issues"
+  },
+  "homepage": "https://github.com/daniperdomo/Landing-page-myr#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mssql": "^10.0.2"
+  },
+  "description": ""
+}
