@@ -272,7 +272,7 @@
     width: 100%;
     box-sizing: border-box;
     overflow: hidden; 
-    background-image: url('imagenes/Fondo.webp');
+    background-image: url('imagenes/Fondo.png');
     background-size: cover;
     background-position: center;
   }
