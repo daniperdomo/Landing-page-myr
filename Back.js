@@ -17,7 +17,7 @@ async  function acceso(username,contraseña,res){
         const result = await(mssql.query`select * from Usuario`)
         for (let i = 0; i < result.recordsets.length; i++) {
             if(username == result.recordset[i].Usuario && contraseña == result.recordset[i].Contraseña){
-                res.send('Acceso')
+                res.sendFile(path.join(__dirname,'administrador.html'))
             }else{
                 res.send('No Acceso')
             }
@@ -30,7 +30,7 @@ async  function acceso(username,contraseña,res){
 const app = express()
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(express.static(path.join(__dirname, './')))
+app.use(express.static(path.join(__dirname)))
 
 //inicia el servidor
 app.listen(port,()=>{
