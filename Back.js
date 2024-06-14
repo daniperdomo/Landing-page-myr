@@ -41,9 +41,7 @@ app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname,'index.html'))
 })
 
-app.get("/iniciarsesion.html",(req,res)=>{
-    res.sendFile(path.join(__dirname,'iniciarsesion.html'))
-})
+
 
 app.post('/login',(req,res) =>{
     var usuario = req.body.username
