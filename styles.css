@@ -578,3 +578,81 @@ body {
     padding: 8px;
   }
 }
+
+/* Estilos generales para el contenedor del formulario captacion de inmuebles*/
+.form-container {
+  width: 90%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Estilo para el título principal */
+.form-container h2 {
+  text-align: center;
+  color: #AB5DA8;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el formulario */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Estilo para los fieldsets */
+.form-container form fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+/* Estilo para las leyendas */
+.form-container form legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Estilos para los grupos de campos */
+.form-container form .field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Agregar borde */
+  padding: 10px; /* Agregar espacio interno */
+  border-radius: 5px; /* Agregar esquinas redondeadas */
+}
+
+/* Estilo para las etiquetas */
+.form-container form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para los inputs */
+.form-container form input {
+  padding: 5px; /* Reducir el padding */
+  width: 50%; /* Ajustar el ancho de los inputs */
+  margin-right: 10px; /* Agregar un margen derecho para separar los inputs */
+}
+
+/* Estilos para los grupos de campos */
+.form-container form .field-group {
+  display: flex;
+  flex-direction: row; /* Cambiar la dirección a horizontal */
+  align-items: center; /* Centrar verticalmente los elementos */
+  margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas */
+.form-container form label {
+  margin-right: 5px; /* Agregar un margen derecho para separar las etiquetas */
+}

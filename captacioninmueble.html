@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administracion</title>
+    <title>Ingresar captacion de inmueble</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <!--Navbar-->
@@ -41,21 +41,46 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-text" href="#contacto">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-text" href="#equipo">Equipo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-text" href="iniciarsesion.html">Ini. sesion</a>
+              <a class="nav-link nav-text" href="index.html">Cerrar sesion</a>
             </li>
           </ul>
         </div>
     </nav>
 
-  <h1>Bienvenido, administrador</h1>
+
+    <div class="form-container">
+        <h2>Formato de Captación de Inmuebles</h2>
+        <form action="/submit-property" method="post">
+          <fieldset>
+            <legend>Datos Generales del Inmueble</legend>
+            <div class="field-group">
+              <div class="field-row">
+                <label for="sector">Sector:</label>
+                <input type="text" id="sector" name="sector" required>
+              </div>
+              <div class="field-row">
+                <label for="residential-complex">Conjunto Residencial:</label>
+                <input type="text" id="residential-complex" name="residential-complex" required>
+              </div>
+              <div class="field-row">
+                <label for="contact-name">Nombre de Contacto:</label>
+                <input type="text" id="contact-name" name="contact-name" required>
+              </div>
+              <div class="field-row">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+          </fieldset>
+          <button id="submitbtn" type="submit">Enviar</button>
+        </form>
+        
+    </div>
 
 
-  
+    <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
