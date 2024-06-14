@@ -1,30 +1,37 @@
 import express from "express"
 import bodyParser from "body-parser"
 import path, { dirname } from "path"
-import mssql from "mssql"
+import mysql from "mysql2"
 import { fileURLToPath } from "url"
 
 //puerto del servidor
 const port = 3000
+
+var BD = mysql.createConnection({
+    host: "localhost",
+    port: '33060',
+    user: "WebPage",
+    password: "Stalin25-10",
+    database: 'Inmobiliaria'
+})
 
 //directorio actual
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 //creacion de conexion
 async  function acceso(username,contraseña,res){
-    try {
-        await mssql.connect('Server=localhost,1434;Database=Inmobiliaria;User Id=WebPage;Password=Stalin25-10;Encrypt=true;Trusted_Connection=True;TrustServerCertificate=True;')
-        const result = await(mssql.query`select * from Usuario`)
-        for (let i = 0; i < result.recordsets.length; i++) {
-            if(username == result.recordset[i].Usuario && contraseña == result.recordset[i].Contraseña){
-                res.sendFile(path.join(__dirname,'administrador.html'))
-            }else{
-                res.send('No Acceso')
-            }
+    let query = 'Select * from Usuario'
+    BD.query(query, (err,result) =>{
+        if (err) throw err
+
+        for(let i=0; i<result.length;i++){
+            console.log(result[i].Usuario)
+            if(result[i].Usuario == username && result[i].Contraseña == contraseña){
+                res.sendFile(path.join(__dirname, 'administrador.html'))
+                }
         }
-    } catch(err){
-        console.log(err)
-    }
+        
+    })
 }
 
 const app = express()
@@ -48,6 +55,5 @@ app.get("/iniciarsesion.html",(req,res)=>{
 app.post('/login',(req,res) =>{
     var usuario = req.body.username
     var contraseña = req.body.password
-    console.log(req)
     acceso(usuario,contraseña,res)
 })
