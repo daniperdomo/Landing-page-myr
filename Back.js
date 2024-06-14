@@ -9,7 +9,6 @@ const port = 3000
 
 var BD = mysql.createConnection({
     host: "localhost",
-    port: '33060',
     user: "WebPage",
     password: "Stalin25-10",
     database: 'Inmobiliaria'
