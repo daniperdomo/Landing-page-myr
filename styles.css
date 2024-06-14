@@ -579,80 +579,162 @@ body {
   }
 }
 
-/* Estilos generales para el contenedor del formulario captacion de inmuebles*/
+
+
 .form-container {
   width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: #fff;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para el título principal */
-.form-container h2 {
+h2 {
   text-align: center;
-  color: #AB5DA8;
   margin-bottom: 20px;
 }
 
-/* Estilo para el formulario */
-.form-container form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Estilo para los fieldsets */
-.form-container form fieldset {
-  border: none;
-  padding: 0;
+fieldset {
+  border: 1px solid #ccc;
+  padding: 15px;
   margin-bottom: 20px;
+  border-radius: 8px;
 }
 
-/* Estilo para las leyendas */
-.form-container form legend {
+legend {
   font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
+  padding: 0 10px;
 }
 
-/* Estilos para los grupos de campos */
-.form-container form .field-group {
+.field-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.field-row {
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-  border: 1px solid #ccc; /* Agregar borde */
-  padding: 10px; /* Agregar espacio interno */
-  border-radius: 5px; /* Agregar esquinas redondeadas */
 }
 
-/* Estilo para las etiquetas */
-.form-container form label {
+.field-row label {
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-/* Estilos para los inputs */
-.form-container form input {
-  padding: 5px; /* Reducir el padding */
-  width: 50%; /* Ajustar el ancho de los inputs */
-  margin-right: 10px; /* Agregar un margen derecho para separar los inputs */
+.field-row input,
+.field-row select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-/* Estilos para los grupos de campos */
-.form-container form .field-group {
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-inline {
   display: flex;
-  flex-direction: row; /* Cambiar la dirección a horizontal */
-  align-items: center; /* Centrar verticalmente los elementos */
-  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
 }
 
-/* Estilos para las etiquetas */
-.form-container form label {
-  margin-right: 5px; /* Agregar un margen derecho para separar las etiquetas */
+.form-inline label,
+.form-inline input,
+.form-inline select {
+  margin-bottom: 10px;
+}
+
+.form-inline input,
+.form-inline select {
+  flex: 1;
+  min-width: 80px;
+}
+
+.small-input {
+  width: 60px;
+}
+
+.checkbox-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .field-group {
+      flex-direction: column;
+  }
+
+  .field-row {
+      flex: 1 1 100%;
+  }
+
+  .form-inline {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .form-inline label,
+  .form-inline input,
+  .form-inline select {
+      flex: 1;
+      min-width: 100%;
+  }
+
+  .small-input {
+      min-width: 100%;
+  }
+}
+
+/* Specific Styles for Additional Sections */
+.checkbox-group label {
+  flex: 1 1 30%;
+  margin-bottom: 10px;
+}
+
+#submitbtn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+#submitbtn:hover {
+  background-color: #0056b3;
+}
+
+.form-control {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
 }
