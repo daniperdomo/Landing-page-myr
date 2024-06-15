@@ -9,11 +9,11 @@
     <link href="styles.css" rel="stylesheet">
     
 </head>
-<body>
+<body class="iniciarsesion-body">
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-purple">
         <a class="navbar-brand" href="#">
-          <img src="imagenes/logomyr.webp" alt="Logo" height="90px" width="200px">
+          <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,15 +46,28 @@
               <a class="nav-link nav-text" href="#equipo">Equipo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-text" href="iniciarsesion.html">Administración</a>
+              <a class="nav-link nav-text" href="iniciarsesion.html">Ini. sesion</a>
             </li>
           </ul>
         </div>
     </nav>
 
+    <div class="login-container">
+        <h2>Administrador - Iniciar Sesión</h2>
+        <form action="/login" method="post">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <button id="logbtn" type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="iniciarsesion.js"></script>
 </body>
 </html>
