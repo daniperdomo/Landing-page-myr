@@ -131,7 +131,32 @@
                 <label for="p-e" class="mr-2">P/E:</label>
                 <input type="number" class="form-control small-input" id="p-e" name="p-e">
             </div>
+
             <br>
+
+            <div class="form-group form-inline">
+              <label for="escaleras" class="mr-2">Escaleras:</label>
+              <select class="form-control mr-sm-2" id="escaleras" name="escaleras">
+                <option value="no-tiene">No tiene</option>
+                <option value="granito">Granito</option>
+                <option value="marmol">Marmol</option>
+                <option value="madera">Madera</option>
+                <option value="concreto">Concreto</option>
+                <option value="baranda">Baranda</option>
+                <option value="calentador">Calentador</option>
+              </select>
+         
+              <label for="piso" class="mr-2">Piso:</label>
+              <select class="form-control mr-sm-2" id="piso" name="piso">
+                <option value="madera">Madera</option>
+                <option value="porcelanato">Porcelanato</option>
+                <option value="granito">Granito</option>
+                <option value="ceramica">Cerámica</option>
+                <option value="cemento">Cemento</option>
+                <option value="caico">Caico</option>
+              </select>
+          </div>
+
             <div class="form-group">
                 <label for="cocina-servicio" class="checkbox-label">Cocina/Servicio:</label>
                 <div class="checkbox-group">
@@ -429,28 +454,6 @@
                     </div>
                 </div>
 
-                <div class="form-group form-inline">
-                    <label for="escaleras" class="mr-2">Escaleras:</label>
-                    <select class="form-control mr-sm-2" id="escaleras" name="escaleras">
-                      <option value="granito">Granito</option>
-                      <option value="marmol">Marmol</option>
-                      <option value="madera">Madera</option>
-                      <option value="concreto">Concreto</option>
-                      <option value="baranda">Baranda</option>
-                      <option value="calentador">Calentador</option>
-                    </select>
-               
-                    <label for="piso" class="mr-2">Piso:</label>
-                    <select class="form-control mr-sm-2" id="piso" name="piso">
-                      <option value="madera">Madera</option>
-                      <option value="porcelanato">Porcelanato</option>
-                      <option value="granito">Granito</option>
-                      <option value="ceramica">Cerámica</option>
-                      <option value="cemento">Cemento</option>
-                      <option value="caico">Caico</option>
-                    </select>
-                </div>
-
                 <div class="form-group">
                     <label for="area-externa" class="checkbox-label">Área externa:</label>
                     <div class="checkbox-group">
@@ -480,7 +483,7 @@
                       </label>
                       <label for="tanque-agua">
                         <input type="checkbox" id="tanque-agua" name="tanque-agua">
-                        Tanq/Agua
+                        Tanque de Agua
                       </label>
                       <label for="lavandero">
                         <input type="checkbox" id="lavandero" name="lavandero">
@@ -530,7 +533,16 @@
                       </label>
                     </div>
                   </div>
+            </fieldset>
 
+            <!--No fuciona bien. No deja subir más de una foto-->
+            <fieldset class="images">
+              <legend>Subir Imágenes</legend>
+              <form action="post" class="form-images">
+                <label class="input-images">
+                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="images" multiple />
+                </label>
+              </form>
             </fieldset>
 
             <div>
