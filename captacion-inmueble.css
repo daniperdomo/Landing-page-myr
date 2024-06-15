@@ -1,0 +1,183 @@
+.form-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  
+  .field-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .field-row {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .field-row label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .field-row input,
+  .field-row select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .info {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .form-inline label,
+  .form-inline input,
+  .form-inline select {
+    margin-bottom: 10px;
+  }
+  
+  .form-inline input,
+  .form-inline select {
+    flex: 1;
+    min-width: 80px;
+  }
+  
+  .small-input {
+    width: 60px;
+  }
+  
+  .checkbox-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 5px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+  }
+
+  .checkbox-group label:hover {
+    background-color: #cccbcb;
+    border-radius: 5px;
+  }
+  
+  .checkbox-group input {
+    margin-right: 5px;
+  }
+  
+  /* Styles for Observations and Referido */
+  textarea#observaciones {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    resize: vertical;
+  }
+  
+  input#referido {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  #submitbtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #AB5DA8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  #submitbtn:hover {
+    background-color: #954693;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .field-group {
+        flex-direction: column;
+    }
+  
+    .field-row {
+        flex: 1 1 100%;
+    }
+  
+    .form-inline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .form-inline label,
+    .form-inline input,
+    .form-inline select {
+        flex: 1;
+        min-width: 100%;
+    }
+  
+    .small-input {
+        min-width: 100%;
+    }
+  }
+  
+  /* Specific Styles for Additional Sections */
+  .checkbox-group label {
+    flex: 1 1 30%;
+    margin-bottom: 10px;
+  }

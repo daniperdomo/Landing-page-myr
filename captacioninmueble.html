@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="captacion-inmueble.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
@@ -60,28 +61,30 @@
         <form action="/submit-property" method="post">
           <fieldset>
             <legend>Datos Generales del Inmueble</legend>
-            <div class="field-group">
-              <div class="field-row">
-                <label for="sector">Sector:</label>
-                <input type="text" id="sector" name="sector" required>
-              </div>
-              <div class="field-row">
-                <label for="residential-complex">Conjunto Residencial:</label>
-                <input type="text" id="residential-complex" name="residential-complex" required>
-              </div>
-              <div class="field-row">
-                <label for="contact-name">Nombre de Contacto:</label>
-                <input type="text" id="contact-name" name="contact-name" required>
-              </div>
-              <div class="field-row">
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <div class="info">
+              <div class="field-group">
+                <div class="field-row">
+                  <label for="sector">Sector:</label>
+                  <input type="text" id="sector" name="sector" required>
+                </div>
+                <div class="field-row">
+                  <label for="residential-complex">Conjunto Residencial:</label>
+                  <input type="text" id="residential-complex" name="residential-complex" required>
+                </div>
+                <div class="field-row">
+                  <label for="contact-name">Nombre de Contacto:</label>
+                  <input type="text" id="contact-name" name="contact-name" required>
+                </div>
+                <div class="field-row">
+                  <label for="phone">Teléfono:</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
               </div>
             </div>
           </fieldset>
 
           <fieldset>
-            <div class="form-group form-inline">
+            <div class="info form-inline">
                 <label for="tipo" class="mr-2">Tipo:</label>
                 <select class="form-control mr-sm-2" id="tipo" name="tipo">
                   <option value="">Seleccionar</option>
@@ -94,7 +97,7 @@
                   <option value="f-comercio">Local Comercial</option>
                   <option value="otros">Otros</option>
                 </select>
-
+                <br>
                 <label for="niveles" class="mr-2">Niveles:</label>
                 <select class="form-control mr-sm-2" id="niveles" name="niveles">
                     <option value="1">1</option>
@@ -103,22 +106,19 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-
-                <label for="tamaño" class="mr-2">Tamaño (m²):</label>
-                <select class="form-control mr-sm-2" id="tipo-tamaño" name="tipo-tamaño">
-                    <option value="construccion">Construcción</option>
-                    <option value="terreno">Terreno</option>
-                </select>
-                <input type="number" class="form-control" id="tamaño" name="tamaño" placeholder="Cantidad de m²">
-            </div>
-
-            <div class="form-group form-inline">
-                <label for="distribucion" class="mr-2">Distribución de inmuebles:</label>
+                <br>
+                <label for="tamaño-terreno" class="mr-2">Terreno:</label>
+                <input type="number" class="form-control" id="tamaño-terreno" name="tamaño-terreno" placeholder="m²">
+                <br>
+                <label for="tamaño-const" class="mr-2">Construcción:</label>
+                <input type="number" class="form-control" id="tamaño-const" name="tamaño-const" placeholder="m²">
+                <br>
                 <label for="hab" class="mr-2">Hab:</label>
                 <input type="number" class="form-control mr-sm-2 small-input" id="hab" name="hab">
-                <label for="bañ" class="mr-2">Bañ:</label>
+                <br>
+                <label for="bañ" class="mr-2">Baños:</label>
                 <input type="number" class="form-control mr-sm-2 small-input" id="bañ" name="bañ">
-                <label for="medio-bañ" class="mr-2">1/2 Bañ:</label>
+                <label for="medio-bañ" class="mr-2">1/2 Baños:</label>
                 <input type="number" class="form-control mr-sm-2 small-input" id="medio-bañ" name="medio-bañ">
                 <label for="servicio" class="mr-2">Servicio:</label>
                 <input type="number" class="form-control mr-sm-2 small-input" id="servicio" name="servicio">
@@ -131,7 +131,7 @@
                 <label for="p-e" class="mr-2">P/E:</label>
                 <input type="number" class="form-control small-input" id="p-e" name="p-e">
             </div>
-
+            <br>
             <div class="form-group">
                 <label for="cocina-servicio" class="checkbox-label">Cocina/Servicio:</label>
                 <div class="checkbox-group">
@@ -192,7 +192,7 @@
                     Secadora
                   </label>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <label for="sala-comedor" class="checkbox-label">Sala/Comedor:</label>
                     <div class="checkbox-group">
@@ -429,7 +429,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group form-inline">
                     <label for="escaleras" class="mr-2">Escaleras:</label>
                     <select class="form-control mr-sm-2" id="escaleras" name="escaleras">
                       <option value="granito">Granito</option>
@@ -439,9 +439,7 @@
                       <option value="baranda">Baranda</option>
                       <option value="calentador">Calentador</option>
                     </select>
-                </div>
-
-                <div class="form-group">
+               
                     <label for="piso" class="mr-2">Piso:</label>
                     <select class="form-control mr-sm-2" id="piso" name="piso">
                       <option value="madera">Madera</option>
@@ -512,11 +510,11 @@
                       </label>
                       <label for="vigilancia">
                         <input type="checkbox" id="vigilancia" name="vigilancia">
-                        Vigil.
+                        Vigilancia
                       </label>
                       <label for="cerca-electrica">
                         <input type="checkbox" id="cerca-electrica" name="cerca-electrica">
-                        C.Eléc.
+                        Cerco Eléc.
                       </label>
                       <label for="monitor">
                         <input type="checkbox" id="monitor" name="monitor">
