@@ -108,28 +108,36 @@
                 </select>
                 <br>
                 <label for="tamaño-terreno" class="mr-2">Terreno:</label>
-                <input type="number" class="form-control" id="tamaño-terreno" name="tamaño-terreno" placeholder="m²">
+                <input type="number" min="1" class="form-control" id="tamaño-terreno" name="tamaño-terreno" placeholder="m²">
                 <br>
                 <label for="tamaño-const" class="mr-2">Construcción:</label>
-                <input type="number" class="form-control" id="tamaño-const" name="tamaño-const" placeholder="m²">
+                <input type="number" min="1" class="form-control" id="tamaño-const" name="tamaño-const" placeholder="m²">
                 <br>
                 <label for="hab" class="mr-2">Hab:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="hab" name="hab">
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="hab" name="hab">
                 <br>
-                <label for="bañ" class="mr-2">Baños:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="bañ" name="bañ">
-                <label for="medio-bañ" class="mr-2">1/2 Baños:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="medio-bañ" name="medio-bañ">
+                <label for="baño" class="mr-2">Baños:</label>
+                <input type="number" min="1" class="form-control mr-sm-2 small-input" id="baño" name="baño">
+                <label for="medio-baño" class="mr-2">1/2 Baños:</label>
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="medio-baño" name="medio-baño">
                 <label for="servicio" class="mr-2">Servicio:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="servicio" name="servicio">
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="servicio" name="servicio">
                 <label for="maletero" class="mr-2">Maletero:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="maletero" name="maletero">
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="maletero" name="maletero">
                 <label for="terraza" class="mr-2">Terraza:</label>
-                <input type="number" class="form-control mr-sm-2 smallinput" id="terraza" name="terraza">
+                <select class="form-control mr-sm-2" id="terraza" name="terraza">
+                  <option value="">Seleccionar</option>
+                  <option value="terraza-si">Si</option>
+                  <option value="terraza-no">No</option>
+                </select>
                 <label for="oficina" class="mr-2">Oficina:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="oficina" name="oficina">
+                <select class="form-control mr-sm-2" id="oficina" name="oficina">
+                  <option value="">Seleccionar</option>
+                  <option value="oficina">Si</option>
+                  <option value="oficina">No</option>
+                </select>                
                 <label for="p-e" class="mr-2">P/E:</label>
-                <input type="number" class="form-control small-input" id="p-e" name="p-e">
+                <input type="number" min="0" class="form-control small-input" id="p-e" name="p-e">
             </div>
 
             <br>
