@@ -3,7 +3,19 @@ import bodyParser from "body-parser"
 import path, { dirname } from "path"
 import mysql from "mysql2"
 import { fileURLToPath } from "url"
+import multer from "multer";
 
+// Configuración de multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({ storage });
 //puerto del servidor
 const port = 3000
 
@@ -57,3 +69,13 @@ app.post('/login',(req,res) =>{
     var contraseña = req.body.password
     acceso(usuario,contraseña,res)
 })
+
+// Ruta para manejar la carga de archivos
+app.post('/upload', upload.single('file'), (req, res) => {
+    if (req.file) {
+        console.log(`Archivo subido: ${req.file.filename}`);
+        res.send('Archivo subido exitosamente.');
+    } else {
+        res.status(400).send('Error al subir el archivo.');
+    }
+});
