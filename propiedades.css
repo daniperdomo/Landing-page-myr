@@ -1,8 +1,8 @@
-/* Estilos para la sección de propiedades */
+/* Property Section Styles */
 .property-section .container {
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 0.5fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -14,7 +14,7 @@
 
 .property-section h5 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin: 20px 0 10px 0;
 }
 
 .datos-propiedad {
@@ -22,7 +22,8 @@
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
-    
+    justify-content: center;
+    text-align: center;
 }
 
 .dato {
@@ -38,8 +39,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    align-items: center;
-    height: 400px;
+    height: 450px;
 }
 
 .card:hover {
@@ -49,6 +49,7 @@
 
 .card-content {
     width: 100%;
+    padding: 20px;
 }
 
 .property-image {
@@ -71,4 +72,10 @@
 
 .btn-primary:hover {
     background-color: #985596;
+}
+
+.dato i {
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #333;
 }
