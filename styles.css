@@ -120,6 +120,7 @@
   .overlay-button {
     font-size: 1rem;
   }
+}
   
   .contact-form::before {
     content: "";
@@ -608,5 +609,4 @@ body {
   .login-container form button {
     padding: 8px;
   }
-}
 }
