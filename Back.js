@@ -4,6 +4,17 @@ import path, { dirname } from "path"
 import mysql from "mysql2"
 import { fileURLToPath } from "url"
 import multer from "multer";
+import { WebSocketServer } from "ws"
+
+//Coneccion con Base de datos MySql
+var BD = mysql.createConnection({
+    host: "localhost",
+    user: "WebPage",
+    password: "Stalin25-10",
+    database: 'Inmobiliaria'
+})
+//Creacion del Socket del lado del servidor en el puerto 8080
+const wss = new WebSocketServer({ port: 8080 });
 
 // Configuración de multer
 const storage = multer.diskStorage({
@@ -15,17 +26,17 @@ const storage = multer.diskStorage({
     }
 });
 
+wss.on('connection', (ws) =>{
+    let query = 'SELECT * FROM propiedadesweb'
+    BD.query(query,(err,result) =>{
+        if (err) throw result
+        ws.send(JSON.stringify(result));
+    })
+})
+
 const upload = multer({ storage });
 //puerto del servidor
 const port = 3000
-
-//Coneccion con Base de datos MySql
-var BD = mysql.createConnection({
-    host: "localhost",
-    user: "WebPage",
-    password: "Stalin25-10",
-    database: 'Inmobiliaria'
-})
 
 //directorio actual
 const __dirname = dirname(fileURLToPath(import.meta.url))

@@ -6,13 +6,14 @@ CREATE USER 'WebPage'@'%' IDENTIFIED BY 'Stalin25-10'
 
 GRANT SELECT ON Usuario TO 'WebPage'@'%'
 
+GRANT SELECT ON propiedadesweb TO 'WebPage'@'%'
 
 USE Inmobiliaria
 
 CREATE TABLE Propiedad(
     IdPropiedad INT PRIMARY KEY AUTO_INCREMENT,
     NombreContacto VARCHAR(15) NOT NULL,
-    Teleforno VARCHAR(10) NOT NULL,
+    Telefono VARCHAR(15) NOT NULL,
     TipoPropiedad ENUM('Apartamento','Town House','Quinta','Casa','Galpon','Oficina','F. Comercio','Otros'),
     TipoListado ENUM('Para la Venta','Para Renta'),
     Ubicacion VARCHAR(100) NOT NULL,
@@ -33,6 +34,10 @@ CREATE TABLE Propiedad(
     Longitud VARCHAR(20),
     Latitud VARCHAR(20)
 )
+
+INSERT INTO propiedad(NombreContacto,Telefono,TipoPropiedad,TipoListado,Ubicacion,Precio,Dormitorios,Habitaciones,Baños,MedioBaño,Descripcion,TamañoConstruc,TamañoTerreno,AñoDeConstruccion,Estacionamiento,Country,Ciudad,CodigoPostal,NumeroDePiso,Longitud,Latitud)
+VALUES ('Stalin','04249159738','Apartamento','Para la Venta','Calle 12 # 34-56',5000000,3,2,2,1,'Apartamento en el centro de la ciudad',120,200,2010,2,'Colombia','Medellín',050001,5,'-74.8081','-4.5703')
+
 
 
 CREATE TABLE Cocina_Servicio(
@@ -112,5 +117,5 @@ VALUES('admin','admin')
 
 
 CREATE VIEW PropiedadesWeb AS
-
-SELECT
+SELECT TipoPropiedad,TipoListado,Precio,Dormitorios,Habitaciones,Baños,MedioBaño,TamañoConstruc,AñoDeConstruccion,Country,Ciudad,CodigoPostal,NumeroDePiso,Longitud,Latitud
+FROM propiedad
