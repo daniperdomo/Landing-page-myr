@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="administrador.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <!--Navbar aprtador de administrador-->
+    <!--Navbar apartado de administrador-->
     <nav class="navbar navbar-expand-lg navbar-light bg-purple">
       <a class="navbar-brand" href="#">
         <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
@@ -23,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link nav-text" href="index.html">Inicio</a>
+            <a class="nav-link nav-text" href="administrador.html">Inicio</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -32,7 +33,7 @@
               </a>
               <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item dropdown-text" href="captacioninmueble.html">De inmueble</a>
-                <a class="dropdown-item dropdown-text" href="#">De cliente</a>
+                <a class="dropdown-item dropdown-text" href="captacioncliente.html">De cliente</a>
               </div>
             </li>
 
@@ -54,9 +55,56 @@
       </div>
   </nav>
 
-  <h1>Bienvenido, administrador</h1>
+  <!-- Menú de administrador -->
+  <div class="services">
+    <div class="services-title-card">
+      <h1 class="services-title">Menú de Administrador</h1>
+    </div>
+    <div class="container">
+      <!-- Tarjeta de Ingresar Propiedades -->
+      <div class="card" id="card-ingresar-propiedades">
+        <h3>Ingresar Propiedades</h3>
+        <p>Agrega nuevas propiedades al sistema para venta o alquiler</p>
+      </div>
 
+      <!-- Opciones de Ingresar Propiedades -->
+      <div class="sub-cards" id="sub-cards-propiedades">
+        <div class="card">
+          <h3>Para Venta</h3>
+          <p>Ingrese propiedades disponibles para la venta</p>
+        </div>
+        <div class="card">
+          <h3>Para Alquiler</h3>
+          <p>Ingrese propiedades disponibles para alquiler</p>
+        </div>
+      </div>
 
+      <!-- Tarjeta de Ingresar Captación -->
+      <div class="card" id="card-ingresar-captacion">
+        <h3>Ingresar Captación</h3>
+        <p>Registra nuevas captaciones de clientes o inmobiliarias</p>
+      </div>
+
+      <!-- Opciones de Ingresar Captación -->
+      <a href="captacioncliente.html"><div class="sub-cards" id="sub-cards-captacion">
+        <div class="card">
+          <h3>De Cliente</h3>
+          <p>Registra captaciones directas de clientes interesados</p>
+        </div></a>
+        <a href="captacioninmueble.html"><div class="card">
+          <h3>De Inmobiliaria</h3>
+          <p>Registra captaciones de otras inmobiliarias</p>
+        </div></a>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+  <script src="admin-scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   
 </body>
 </html>

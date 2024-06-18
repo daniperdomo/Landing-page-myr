@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="captacion-cliente.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <!--Navbar apartado de administrador-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+        <a class="navbar-brand" href="#">
+          <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-text" href="administrador.html">Inicio</a>
+            </li>
+  
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ingresar captación
+                </a>
+                <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item dropdown-text" href="captacioninmueble.html">De inmueble</a>
+                  <a class="dropdown-item dropdown-text" href="captacioncliente.html">De cliente</a>
+                </div>
+              </li>
+  
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ingresar Inmueble
+              </a>
+              <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item dropdown-text" href="#">Para su venta</a>
+                <a class="dropdown-item dropdown-text" href="#">Para su alquiler</a>
+              </div>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link nav-text" href="index.html">Cerrar sesion</a>
+            </li>
+  
+          </ul>
+        </div>
+    </nav>
+
+    <!--Formulario de captacion de cliente-->
+    <div class="form-container">
+        <h2>Formato de Captación de Cliente</h2>
+        <form action="/submit-cliente" method="post">
+            <fieldset>
+                <legend>Datos Generales del Cliente</legend>
+                <div class="form-grid">
+                    <label for="tipo-identificacion">Tipo de Identificación:</label>
+                    <select id="tipo-identificacion" name="tipo-identificacion" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="V-">V-</option>
+                        <option value="E-">E-</option>
+                        <option value="P-">P-</option>
+                        <option value="J-">J-</option>
+                        <option value="G-">G-</option>
+                        <option value="C-">C-</option>
+                    </select>
+    
+                    <label for="cedula">Cédula de Identidad:</label>
+                    <input type="text" id="cedula" name="cedula" required>
+    
+                    <label for="rif">Registro de Información Fiscal (R.I.F):</label>
+                    <input type="text" id="rif" name="rif" required>
+    
+                    <label for="propiedad">Documentos de Propiedad:</label>
+                    <input type="file" id="propiedad" name="propiedad" accept=".pdf" required>
+    
+                    <label for="liberacion">Documento de Liberación de Hipoteca:</label>
+                    <input type="file" id="liberacion" name="liberacion" accept=".pdf" required>
+    
+                    <label for="catastral">Ficha Catastral:</label>
+                    <input type="file" id="catastral" name="catastral" accept=".pdf" required>
+    
+                    <label for="solvencia">Solvencia Municipal:</label>
+                    <input type="file" id="solvencia" name="solvencia" accept=".pdf" required>
+    
+                    <label for="registro">Registro de Vivienda Principal:</label>
+                    <input type="file" id="registro" name="registro" accept=".pdf" required>
+    
+                    <label for="poder">Poder:</label>
+                    <input type="file" id="poder" name="poder" accept=".pdf" required>
+    
+                    <label for="captacion">Formato de Captación:</label>
+                    <input type="file" id="captacion" name="captacion" accept=".pdf" required>
+                </div>
+                <input type="submit" value="Enviar">
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

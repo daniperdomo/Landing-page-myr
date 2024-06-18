@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="captacion-inmueble.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
@@ -23,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link nav-text" href="index.html">Inicio</a>
+              <a class="nav-link nav-text" href="administrador.html">Inicio</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -32,7 +33,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item dropdown-text" href="captacioninmueble.html">De inmueble</a>
-                  <a class="dropdown-item dropdown-text" href="#">De cliente</a>
+                  <a class="dropdown-item dropdown-text" href="captacioncliente.html">De cliente</a>
                 </div>
               </li>
 
@@ -57,31 +58,32 @@
     <!--Formulario de captacion de inmueble-->
     <div class="form-container">
         <h2>Formato de Captación de Inmuebles</h2>
-        <form action="/upload" method="post" enctype="multipart/form-data"> 
           <fieldset>
             <legend>Datos Generales del Inmueble</legend>
-            <div class="field-group">
-              <div class="field-row">
-                <label for="sector">Sector:</label>
-                <input type="text" id="sector" name="sector" required>
-              </div>
-              <div class="field-row">
-                <label for="residential-complex">Conjunto Residencial:</label>
-                <input type="text" id="residential-complex" name="residential-complex" required>
-              </div>
-              <div class="field-row">
-                <label for="contact-name">Nombre de Contacto:</label>
-                <input type="text" id="contact-name" name="contact-name" required>
-              </div>
-              <div class="field-row">
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <div class="info">
+              <div class="field-group">
+                <div class="field-row">
+                  <label for="sector">Sector:</label>
+                  <input type="text" id="sector" name="sector" required>
+                </div>
+                <div class="field-row">
+                  <label for="residential-complex">Conjunto Residencial:</label>
+                  <input type="text" id="residential-complex" name="residential-complex" required>
+                </div>
+                <div class="field-row">
+                  <label for="contact-name">Nombre de Contacto:</label>
+                  <input type="text" id="contact-name" name="contact-name" required>
+                </div>
+                <div class="field-row">
+                  <label for="phone">Teléfono:</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
               </div>
             </div>
           </fieldset>
 
           <fieldset>
-            <div class="form-group form-inline">
+            <div class="info form-inline">
                 <label for="tipo" class="mr-2">Tipo:</label>
                 <select class="form-control mr-sm-2" id="tipo" name="tipo">
                   <option value="">Seleccionar</option>
@@ -94,7 +96,7 @@
                   <option value="f-comercio">Local Comercial</option>
                   <option value="otros">Otros</option>
                 </select>
-
+                <br>
                 <label for="niveles" class="mr-2">Niveles:</label>
                 <select class="form-control mr-sm-2" id="niveles" name="niveles">
                     <option value="1">1</option>
@@ -103,34 +105,59 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-
-                <label for="tamaño" class="mr-2">Tamaño (m²):</label>
-                <select class="form-control mr-sm-2" id="tipo-tamaño" name="tipo-tamaño">
-                    <option value="construccion">Construcción</option>
-                    <option value="terreno">Terreno</option>
-                </select>
-                <input type="number" class="form-control" id="tamaño" name="tamaño" placeholder="Cantidad de m²">
+                <br>
+                <label for="tamaño-terreno" class="mr-2">Terreno:</label>
+                <input type="number" min="1" class="form-control" id="tamaño-terreno" name="tamaño-terreno" placeholder="m²">
+                <br>
+                <label for="tamaño-const" class="mr-2">Construcción:</label>
+                <input type="number" min="1" class="form-control" id="tamaño-const" name="tamaño-const" placeholder="m²">
+                <br>
+                <label for="hab" class="mr-2">Hab:</label>
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="hab" name="hab">
+                <br>
+                <label for="baño" class="mr-2">Baños:</label>
+                <input type="number" min="1" class="form-control mr-sm-2 small-input" id="baño" name="baño">
+                <label for="medio-baño" class="mr-2">1/2 Baños:</label>
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="medio-baño" name="medio-baño">
+                <label for="servicio" class="mr-2">Servicio:</label>
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="servicio" name="servicio">
+                <label for="maletero" class="mr-2">Maletero:</label>
+                <input type="number" min="0" class="form-control mr-sm-2 small-input" id="maletero" name="maletero">
+                <label for="terraza" class="mr-2">Terraza:</label>
+                <label for="oficina" class="mr-2">Oficina:</label>
+                <select class="form-control mr-sm-2" id="oficina" name="oficina">
+                  <option value="">Seleccionar</option>
+                  <option value="oficina">Si</option>
+                  <option value="oficina">No</option>
+                </select>                
+                <label for="p-e" class="mr-2">P/E:</label>
+                <input type="number" min="0" class="form-control small-input" id="p-e" name="p-e">
             </div>
+
+            <br>
 
             <div class="form-group form-inline">
-                <label for="distribucion" class="mr-2">Distribución de inmuebles:</label>
-                <label for="hab" class="mr-2">Hab:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="hab" name="hab">
-                <label for="bañ" class="mr-2">Bañ:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="bañ" name="bañ">
-                <label for="medio-bañ" class="mr-2">1/2 Bañ:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="medio-bañ" name="medio-bañ">
-                <label for="servicio" class="mr-2">Servicio:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="servicio" name="servicio">
-                <label for="maletero" class="mr-2">Maletero:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="maletero" name="maletero">
-                <label for="terraza" class="mr-2">Terraza:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="terraza" name="terraza">
-                <label for="oficina" class="mr-2">Oficina:</label>
-                <input type="number" class="form-control mr-sm-2 small-input" id="oficina" name="oficina">
-                <label for="p-e" class="mr-2">P/E:</label>
-                <input type="number" class="form-control small-input" id="p-e" name="p-e">
-            </div>
+              <label for="escaleras" class="mr-2">Escaleras:</label>
+              <select class="form-control mr-sm-2" id="escaleras" name="escaleras">
+                <option value="no-tiene">No tiene</option>
+                <option value="granito">Granito</option>
+                <option value="marmol">Marmol</option>
+                <option value="madera">Madera</option>
+                <option value="concreto">Concreto</option>
+                <option value="baranda">Baranda</option>
+                <option value="calentador">Calentador</option>
+              </select>
+         
+              <label for="piso" class="mr-2">Piso:</label>
+              <select class="form-control mr-sm-2" id="piso" name="piso">
+                <option value="madera">Madera</option>
+                <option value="porcelanato">Porcelanato</option>
+                <option value="granito">Granito</option>
+                <option value="ceramica">Cerámica</option>
+                <option value="cemento">Cemento</option>
+                <option value="caico">Caico</option>
+              </select>
+          </div>
 
             <div class="form-group">
                 <label for="cocina-servicio" class="checkbox-label">Cocina/Servicio:</label>
@@ -192,68 +219,7 @@
                     Secadora
                   </label>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="sala-comedor" class="checkbox-label">Sala/Comedor:</label>
-                <div class="checkbox-group">
-                  <label for="mesa">
-                    <input type="checkbox" id="mesa" name="mesa">
-                    Mesa
-                  </label>
-                  <label for="sillas">
-                    <input type="checkbox" id="sillas" name="sillas">
-                    Sillas
-                  </label>
-                  <label for="a-a">
-                    <input type="checkbox" id="a-a" name="a-a">
-                    A/A
-                  </label>
-                  <label for="vitrina">
-                    <input type="checkbox" id="vitrina" name="vitrina">
-                    Vitrina
-                  </label>
-                  <label for="cantv">
-                    <input type="checkbox" id="cantv" name="cantv">
-                    Cantv
-                  </label>
-                  <label for="internet">
-                    <input type="checkbox" id="internet" name="internet">
-                    Internet
-                  </label>
-                  <label for="televisor">
-                    <input type="checkbox" id="televisor" name="televisor">
-                    Televisor
-                  </label>
-                  <label for="directv">
-                    <input type="checkbox" id="directv" name="directv">
-                    Directv
-                  </label>
-                  <label for="sofa">
-                    <input type="checkbox" id="sofa" name="sofa">
-                    Sofá
-                  </label>
-                  <label for="poltrona">
-                    <input type="checkbox" id="poltrona" name="poltrona">
-                    Poltrona
-                  </label>
-                  <label for="biblioteca">
-                    <input type="checkbox" id="biblioteca" name="biblioteca">
-                    Biblioteca
-                  </label>
-                  <label for="ceibo">
-                    <input type="checkbox" id="ceibo" name="ceibo">
-                    Ceibo
-                  </label>
-                  <label for="h-theater">
-                    <input type="checkbox" id="h-theater" name="h-theater">
-                    Cine
-                  </label>
-                  <label for="lamparas">
-                    <input type="checkbox" id="lamparas" name="lamparas">
-                    Lámparas
-                  </label>
-                </div>
+                
             </div>
 
             <div class="form-group">
@@ -429,111 +395,16 @@
                   </label>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label for="escaleras" class="mr-2">Escaleras:</label>
-                <select class="form-control mr-sm-2" id="escaleras" name="escaleras">
-                  <option value="granito">Granito</option>
-                  <option value="marmol">Marmol</option>
-                  <option value="madera">Madera</option>
-                  <option value="concreto">Concreto</option>
-                  <option value="baranda">Baranda</option>
-                  <option value="calentador">Calentador</option>
-                </select>
             </div>
 
-            <div class="form-group">
-                <label for="piso" class="mr-2">Piso:</label>
-                <select class="form-control mr-sm-2" id="piso" name="piso">
-                  <option value="madera">Madera</option>
-                  <option value="porcelanato">Porcelanato</option>
-                  <option value="granito">Granito</option>
-                  <option value="ceramica">Cerámica</option>
-                  <option value="cemento">Cemento</option>
-                  <option value="caico">Caico</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="area-externa" class="checkbox-label">Área externa:</label>
-                <div class="checkbox-group">
-                  <label for="patio">
-                    <input type="checkbox" id="patio" name="patio">
-                    Patio
-                  </label>
-                  <label for="piscina">
-                    <input type="checkbox" id="piscina" name="piscina">
-                    Piscina
-                  </label>
-                  <label for="parrillera">
-                    <input type="checkbox" id="parrillera" name="parrillera">
-                    Parrillera
-                  </label>
-                  <label for="jardinera">
-                    <input type="checkbox" id="jardinera" name="jardinera">
-                    Jardinera
-                  </label>
-                  <label for="gimnasio">
-                    <input type="checkbox" id="gimnasio" name="gimnasio">
-                    Gimnasio
-                  </label>
-                  <label for="fuente">
-                    <input type="checkbox" id="fuente" name="fuente">
-                    Fuente
-                  </label>
-                  <label for="tanque-agua">
-                    <input type="checkbox" id="tanque-agua" name="tanque-agua">
-                    Tanq/Agua
-                  </label>
-                  <label for="lavandero">
-                    <input type="checkbox" id="lavandero" name="lavandero">
-                    Lavandero
-                  </label>
-                  <label for="reflector">
-                    <input type="checkbox" id="reflector" name="reflector">
-                    Reflector
-                  </label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="seguridad" class="checkbox-label">Seguridad:</label>
-                <div class="checkbox-group">
-                  <label for="camara">
-                    <input type="checkbox" id="camara" name="camara">
-                    Cámara
-                  </label>
-                  <label for="dvr">
-                    <input type="checkbox" id="dvr" name="dvr">
-                    DVR
-                  </label>
-                  <label for="alarma">
-                    <input type="checkbox" id="alarma" name="alarma">
-                    Alarma
-                  </label>
-                  <label for="vigilancia">
-                    <input type="checkbox" id="vigilancia" name="vigilancia">
-                    Vigil.
-                  </label>
-                  <label for="cerca-electrica">
-                    <input type="checkbox" id="cerca-electrica" name="cerca-electrica">
-                    C.Eléc.
-                  </label>
-                  <label for="monitor">
-                    <input type="checkbox" id="monitor" name="monitor">
-                    Monitor
-                  </label>
-                  <label for="boton-panico">
-                    <input type="checkbox" id="boton-panico" name="boton-panico">
-                    B/Pánico
-                  </label>
-                  <label for="sirena">
-                    <input type="checkbox" id="sirena" name="sirena">
-                    Sirena
-                  </label>
-                </div>
-              </div>
-
+            <!--No fuciona bien. No deja subir más de una foto-->
+            <fieldset class="images">
+              <legend>Subir Imágenes</legend>
+              <form action="post" class="form-images">
+                <label class="input-images">
+                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="images" multiple />
+                </label>
+              </form>
             </fieldset>
 
             <div>
