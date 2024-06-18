@@ -13,15 +13,25 @@ CREATE TABLE Propiedad(
     IdPropiedad INT PRIMARY KEY AUTO_INCREMENT,
     NombreContacto VARCHAR(15) NOT NULL,
     Teleforno VARCHAR(10) NOT NULL,
-    TipoPropiedad VARCHAR(50) NOT NULL,
+    TipoPropiedad ENUM('Apartamento','Town House','Quinta','Casa','Galpon','Oficina','F. Comercio','Otros'),
+    TipoListado ENUM('Para la Venta','Para Renta'),
     Ubicacion VARCHAR(100) NOT NULL,
     Precio DECIMAL(10,2) NOT NULL,
+    Dormitorios INT,
+    Habitaciones INT,
+    Baños INT,
+    MedioBaño INT,
     Descripcion TEXT,
     TamañoConstruc INT NOT NULL,
-    TamañoTerreno INTEGER NOT NULL,
-    Habitaciones INTEGER NOT NULL,
-    Baños INTEGER NOT NULL,
-    Estacionamiento INTEGER NOT NULL
+    TamañoTerreno INT NOT NULL,
+    AñoDeConstruccion INT,
+    Estacionamiento INTEGER NOT NULL,
+    Country VARCHAR(30),
+    Ciudad VARCHAR(30),
+    CodigoPostal VARCHAR(10),
+    NumeroDePiso INT,
+    Longitud VARCHAR(20),
+    Latitud VARCHAR(20)
 )
 
 
@@ -97,3 +107,10 @@ CREATE TABLE Usuario(
 
 INSERT INTO Usuario(Usuario,Contraseña)
 VALUES('admin','admin')
+
+
+
+
+CREATE VIEW PropiedadesWeb AS
+
+SELECT
