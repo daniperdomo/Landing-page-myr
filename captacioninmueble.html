@@ -58,6 +58,7 @@
     <!--Formulario de captacion de inmueble-->
     <div class="form-container">
         <h2>Formato de Captación de Inmuebles</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
           <fieldset>
             <legend>Datos Generales del Inmueble</legend>
             <div class="info">
@@ -396,16 +397,6 @@
                 </div>
             </div>
             </div>
-
-            <!--No fuciona bien. No deja subir más de una foto-->
-            <fieldset class="images">
-              <legend>Subir Imágenes</legend>
-              <form action="post" class="form-images">
-                <label class="input-images">
-                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="images" multiple />
-                </label>
-              </form>
-            </fieldset>
 
             <div>
                 <label for="observaciones">Observaciones:</label>

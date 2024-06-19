@@ -87,6 +87,11 @@ app.post('/login',(req,res) =>{
     acceso(usuario,contraseña,res)
 })
 
+//Pagina de captacion inmueble
+app.get("/captacioninmueble.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "captacioninmueble.html"));
+  });
+
 // Ruta para manejar la carga de archivos
 app.post('/upload', upload.single('file'), (req, res) => {
     if (req.file) {
