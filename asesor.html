@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="asesor.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <!--Navbar apartado de administrador-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+        <a class="navbar-brand" href="#">
+          <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-text" href="asesor.html">Menú</a>
+            </li>
+  
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ingresar captación
+                </a>
+                <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item dropdown-text" href="captacioninmueble.html">De inmueble</a>
+                  <a class="dropdown-item dropdown-text" href="captacioncliente.html">De cliente</a>
+                </div>
+              </li>
+  
+            <li class="nav-item">
+              <a class="nav-link nav-text" href="index.html">Cerrar sesion</a>
+            </li>
+  
+          </ul>
+        </div>
+    </nav>
+
+    <!-- Menú de asesor -->
+  <div class="services">
+    <div class="services-title-card">
+        <h1 class="services-title">Menú de Asesor</h1>
+    </div>
+    <div class="container">
+         <!-- Tarjeta de Ingresar Captación -->
+        <div class="card" id="card-ingresar-propiedades">
+            <h3>Ingresar Captación</h3>
+            <p>Registra nuevas captaciones de clientes o inmobiliarias</p>
+        </div>
+
+        <!-- Opciones de Ingresar Captación -->
+        <div class="sub-cards" id="sub-cards-propiedades">
+            <a href="#">
+            <div class="card">
+                <h3>De Cliente</h3>
+                <p>Registre captaciones de clientes.</p>
+            </div>
+            </a>
+
+            <a href="#">
+            <div class="card">
+                <h3>De Inmobiliaria</h3>
+                <p>Registre captaciones de otras inmobiliarias.</p>
+            </div>
+            </a>
+        </div>
+
+    </div>
+  </div>
+  
+    <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+  <script src="admin-scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
