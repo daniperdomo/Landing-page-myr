@@ -48,9 +48,14 @@ async  function acceso(username,contraseña,res){
     BD.query(query, (err,result) =>{
         if (err) throw res
         for(let i=0; i<result.length;i++){
-            if(result[i].Usuario == username && result[i].Contraseña == contraseña){
+            if(result[i].Usuario == username && result[i].Contraseña == contraseña && result[i].TipoUsuario == 'Administrador'){
                 console.log(result[i].Usuario)
                 res.sendFile(path.join(__dirname, 'administrador.html'))
+                return
+            }
+            if(result[i].Usuario == username && result[i].Contraseña == contraseña && result[i].TipoUsuario == 'Asesor'){
+                console.log(result[i].Usuario)
+                res.sendFile(path.join(__dirname, 'asesor.html'))
                 return
             }
         }
