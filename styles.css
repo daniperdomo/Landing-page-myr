@@ -120,6 +120,81 @@
   .overlay-button {
     font-size: 1rem;
   }
+}
+  
+  .contact-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagenes/Formulario1.png'); /* Cambié la ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  
+  .contact-form .form-control {
+    background-color: rgba(217, 167, 214, 0.7);
+    border: none;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .contact-form .form-control::placeholder {
+    color: #f3e6f5;
+  }
+  
+  .contact-form .form-control:focus {
+    background-color: rgba(196, 139, 191, 0.7);
+    color: white;
+    border: 1px solid #00C7B1;
+    box-shadow: 0 0 0 0.2rem rgba(0, 199, 177, 0.25);
+  }
+  
+  .contact-form .btn-primary {
+    background-color: #00C7B1;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .contact-form .btn-primary:hover {
+    background-color: #009a8a;
+  }
+  
+  .contact-form h5 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .static-message {
+    background-color: #c48bbf;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-form {
+      padding: 10px;
+    }
+  
+    .static-message {
+      margin-top: 20px;
+    }
+  }
+  
+ /* Estilos para el botón de volver al inicio */
+.return-to-top {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
 
 /* Estilos de la sección de servicios */
 .services {
@@ -260,103 +335,50 @@
   }
 }
 
-.nosotros {
-  position: relative;
-  padding: 20px 40px;
-  background-color: #2DB5AF;
-  color: white;
-  text-align: center;
-  transition: background-color 0.3s ease;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden; 
-  background-image: url('imagenes/Fondo.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.nosotros-title-card {
+.about-us-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
+  width: 100%;
   background-color: white;
-  padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: fit-content;
-  margin: 0 auto 40px auto;
-}
-
-.nosotros h2 {
-  font-size: 1.5rem;
-  color: black;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-#nosotros-text {
-  text-align: justify;
-  font-size: 1.09rem;
-}
-
-
-.text-container {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 8px;
-  display: inline-block;
-  text-align: left;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  max-height: 110px;
   overflow: hidden;
-  max-width: 800px;
-  width: 100%;
 }
 
-.text-container.expanded {
-  max-height: 1000px;
+.about-us-text {
+  width: 70%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.nosotros p {
-  font-size: 1rem;
+.about-us-text h1 {
+  font-size: 2.5rem;
   color: #333;
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-size: 1.1rem;
+  color: #666;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-#toggle-button {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+.about-us-image {
+  width: 30%;
+  overflow: hidden;
 }
 
-#toggle-button:hover {
-  color: white;
-  background-color: #AB5DA8;
+.about-us-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-us-image img:hover {
   transform: scale(1.05);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-@media (max-width: 600px) {
-  .nosotros h2 {
-    font-size: 1.8rem;
-  }
-
-  .nosotros p {
-    font-size: 0.9rem;
-  }
-
-  #toggle-button {
-    width: 100%;
-    padding: 12px 0;
-  }
 }
 
 .contacto {
@@ -535,4 +557,3 @@ body {
     padding: 8px;
   }
 }
-
