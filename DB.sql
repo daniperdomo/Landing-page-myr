@@ -106,16 +106,18 @@ CREATE TABLE Seguridad(
 CREATE TABLE Usuario(
     IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
     Usuario VARCHAR(50) NOT NULL,
-    Contraseña VARCHAR(50) NOT NULL
+    Contraseña VARCHAR(50) NOT NULL,
+    TipoUsuario ENUM('Administrador','Asesor') NOT NULL
 )
 
 
-INSERT INTO Usuario(Usuario,Contraseña)
-VALUES('admin','admin')
-
+INSERT INTO Usuario(Usuario,Contraseña,TipoUsuario)
+VALUES('admin','admin','Administrador'),
+('asesor','asesor','Asesor')
 
 
 
 CREATE VIEW PropiedadesWeb AS
 SELECT TipoPropiedad,TipoListado,Precio,Dormitorios,Habitaciones,Baños,MedioBaño,TamañoConstruc,AñoDeConstruccion,Country,Ciudad,CodigoPostal,NumeroDePiso,Longitud,Latitud
+
 FROM propiedad
