@@ -15,50 +15,30 @@
 <body>
     <!--Navbar apartado de administrador-->
     <nav class="navbar navbar-expand-lg navbar-light bg-purple">
-        <a class="navbar-brand" href="#">
-          <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link nav-text" href="administrador.html">Inicio</a>
-            </li>
-  
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ingresar captación
-                </a>
-                <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item dropdown-text" href="captacioninmueble.html">De inmueble</a>
-                  <a class="dropdown-item dropdown-text" href="captacioncliente.html">De cliente</a>
-                </div>
-              </li>
-  
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Ingresar Inmueble
-              </a>
-              <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item dropdown-text" href="#">Para su venta</a>
-                <a class="dropdown-item dropdown-text" href="#">Para su alquiler</a>
-              </div>
-            </li>
-  
-            <li class="nav-item">
-              <a class="nav-link nav-text" href="index.html">Cerrar sesion</a>
-            </li>
-  
-          </ul>
-        </div>
-    </nav>
+      <a class="navbar-brand" href="#">
+        <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="#" onclick="volver()">Menú</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="index.html">Cerrar sesion</a>
+          </li>
+
+        </ul>
+      </div>
+  </nav>
 
     <!--Formulario de captacion de cliente-->
     <div class="form-container">
         <h2>Formato de Captación de Cliente</h2>
-        <form action="/submit-cliente" method="post">
+        <form action="/submit-cliente" method="post" id="formulario">
             <fieldset>
                 <legend>Datos Generales del Cliente</legend>
                 <div class="form-grid">
@@ -100,12 +80,16 @@
                     <label for="captacion">Formato de Captación:</label>
                     <input type="file" id="captacion" name="captacion" accept=".pdf" required>
                 </div>
+
+                <input type="hidden" id="timestamp" name="timestamp" value="">
+
                 <input type="submit" value="Enviar">
             </fieldset>
         </form>
     </div>
 
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+    <script src="captaciones.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

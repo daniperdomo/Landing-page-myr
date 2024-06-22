@@ -24,27 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link nav-text" href="administrador.html">Inicio</a>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ingresar captación
-                </a>
-                <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item dropdown-text" href="captacioninmueble.html">De inmueble</a>
-                  <a class="dropdown-item dropdown-text" href="captacioncliente.html">De cliente</a>
-                </div>
-              </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Ingresar Inmueble
-              </a>
-              <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item dropdown-text" href="#">Para su venta</a>
-                <a class="dropdown-item dropdown-text" href="#">Para su alquiler</a>
-              </div>
+              <a class="nav-link nav-text" href="#" onclick="volver()">Menú</a>
             </li>
 
             <li class="nav-item">
@@ -59,6 +39,7 @@
     <div class="form-container">
         <h2>Formato de Captación de Inmuebles</h2>
         <form action="/upload" method="post" enctype="multipart/form-data"> 
+
 
           <fieldset>
             <legend>Datos Generales del Inmueble</legend>
@@ -462,30 +443,6 @@
             </div>
 
             <div class="form-group">
-                <label for="escaleras" class="mr-2">Escaleras:</label>
-                <select class="form-control mr-sm-2" id="escaleras" name="escaleras">
-                  <option value="granito">Granito</option>
-                  <option value="marmol">Marmol</option>
-                  <option value="madera">Madera</option>
-                  <option value="concreto">Concreto</option>
-                  <option value="baranda">Baranda</option>
-                  <option value="calentador">Calentador</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="piso" class="mr-2">Piso:</label>
-                <select class="form-control mr-sm-2" id="piso" name="piso">
-                  <option value="madera">Madera</option>
-                  <option value="porcelanato">Porcelanato</option>
-                  <option value="granito">Granito</option>
-                  <option value="ceramica">Cerámica</option>
-                  <option value="cemento">Cemento</option>
-                  <option value="caico">Caico</option>
-                </select>
-            </div>
-
-            <div class="form-group">
                 <label for="area-externa" class="checkbox-label">Área externa:</label>
                 <div class="checkbox-group">
                   <label for="patio">
@@ -564,6 +521,15 @@
                 </div>
               </div>
 
+              <fieldset class="images">
+                <legend>Subir Imágenes</legend>
+                <form action="post" class="form-images">
+                  <label class="input-images">
+                    <input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="images" multiple />
+                  </label>
+                </form>
+              </fieldset>
+
             <div>
                 <label for="observaciones">Observaciones:</label>
                 <textarea id="observaciones" name="observaciones" rows="5" cols="50"></textarea>
@@ -574,11 +540,7 @@
                 <input type="text" id="referido" name="referido">
               </div>
 
-              <!-- campo de tipo file para subir imágenes -->
-              <div class="form-group">
-                <label for="imagen">Subir Imagen:</label>
-                <input type="file" id="imagen" name="file" required> 
-              </div>
+          <input type="hidden" id="timestamp" name="timestamp" value="">
 
           <button id="submitbtn" type="submit">Enviar</button>
         </form>
@@ -586,6 +548,7 @@
     </div>
 
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+    <script src="captaciones.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

@@ -27,16 +27,6 @@
               <a class="nav-link nav-text" href="asesor.html">Menú</a>
             </li>
   
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ingresar captación
-                </a>
-                <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item dropdown-text" href="captacioninmueble.html">De inmueble</a>
-                  <a class="dropdown-item dropdown-text" href="captacioncliente.html">De cliente</a>
-                </div>
-              </li>
-  
             <li class="nav-item">
               <a class="nav-link nav-text" href="index.html">Cerrar sesion</a>
             </li>
@@ -46,36 +36,57 @@
     </nav>
 
     <!-- Menú de asesor -->
-  <div class="services">
-    <div class="services-title-card">
-        <h1 class="services-title">Menú de Asesor</h1>
-    </div>
-    <div class="container">
-         <!-- Tarjeta de Ingresar Captación -->
-        <div class="card" id="card-ingresar-propiedades">
-            <h3>Ingresar Captación</h3>
-            <p>Registra nuevas captaciones de clientes o inmobiliarias</p>
-        </div>
-
-        <!-- Opciones de Ingresar Captación -->
-        <div class="sub-cards" id="sub-cards-propiedades">
-            <a href="captacioncliente.html">
-            <div class="card">
-                <h3>De Cliente</h3>
-                <p>Registre captaciones de clientes.</p>
-            </div>
-            </a>
-
-            <a href="captacioninmueble.html">
-            <div class="card">
-                <h3>De Inmobiliaria</h3>
-                <p>Registre captaciones de otras inmobiliarias.</p>
-            </div>
-            </a>
-        </div>
-
-    </div>
+<div class="services">
+  <div class="services-title-card">
+      <h1 class="services-title">Menú de Asesor</h1>
   </div>
+  <div class="container">
+      <div class="row">
+          <!-- Primera fila de tarjetas -->
+          <div class="col-md-6 mb-3">
+              <!-- Tarjeta de Ingresar Captación -->
+              <div class="card" id="card-ingresar-propiedades">
+                  <h3>Ingresar Captación</h3>
+                  <p>Registra nuevas captaciones de clientes o inmobiliarias</p>
+              </div>
+
+              <!-- Opciones de Ingresar Captación -->
+              <div class="sub-cards" id="sub-cards-propiedades">
+                  <a href="captacioncliente.html?source=asesor">
+                      <div class="card">
+                          <h3>De Cliente</h3>
+                          <p>Registre captaciones de clientes.</p>
+                      </div>
+                  </a>
+                  <a href="captacioninmueble.html?source=asesor">
+                      <div class="card">
+                          <h3>De Inmobiliaria</h3>
+                          <p>Registre captaciones de otras inmobiliarias.</p>
+                      </div>
+                  </a>
+              </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+              <!-- Tarjeta de Realizar Solicitud de Carga de Inmueble -->
+              <div class="card" id="card-realizar-solicitud">
+                  <h3>Realizar Solicitud de Carga de Inmueble</h3>
+                  <p>Solicita la carga de un inmueble a la web</p>
+              </div>
+
+              <!-- Opciones de Realizar Solicitud de Carga de Inmueble -->
+              <div class="sub-cards" id="sub-cards-solicitud">
+                  <a href="solicitudcarga.html?source=asesor">
+                      <div class="card">
+                          <h3>Solicitud de Carga</h3>
+                          <p>Realiza una solicitud de carga de inmueble a la web</p>
+                      </div>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
   
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
   <script src="admin-scripts.js"></script>

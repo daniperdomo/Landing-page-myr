@@ -119,4 +119,5 @@ VALUES('admin','admin','Administrador'),
 
 CREATE VIEW PropiedadesWeb AS
 SELECT TipoPropiedad,TipoListado,Precio,Dormitorios,Habitaciones,Baños,MedioBaño,TamañoConstruc,AñoDeConstruccion,Country,Ciudad,CodigoPostal,NumeroDePiso,Longitud,Latitud
+
 FROM propiedad
