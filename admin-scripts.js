@@ -27,4 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejar el clic en la tarjeta "Ver Captaciones"
     toggleSubCards('card-ver-captaciones', 'sub-cards-ver-captaciones');
+
+    // Manejar el clic en la tarjeta "Ver Solicitud de carga de inmueble"
+    toggleSubCards('card-ver-solicitudes', 'sub-cards-ver-solicitudes');
 });
