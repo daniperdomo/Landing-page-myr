@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link nav-text" href="administrador.html">Inicio</a>
+              <a class="nav-link nav-text" href="#" onclick="volver()">Inicio</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -58,7 +58,7 @@
     <!--Formulario de captacion de inmueble-->
     <div class="form-container">
         <h2>Formato de Captación de Inmuebles</h2>
-        <form action="/upload" method="post" enctype="multipart/form-data">
+        <form action="/upload" method="post" enctype="multipart/form-data" id="formulario">
 
           <fieldset>
             <legend>Datos Generales del Inmueble</legend>
@@ -559,12 +559,15 @@
                 <input type="text" id="referido" name="referido">
               </div>
 
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+
           <button id="submitbtn" type="submit">Enviar</button>
         </form>
         
     </div>
 
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+    <script src="captaciones.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
