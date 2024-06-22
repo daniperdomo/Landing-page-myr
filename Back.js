@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
         cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
+        cb(null, Date.now() + '-' + file.originalname);
     }
 });
 
@@ -40,6 +40,13 @@ const port = 3000
 
 //directorio actual
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// Crear la carpeta 'uploads' si no existe
+import fs from 'fs';
+if (!fs.existsSync('uploads')) {
+    fs.mkdirSync('uploads');
+}
+
 
 //creacion de conexion
 async  function acceso(username,contraseña,res){
@@ -92,12 +99,36 @@ app.get("/captacioninmueble.html", (req, res) => {
     res.sendFile(path.join(__dirname, "captacioninmueble.html"));
   });
 
-// Ruta para manejar la carga de archivos
-app.post('/upload', upload.single('file'), (req, res) => {
-    if (req.file) {
-        console.log(`Archivo subido: ${req.file.filename}`);
-        res.send('Archivo subido exitosamente.');
-    } else {
-        res.status(400).send('Error al subir el archivo.');
+// Ruta para manejar la carga de múltiples archivos
+app.post('/upload', upload.array('files', 20), (req, res) => {
+    try {
+        if (!req.files) {
+            return res.status(400).send('No se han subido archivos.');
+        }
+        res.send('Archivos subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los archivos.');
+    }
+});
+
+// Ruta para manejar la carga de archivos del segundo formulario
+app.post('/submit-cliente', upload.fields([
+    { name: 'propiedad', maxCount: 1 },
+    { name: 'liberacion', maxCount: 1 },
+    { name: 'catastral', maxCount: 1 },
+    { name: 'solvencia', maxCount: 1 },
+    { name: 'registro', maxCount: 1 },
+    { name: 'poder', maxCount: 1 },
+    { name: 'captacion', maxCount: 1 }
+]), (req, res) => {
+    try {
+        if (!req.files) {
+            return res.status(400).send('No se han subido archivos.');
+        }
+        res.send('Archivos subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los archivos.');
     }
 });
