@@ -106,13 +106,14 @@ CREATE TABLE Seguridad(
 CREATE TABLE Usuario(
     IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
     Usuario VARCHAR(50) NOT NULL,
-    Contraseña VARCHAR(50) NOT NULL
+    Contraseña VARCHAR(50) NOT NULL,
+    TipoUsuario ENUM('Administrador','Asesor') NOT NULL
 )
 
 
-INSERT INTO Usuario(Usuario,Contraseña)
-VALUES('admin','admin')
-
+INSERT INTO Usuario(Usuario,Contraseña,TipoUsuario)
+VALUES('admin','admin','Administrador'),
+('asesor','asesor','Asesor')
 
 
 
