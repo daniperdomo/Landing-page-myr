@@ -89,7 +89,7 @@
     <!--Formulario de captacion de inmueble-->
     <div class="form-container">
       <h2>Formato de Captación de Inmuebles</h2>
-
+      <form action="/upload" method="post" enctype="multipart/form-data"> 
 
         <fieldset>
           <legend>Datos Generales del Inmueble</legend>
@@ -570,16 +570,11 @@
                 </label>
               </div>
             </div>
-
-            <fieldset class="images">
-              <legend>Subir Imágenes</legend>
-              <form action="post" class="form-images">
-                <label class="input-images">
-                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="images" multiple />
-                </label>
-              </form>
-            </fieldset>
-
+              <!-- campo de tipo file para subir imágenes -->
+              <div class="form-group">
+                <label for="imagen">Subir Imagen:</label>
+                <input type="file" accept="image/png, image/jpeg, image/jpg" id="images" name="files" multiple /> 
+              </div>
           <div>
               <label for="observaciones">Observaciones:</label>
               <textarea id="observaciones" name="observaciones" rows="5" cols="50"></textarea>

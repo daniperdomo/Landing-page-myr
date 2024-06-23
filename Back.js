@@ -96,25 +96,29 @@ app.post('/login',(req,res) =>{
     acceso(usuario,contraseña,res)
 })
 
-//Pagina de captacion inmueble
-app.get("/captacioninmueble.html", (req, res) => {
-    res.sendFile(path.join(__dirname, "captacioninmueble.html"));
-  });
-
-// Ruta para manejar la carga de múltiples archivos
-app.post('/upload', upload.array('files', 20), (req, res) => {
+// Ruta para manejar la carga de archivos y datos del formulario de captación de inmuebles
+app.post('/upload', upload.array('files', 10), (req, res) => {
     try {
         if (!req.files) {
             return res.status(400).send('No se han subido archivos.');
         }
-        res.send('Archivos subidos con éxito.');
+
+        // Procesar los datos del formulario
+        const data = req.body;
+        console.log('Datos del formulario:', data);
+        console.log('Archivos subidos:', req.files);
+
+        // Guardar los datos en la base de datos
+        // ...
+
+        res.send('Archivos y datos del formulario subidos con éxito.');
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error al subir los archivos.');
+        res.status(500).send('Error al subir los archivos y datos del formulario.');
     }
 });
 
-// Ruta para manejar la carga de archivos del segundo formulario
+// Ruta para manejar la carga de archivos y datos del formulario de captación de clientes
 app.post('/submit-cliente', upload.fields([
     { name: 'propiedad', maxCount: 1 },
     { name: 'liberacion', maxCount: 1 },
@@ -128,9 +132,18 @@ app.post('/submit-cliente', upload.fields([
         if (!req.files) {
             return res.status(400).send('No se han subido archivos.');
         }
-        res.send('Archivos subidos con éxito.');
+
+        // Procesar los datos del formulario
+        const data = req.body;
+        console.log('Datos del formulario:', data);
+        console.log('Archivos subidos:', req.files);
+
+        // Guardar los datos en la base de datos
+        // ...
+
+        res.send('Archivos y datos del formulario subidos con éxito.');
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error al subir los archivos.');
+        res.status(500).send('Error al subir los archivos y datos del formulario.');
     }
 });
