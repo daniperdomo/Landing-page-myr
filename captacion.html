@@ -35,10 +35,11 @@
       </div>
   </nav>
 
+  
     <!--Formulario de captacion de cliente-->
     <div class="form-container">
         <h2>Formato de Captación de Cliente</h2>
-        <form action="/submit-cliente" method="post" enctype="multipart/form-data">
+        <form action="/submit-cliente" method="post" id="formulario" enctype="multipart/form-data">
             <fieldset>
                 <legend>Datos Generales del Cliente</legend>
                 <div class="form-grid">
@@ -623,14 +624,12 @@
               </div>
             </div>
 
-            <!--Subir imagenes-->
+            <!-- Añadir campo de tipo file para subir imágenes -->
             <fieldset class="images">
               <legend>Subir Imágenes</legend>
-              <form action="post" class="form-images">
-                <label class="input-images">
-                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="images" multiple />
-                </label>
-              </form>
+              <label class="input-images">
+                <input type="file" accept="image/png, image/jpeg, image/jpg" id="images" name="files" multiple />
+              </label>
             </fieldset>
 
             <!--Observaciones-->

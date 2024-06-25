@@ -96,40 +96,28 @@ app.post('/login',(req,res) =>{
     acceso(usuario,contraseña,res)
 })
 
-// Ruta para manejar la carga de archivos y datos del formulario de captación de inmuebles
-app.post('/upload', upload.array('files', 10), (req, res) => {
-    try {
-        if (!req.files) {
-            return res.status(400).send('No se han subido archivos.');
-        }
+//Pagina de captacion inmueble
+app.get("/captacion.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "captacion.html"));
+  });
 
-        // Procesar los datos del formulario
-        const data = req.body;
-        console.log('Datos del formulario:', data);
-        console.log('Archivos subidos:', req.files);
-
-        // Guardar los datos en la base de datos
-        // ...
-
-        res.send('Archivos y datos del formulario subidos con éxito.');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error al subir los archivos y datos del formulario.');
-    }
-});
-
-// Ruta para manejar la carga de archivos y datos del formulario de captación de clientes
-app.post('/submit-cliente', upload.fields([
-    { name: 'propiedad', maxCount: 1 },
+// Configurar Multer para aceptar todos los posibles campos de archivos de ambos formularios
+const uploadFields = upload.fields([
+    { name: 'files', maxCount: 10 }, // Para el formulario de captación de inmuebles
+    { name: 'propiedad', maxCount: 1 }, // Para el formulario de captación de clientes
     { name: 'liberacion', maxCount: 1 },
     { name: 'catastral', maxCount: 1 },
     { name: 'solvencia', maxCount: 1 },
     { name: 'registro', maxCount: 1 },
     { name: 'poder', maxCount: 1 },
     { name: 'captacion', maxCount: 1 }
-]), (req, res) => {
+]);
+
+// Ruta unificada para manejar la carga de archivos y datos de ambos formularios
+app.post('/submit-cliente', uploadFields, (req, res) => {
     try {
-        if (!req.files) {
+        console.log(req.files);
+        if (!req.files || Object.keys(req.files).length === 0) {
             return res.status(400).send('No se han subido archivos.');
         }
 
