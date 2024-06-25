@@ -18,16 +18,16 @@ function volver() {
 
 // Función para obtener la fecha y hora actual
 function getCurrentTimestamp() {
-    var now = new Date();
-    return now.toISOString();
-  }
+  var now = new Date();
+  return now.toISOString();
+}
 
-  // Asignar la fecha y hora actual al campo oculto antes de enviar el formulario
-  document.getElementById('fomulario').addEventListener('submit', function(e) {
-    var timestampField = document.getElementById('timestamp');
-    var timestamp = getCurrentTimestamp();
-    timestampField.value = timestamp;
+// Asignar la fecha y hora actual al campo oculto antes de enviar el formulario
+document.getElementById('formulario').addEventListener('submit', function(e) {
+  var timestampField = document.getElementById('timestamp');
+  var timestamp = getCurrentTimestamp();
+  timestampField.value = timestamp;
 
-    // Imprimir la fecha y hora en la consola del navegador
-    console.log('Fecha y hora de envío:', timestamp);
-  });
+  // Imprimir la fecha y hora en la consola del navegador
+  console.log('Fecha y hora de envío:', timestamp);
+});
