@@ -43,7 +43,7 @@
                 <legend>Datos Generales del Cliente</legend>
                 <div class="form-grid">
                     <!--Tipo de identificacion-->
-                    <label for="tipoid">Tipo de Identificación:</label>
+                    <label for="tipo_id">Tipo de Identificación:</label>
                     <select id="tipo_id" name="tipo_id" required>
                         <option value="">Seleccione una opción</option>
                         <option value="V">V-</option>
@@ -63,15 +63,15 @@
                     <input type="text" id="rif" name="rif" required>
 
                     <!--Asiento registral-->
-                    <label for="rif">Asiento registral:</label>
+                    <label for="a_registral">Asiento registral:</label>
                     <input type="text" id="a_registral" name="asiento" required>
 
                     <!--Numero de protocolo-->
-                    <label for="rif">Número de protocolo:</label>
+                    <label for="n_protocolo">Número de protocolo:</label>
                     <input type="text" id="n_protocolo" name="n_protocolo" required>
 
                     <!--Folio real-->
-                    <label for="rif">Folio real:</label>
+                    <label for="f_real">Folio real:</label>
                     <input type="text" id="f_real" name="f_real" required>
 
                     <!--Documento de propiedad-->
@@ -104,9 +104,6 @@
 
                 </div>
 
-                <!--Time-stamp-->
-                <input type="hidden" id="timestamp" name="timestamp" value="">
-
             </fieldset>
     </div>
 
@@ -126,14 +123,14 @@
 
               <!--Conjunto residencial-->
               <div class="field-row">
-                <label for="residential-complex">Conjunto Residencial:</label>
-                <input type="text" id="residentialcomplex" name="residentialcomplex" required>
+                <label for="residential_complex">Conjunto Residencial:</label>
+                <input type="text" id="residential_complex" name="residentialcomplex" required>
               </div>
 
               <!--Nombre de contacto-->
               <div class="field-row">
-                <label for="contact-name">Nombre de Contacto:</label>
-                <input type="text" id="contactname" name="contactname" required>
+                <label for="contact_name">Nombre de Contacto:</label>
+                <input type="text" id="contact_name" name="contactname" required>
               </div>
 
               <!--Telefono-->
@@ -176,13 +173,13 @@
               <br>
 
               <!--Terreno-->
-              <label for="tamaño-terreno" class="mr-2">Terreno:</label>
-              <input type="number" min="1" class="form-control" id="tamaño-terreno" name="tamaño-terreno" placeholder="m²">
+              <label for="tamaño_terreno" class="mr-2">Terreno:</label>
+              <input type="number" min="1" class="form-control" id="tamaño_terreno" name="tamaño-terreno" placeholder="m²">
               <br>
 
               <!--Construccion-->
-              <label for="tamaño-const" class="mr-2">Construcción:</label>
-              <input type="number" min="1" class="form-control" id="tamañoconst" name="tamañoconst" placeholder="m²">
+              <label for="tamano_const" class="mr-2">Construcción:</label>
+              <input type="number" min="1" class="form-control" id="tamano_const" name="tamañoconst" placeholder="m²">
               <br>
 
               <!--Habitaciones-->
@@ -191,12 +188,12 @@
               <br>
 
               <!--Baños-->
-              <label for="baño" class="mr-2">Baños:</label>
-              <input type="number" min="1" class="form-control mr-sm-2 small-input" id="baño" name="baño">
+              <label for="bano" class="mr-2">Baños:</label>
+              <input type="number" min="1" class="form-control mr-sm-2 small-input" id="bano" name="bano">
 
               <!--Medio baño-->
-              <label for="medio-baño" class="mr-2">1/2 Baños:</label>
-              <input type="number" min="0" class="form-control mr-sm-2 small-input" id="mediobaño" name="mediobaño">
+              <label for="mediobano" class="mr-2">1/2 Baños:</label>
+              <input type="number" min="0" class="form-control mr-sm-2 small-input" id="mediobano" name="mediobano">
 
               <!--Servicio-->
               <label for="servicio" class="mr-2">Servicio:</label>
@@ -286,7 +283,7 @@
                   <input type="checkbox" id="salpicadero" name="salpicadero">
                   Salpicadero
                 </label>
-                <label for="filtro-agua">
+                <label for="filtro_agua">
                   <input type="checkbox" id="filtro_agua" name="filtro_agua">
                   Filtro/agua
                 </label>
@@ -317,59 +314,59 @@
           <div class="form-group">
               <label for="sala-comedor" class="checkbox-label">Sala/Comedor:</label>
               <div class="checkbox-group">
-                <label for="mesa">
+                <label for="mesa_sala|">
                   <input type="checkbox" id="mesa_sala" name="mesa">
                   Mesa
                 </label>
-                <label for="sillas">
+                <label for="sillas_sala">
                   <input type="checkbox" id="sillas_sala" name="sillas">
                   Sillas
                 </label>
-                <label for="a-a">
+                <label for="aire_sala">
                   <input type="checkbox" id="aire_sala" name="aa">
                   A/A
                 </label>
-                <label for="vitrina">
+                <label for="vitrina_sala">
                   <input type="checkbox" id="vitrina_sala" name="vitrina">
                   Vitrina
                 </label>
-                <label for="cantv">
+                <label for="cantv_sala">
                   <input type="checkbox" id="cantv_sala" name="cantv">
                   Cantv
                 </label>
-                <label for="internet">
+                <label for="internet_sala">
                   <input type="checkbox" id="internet_sala" name="internet">
                   Internet
                 </label>
-                <label for="televisor">
+                <label for="tv_sala">
                   <input type="checkbox" id="tv_sala" name="televisor">
                   Televisor
                 </label>
-                <label for="directv">
+                <label for="directv_sala">
                   <input type="checkbox" id="directv_sala" name="directv">
                   Directv
                 </label>
-                <label for="sofa">
+                <label for="sofa_sala">
                   <input type="checkbox" id="sofa_sala" name="sofa">
                   Sofá
                 </label>
-                <label for="poltrona">
+                <label for="poltrona_sala">
                   <input type="checkbox" id="poltrona_sala" name="poltrona">
                   Poltrona
                 </label>
-                <label for="biblioteca">
+                <label for="biblioteca_sala">
                   <input type="checkbox" id="biblioteca_sala" name="biblioteca">
                   Biblioteca
                 </label>
-                <label for="ceibo">
+                <label for="ceibo_sala">
                   <input type="checkbox" id="ceibo_sala" name="ceibo">
                   Ceibo
                 </label>
-                <label for="h-theater">
+                <label for="htheater_sala">
                   <input type="checkbox" id="htheater_sala" name="h-theater">
                   Cine
                 </label>
-                <label for="lamparas">
+                <label for="lamparas_sala">
                   <input type="checkbox" id="lamparas_sala" name="lamparas">
                   Lámparas
                 </label>
@@ -380,55 +377,55 @@
           <div class="form-group">
               <label for="dormitorio-pcpal" class="checkbox-label">Dormitorio principal:</label>
               <div class="checkbox-group">
-                <label for="camas">
+                <label for="cama_dorm">
                   <input type="checkbox" id="cama_dorm" name="camas">
                   Camas
                 </label>
-                <label for="colchon">
+                <label for="colchon_dorm">
                   <input type="checkbox" id="colchon_dorm" name="colchon">
                   Colchón
                 </label>
-                <label for="peinadora">
+                <label for="peinadora_dorm">
                   <input type="checkbox" id="peinadora_dorm" name="peinadora">
                   Peinadora
                 </label>
-                <label for="vestier">
+                <label for="vestier_dorm">
                   <input type="checkbox" id="vestier_dorm" name="vestier">
                   Vestier
                 </label>
-                <label for="a-a">
+                <label for="aire_dorm">
                   <input type="checkbox" id="aire_dorm" name="a-a">
                   A/A
                 </label>
-                <label for="televisor">
+                <label for="tv_dorm">
                   <input type="checkbox" id="tv_dorm" name="televisor">
                   Televisor
                 </label>
-                <label for="mesa-noche">
+                <label for="mesa_noche_dorm">
                   <input type="checkbox" id="mesa_noche_dorm" name="mesa-noche">
                   Mesa de noche
                 </label>
-                <label for="poltrona">
+                <label for="poltrona_dorm">
                   <input type="checkbox" id="poltrona_dorm" name="poltrona">
                   Poltrona
                 </label>
-                <label for="directv">
+                <label for="directv_dorm">
                   <input type="checkbox" id="directv_dorm" name="directv">
                   Directv
                 </label>
-                <label for="closet">
+                <label for="closet_dorm">
                   <input type="checkbox" id="closet_dorm" name="closet">
                   Closet
                 </label>
-                <label for="lamparas">
+                <label for="lamparas_dorm">
                   <input type="checkbox" id="lamparas_dorm" name="lamparas">
                   Lámparas
                 </label>
-                <label for="espejo">
+                <label for="espejo_dorm">
                   <input type="checkbox" id="espejo_dorm" name="espejo">
                   Espejo
                 </label>
-                <label for="perchero">
+                <label for="perchero_dorm">
                   <input type="checkbox" id="perchero_dorm" name="perchero">
                   Perchero
                 </label>
@@ -439,55 +436,55 @@
           <div class="form-group">
               <label for="dormitorio-pcpal" class="checkbox-label">Cuarto II:</label>
               <div class="checkbox-group">
-                <label for="camas">
+                <label for="camas_cu2">
                   <input type="checkbox" id="camas_cu2" name="camas">
                   Camas
                 </label>
-                <label for="colchon">
+                <label for="colchon_cu2">
                   <input type="checkbox" id="colchon_cu2" name="colchon">
                   Colchón
                 </label>
-                <label for="peinadora">
+                <label for="peinadora_cu2">
                   <input type="checkbox" id="peinadora_cu2" name="peinadora">
                   Peinadora
                 </label>
-                <label for="vestier">
+                <label for="vestier_cu2">
                   <input type="checkbox" id="vestier_cu2" name="vestier">
                   Vestier
                 </label>
-                <label for="a-a">
+                <label for="aire_cu2">
                   <input type="checkbox" id="aire_cu2" name="a-a">
                   A/A
                 </label>
-                <label for="tv-cable">
+                <label for="tv_cable_cu2">
                   <input type="checkbox" id="tv_cable_cu2" name="tv-cable">
                   TV-Cable
                 </label>
-                <label for="mesa-noche">
+                <label for="mesa_noche_cu2">
                   <input type="checkbox" id="mesa_noche_cu2" name="mesa-noche">
                   Mesa de noche
                 </label>
-                <label for="poltrona">
+                <label for="poltrona_cu2">
                   <input type="checkbox" id="poltrona_cu2" name="poltrona">
                   Poltrona
                 </label>
-                <label for="closet">
+                <label for="closet_cu2">
                   <input type="checkbox" id="closet_cu2" name="closet">
                   Closet
                 </label>
-                <label for="lamparas">
+                <label for="lamparas_cu2">
                   <input type="checkbox" id="lamparas_cu2" name="lamparas">
                   Lámparas
                 </label>
-                <label for="espejo">
+                <label for="espejo_cu2">
                   <input type="checkbox" id="espejo_cu2" name="espejo">
                   Espejo
                 </label>
-                <label for="perchero">
+                <label for="perchero_cu2">
                   <input type="checkbox" id="perchero_cu2" name="perchero">
                   Perchero
                 </label>
-                <label for="literas">
+                <label for="literas_cu2">
                   <input type="checkbox" id="literas_cu2" name="literas">
                   Literas
                 </label>
@@ -498,55 +495,55 @@
           <div class="form-group">
               <label for="dormitorio-pcpal" class="checkbox-label">Cuarto III:</label>
               <div class="checkbox-group">
-                <label for="camas">
+                <label for="camas_cu3">
                   <input type="checkbox" id="camas_cu3" name="camas">
                   Camas
                 </label>
-                <label for="colchon">
+                <label for="colchon_cu3">
                   <input type="checkbox" id="colchon_cu3" name="colchon">
                   Colchón
                 </label>
-                <label for="peinadora">
+                <label for="peinadora_cu34">
                   <input type="checkbox" id="peinadora_cu3" name="peinadora">
                   Peinadora
                 </label>
-                <label for="vestier">
+                <label for="vestier_cu3">
                   <input type="checkbox" id="vestier_cu3" name="vestier">
                   Vestier
                 </label>
-                <label for="a-a">
+                <label for="aire_cu3">
                   <input type="checkbox" id="aire_cu3" name="a-a">
                   A/A
                 </label>
-                <label for="tv-cable">
+                <label for="tv_cable_cu3">
                   <input type="checkbox" id="tv_cable_cu3" name="tv-cable">
                   TV-Cable
                 </label>
-                <label for="mesa-noche">
+                <label for="mesa_noche_cu3">
                   <input type="checkbox" id="mesa_noche_cu3" name="mesa-noche">
                   Mesa de noche
                 </label>
-                <label for="poltrona">
+                <label for="poltrona_cu3">
                   <input type="checkbox" id="poltrona_cu3" name="poltrona">
                   Poltrona
                 </label>
-                <label for="closet">
+                <label for="closet_cu3">
                   <input type="checkbox" id="closet_cu3" name="closet">
                   Closet
                 </label>
-                <label for="lamparas">
+                <label for="lamparas_cu3">
                   <input type="checkbox" id="lamparas_cu3" name="lamparas">
                   Lámparas
                 </label>
-                <label for="espejo">
+                <label for="espejo_cu3">
                   <input type="checkbox" id="espejo_cu3" name="espejo">
                   Espejo
                 </label>
-                <label for="perchero">
+                <label for="perchero_cu3">
                   <input type="checkbox" id="perchero_cu3" name="perchero">
                   Perchero
                 </label>
-                <label for="literas">
+                <label for="literas_cu3">
                   <input type="checkbox" id="literas_cu3" name="literas">
                   Literas
                 </label>
@@ -557,39 +554,39 @@
           <div class="form-group">
               <label for="area-externa" class="checkbox-label">Área externa:</label>
               <div class="checkbox-group">
-                <label for="patio">
+                <label for="patio_externa">
                   <input type="checkbox" id="patio_externa" name="patio">
                   Patio
                 </label>
-                <label for="piscina">
+                <label for="piscina_externa">
                   <input type="checkbox" id="piscina_externa" name="piscina">
                   Piscina
                 </label>
-                <label for="parrillera">
+                <label for="parrillera_externa">
                   <input type="checkbox" id="parrillera_externa" name="parrillera">
                   Parrillera
                 </label>
-                <label for="jardinera">
+                <label for="jardinera_externa">
                   <input type="checkbox" id="jardinera_externa" name="jardinera">
                   Jardinera
                 </label>
-                <label for="gimnasio">
+                <label for="gimnasio_externa">
                   <input type="checkbox" id="gimnasio_externa" name="gimnasio">
                   Gimnasio
                 </label>
-                <label for="fuente">
+                <label for="fuente_externa">
                   <input type="checkbox" id="fuente_externa" name="fuente">
                   Fuente
                 </label>
-                <label for="tanque-agua">
+                <label for="tanque_agua_externa">
                   <input type="checkbox" id="tanque_agua_externa" name="tanque-agua">
                   Tanq/Agua
                 </label>
-                <label for="lavandero">
+                <label for="lavandero_externa">
                   <input type="checkbox" id="lavandero_externa" name="lavandero">
                   Lavandero
                 </label>
-                <label for="reflector">
+                <label for="reflector_externa">
                   <input type="checkbox" id="reflector_externa" name="reflector">
                   Reflector
                 </label>
@@ -616,7 +613,7 @@
                   <input type="checkbox" id="vigilancia" name="vigilancia">
                   Vigil.
                 </label>
-                <label for="cerca-electrica">
+                <label for="cerca_electrica">
                   <input type="checkbox" id="cerca_electrica" name="cerca-electrica">
                   C.Eléc.
                 </label>
@@ -624,7 +621,7 @@
                   <input type="checkbox" id="monitor" name="monitor">
                   Monitor
                 </label>
-                <label for="boton-panico">
+                <label for="boton_panico">
                   <input type="checkbox" id="boton_panico" name="boton-panico">
                   B/Pánico
                 </label>
@@ -657,13 +654,14 @@
               <input type="text" id="referido" name="referido">
             </div>
 
-            <input type="hidden" id="timestamp" name="timestamp" value="">
-
         <!--Boton de enviar-->
         <button id="submitbtn" type="submit">Enviar</button>
       </form>
       
   </div>
+
+  <!--Time-stamp-->
+  <input type="hidden" id="timestamp" name="timestamp" value="">
 </form>
 
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->

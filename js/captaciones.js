@@ -22,12 +22,19 @@ function getCurrentTimestamp() {
   return now.toISOString();
 }
 
-// Asignar la fecha y hora actual al campo oculto antes de enviar el formulario
-document.getElementById('formulario').addEventListener('submit', function(e) {
-  var timestampField = document.getElementById('timestamp');
-  var timestamp = getCurrentTimestamp();
-  timestampField.value = timestamp;
-
-  // Imprimir la fecha y hora en la consola del navegador
-  console.log('Fecha y hora de envío:', timestamp);
+// Asegúrate de que el script se ejecute después de que el DOM esté cargado
+document.addEventListener('DOMContentLoaded', function() {
+  var formulario = document.getElementById('formulario');
+  if (formulario) {
+    formulario.addEventListener('submit', function(e) {
+      var timestampField = document.getElementById('timestamp');
+      if (timestampField) {
+        var timestamp = getCurrentTimestamp();
+        timestampField.value = timestamp;
+        
+        // Imprimir la fecha y hora en la consola del navegador
+        console.log('Fecha y hora de envío:', timestamp);
+      }
+    });
+  }
 });
