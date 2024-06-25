@@ -22,9 +22,15 @@ const storage = multer.diskStorage({
         cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
+        cb(null, Date.now() + '-' + file.originalname);
     }
 });
+
+// Crear la carpeta 'uploads' si no existe
+import fs from 'fs';
+if (!fs.existsSync('uploads')) {
+    fs.mkdirSync('uploads');
+}
 
 wss.on('connection', (ws) =>{
     let query = 'SELECT * FROM propiedadesweb'
@@ -90,17 +96,54 @@ app.post('/login',(req,res) =>{
     acceso(usuario,contraseña,res)
 })
 
-//Pagina de captacion inmueble
-app.get("/captacioninmueble.html", (req, res) => {
-    res.sendFile(path.join(__dirname, "captacioninmueble.html"));
-  });
+// Ruta para manejar la carga de archivos y datos del formulario de captación de inmuebles
+app.post('/upload', upload.array('files', 10), (req, res) => {
+    try {
+        if (!req.files) {
+            return res.status(400).send('No se han subido archivos.');
+        }
 
-// Ruta para manejar la carga de archivos
-app.post('/upload', upload.single('file'), (req, res) => {
-    if (req.file) {
-        console.log(`Archivo subido: ${req.file.filename}`);
-        res.send('Archivo subido exitosamente.');
-    } else {
-        res.status(400).send('Error al subir el archivo.');
+        // Procesar los datos del formulario
+        const data = req.body;
+        console.log('Datos del formulario:', data);
+        console.log('Archivos subidos:', req.files);
+
+        // Guardar los datos en la base de datos
+        // ...
+
+        res.send('Archivos y datos del formulario subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los archivos y datos del formulario.');
+    }
+});
+
+// Ruta para manejar la carga de archivos y datos del formulario de captación de clientes
+app.post('/submit-cliente', upload.fields([
+    { name: 'propiedad', maxCount: 1 },
+    { name: 'liberacion', maxCount: 1 },
+    { name: 'catastral', maxCount: 1 },
+    { name: 'solvencia', maxCount: 1 },
+    { name: 'registro', maxCount: 1 },
+    { name: 'poder', maxCount: 1 },
+    { name: 'captacion', maxCount: 1 }
+]), (req, res) => {
+    try {
+        if (!req.files) {
+            return res.status(400).send('No se han subido archivos.');
+        }
+
+        // Procesar los datos del formulario
+        const data = req.body;
+        console.log('Datos del formulario:', data);
+        console.log('Archivos subidos:', req.files);
+
+        // Guardar los datos en la base de datos
+        // ...
+
+        res.send('Archivos y datos del formulario subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los archivos y datos del formulario.');
     }
 });
