@@ -8,14 +8,14 @@ import { WebSocketServer } from "ws"
 import fs from 'fs';
 
 //Coneccion con Base de datos MySql
- var BD = mysql.createConnection({
-     host: "localhost",
-     user: "WebPage",
-     password: "Stalin25-10",
-    database: 'Inmobiliaria'
-})
+//  var BD = mysql.createConnection({
+//      host: "localhost",
+//      user: "WebPage",
+//      password: "Stalin25-10",
+//     database: 'Inmobiliaria'
+// })
 //Creacion del Socket del lado del servidor en el puerto 8080
-const wss = new WebSocketServer({ port: 8080 });
+// const wss = new WebSocketServer({ port: 8080 });
 
 // Configuración de multer
 const storage = multer.diskStorage({
@@ -27,19 +27,13 @@ const storage = multer.diskStorage({
     }
 });
 
-// Crear la carpeta 'uploads' si no existe
-import fs from 'fs';
-if (!fs.existsSync('uploads')) {
-    fs.mkdirSync('uploads');
-}
-
-wss.on('connection', (ws) =>{
-    let query = 'SELECT * FROM propiedadesweb'
-    BD.query(query,(err,result) =>{
-        if (err) throw result
-        ws.send(JSON.stringify(result));
-    })
-})
+// wss.on('connection', (ws) =>{
+//     let query = 'SELECT * FROM propiedadesweb'
+//     BD.query(query,(err,result) =>{
+//         if (err) throw result
+//         ws.send(JSON.stringify(result));
+//     })
+// })
 
 const upload = multer({ storage });
 //puerto del servidor
@@ -54,25 +48,25 @@ if (!fs.existsSync('uploads')) {
 }
 
 // creacion de conexion
-async  function acceso(username,contraseña,res){
-    let query = 'Select * from Usuario'
+// async  function acceso(username,contraseña,res){
+//     let query = 'Select * from Usuario'
     
-    BD.query(query, (err,result) =>{
-        if (err) throw res
-        for(let i=0; i<result.length;i++){
-            if(result[i].Usuario == username && result[i].Contraseña == contraseña && result[i].TipoUsuario == 'Administrador'){
-                res.sendFile(path.join(__dirname, 'administrador.html'))
-                return
-            }
-            if(result[i].Usuario == username && result[i].Contraseña == contraseña && result[i].TipoUsuario == 'Asesor'){
-                res.sendFile(path.join(__dirname, 'asesor.html'))
-                return
-            }
-        }
-        res.status(401).sendFile(path.join(__dirname, 'iniciarsesion.html'))
+//     BD.query(query, (err,result) =>{
+//         if (err) throw res
+//         for(let i=0; i<result.length;i++){
+//             if(result[i].Usuario == username && result[i].Contraseña == contraseña && result[i].TipoUsuario == 'Administrador'){
+//                 res.sendFile(path.join(__dirname, 'administrador.html'))
+//                 return
+//             }
+//             if(result[i].Usuario == username && result[i].Contraseña == contraseña && result[i].TipoUsuario == 'Asesor'){
+//                 res.sendFile(path.join(__dirname, 'asesor.html'))
+//                 return
+//             }
+//         }
+//         res.status(401).sendFile(path.join(__dirname, 'iniciarsesion.html'))
         
-    })
-}
+//     })
+// }
 
 //Configuracion del servidor
 const app = express()
@@ -130,8 +124,10 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
 
         // Procesar los datos del formulario
         const data = req.body;
+        const timestamp = req.body.timestamp; // Obtener la marca de tiempo del formulario
         console.log('Datos del formulario:', data);
         console.log('Archivos subidos:', req.files);
+        console.log('Marca de tiempo:', timestamp);
 
         // Guardar los datos en la base de datos 
         // ...
