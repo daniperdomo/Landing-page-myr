@@ -5,12 +5,13 @@ import mysql from "mysql2"
 import { fileURLToPath } from "url"
 import multer from "multer";
 import { WebSocketServer } from "ws"
+import fs from 'fs';
 
 //Coneccion con Base de datos MySql
-var BD = mysql.createConnection({
-    host: "localhost",
-    user: "WebPage",
-    password: "Stalin25-10",
+ var BD = mysql.createConnection({
+     host: "localhost",
+     user: "WebPage",
+     password: "Stalin25-10",
     database: 'Inmobiliaria'
 })
 //Creacion del Socket del lado del servidor en el puerto 8080
@@ -47,7 +48,12 @@ const port = 3000
 //directorio actual
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-//creacion de conexion
+// Crear la carpeta 'uploads' si no existe
+if (!fs.existsSync('uploads')) {
+    fs.mkdirSync('uploads');
+}
+
+// creacion de conexion
 async  function acceso(username,contraseña,res){
     let query = 'Select * from Usuario'
     
@@ -101,16 +107,17 @@ app.get("/captacion.html", (req, res) => {
     res.sendFile(path.join(__dirname, "captacion.html"));
   });
 
+
 // Configurar Multer para aceptar todos los posibles campos de archivos de ambos formularios
 const uploadFields = upload.fields([
-    { name: 'files', maxCount: 10 }, // Para el formulario de captación de inmuebles
     { name: 'propiedad', maxCount: 1 }, // Para el formulario de captación de clientes
     { name: 'liberacion', maxCount: 1 },
     { name: 'catastral', maxCount: 1 },
     { name: 'solvencia', maxCount: 1 },
     { name: 'registro', maxCount: 1 },
     { name: 'poder', maxCount: 1 },
-    { name: 'captacion', maxCount: 1 }
+    { name: 'captacion', maxCount: 1 },
+    { name: 'images', maxCount: 10 } // Para las imágenes de captación de inmuebles
 ]);
 
 // Ruta unificada para manejar la carga de archivos y datos de ambos formularios
@@ -126,7 +133,7 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
         console.log('Datos del formulario:', data);
         console.log('Archivos subidos:', req.files);
 
-        // Guardar los datos en la base de datos
+        // Guardar los datos en la base de datos 
         // ...
 
         res.send('Archivos y datos del formulario subidos con éxito.');
