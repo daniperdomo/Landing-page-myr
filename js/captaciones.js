@@ -17,8 +17,8 @@ function volver() {
 
 // Función para obtener la fecha y hora actual
 function getCurrentTimestamp() {
-  var now = new Date();
-  return now.toISOString();
+var now = new Date();
+return now.toISOString();
 }
 
 // Asignar la fecha y hora actual al campo oculto antes de enviar el formulario
