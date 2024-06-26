@@ -35,7 +35,7 @@
       </div>
   </nav>
 
-  <form action="/submit-cliente" method="post" id="formulario">
+  <form action="/submit-cliente" method="post" id="formulario" enctype="multipart/form-data">
     <!--Formulario de captacion de cliente-->
     <div class="form-container">
         <h2>Formato de Captación de Cliente</h2>
@@ -460,11 +460,9 @@
             <!--Subir imagenes-->
             <fieldset class="images">
               <legend>Subir Imágenes</legend>
-              <form action="post" class="form-images">
                 <label class="input-images">
-                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="images" multiple />
+                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="images" name="images" multiple />
                 </label>
-              </form>
             </fieldset>
 
             <!--Observaciones-->
@@ -481,12 +479,11 @@
 
         <!--Boton de enviar-->
         <button id="submitbtn" type="submit">Enviar</button>
-      </form>
       
   </div>
 
   <!--Time-stamp-->
-  <input type="hidden" id="timestamp" name="timestamp" value="">
+  <input type="hidden" id="timestamp" name="timestamp">
 </form>
 
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
