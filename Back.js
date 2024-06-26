@@ -5,16 +5,17 @@ import mysql from "mysql2"
 import { fileURLToPath } from "url"
 import multer from "multer";
 import { WebSocketServer } from "ws"
+import fs from 'fs';
 
 //Coneccion con Base de datos MySql
-var BD = mysql.createConnection({
-    host: "localhost",
-    user: "WebPage",
-    password: "Stalin25-10",
+ var BD = mysql.createConnection({
+     host: "localhost",
+     user: "WebPage",
+     password: "Stalin25-10",
     database: 'Inmobiliaria'
 })
 //Creacion del Socket del lado del servidor en el puerto 8080
-const wss = new WebSocketServer({ port: 8080 });
+ const wss = new WebSocketServer({ port: 8080 });
 
 // Configuración de multer
 const storage = multer.diskStorage({
@@ -22,7 +23,7 @@ const storage = multer.diskStorage({
         cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
+        cb(null, Date.now() + '-' + file.originalname);
     }
 });
 
@@ -41,7 +42,12 @@ const port = 3000
 //directorio actual
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-//creacion de conexion
+// Crear la carpeta 'uploads' si no existe
+if (!fs.existsSync('uploads')) {
+    fs.mkdirSync('uploads');
+}
+
+// creacion de conexion
 async  function acceso(username,contraseña,res){
     let query = 'Select * from Usuario'
     
@@ -91,16 +97,44 @@ app.post('/login',(req,res) =>{
 })
 
 //Pagina de captacion inmueble
-app.get("/captacioninmueble.html", (req, res) => {
-    res.sendFile(path.join(__dirname, "captacioninmueble.html"));
+app.get("/captacion.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "captacion.html"));
   });
 
-// Ruta para manejar la carga de archivos
-app.post('/upload', upload.single('file'), (req, res) => {
-    if (req.file) {
-        console.log(`Archivo subido: ${req.file.filename}`);
-        res.send('Archivo subido exitosamente.');
-    } else {
-        res.status(400).send('Error al subir el archivo.');
+
+// Configurar Multer para aceptar todos los posibles campos de archivos de ambos formularios
+const uploadFields = upload.fields([
+    { name: 'propiedad', maxCount: 1 }, // Para el formulario de captación de clientes
+    { name: 'liberacion', maxCount: 1 },
+    { name: 'catastral', maxCount: 1 },
+    { name: 'solvencia', maxCount: 1 },
+    { name: 'registro', maxCount: 1 },
+    { name: 'poder', maxCount: 1 },
+    { name: 'captacion', maxCount: 1 },
+    { name: 'images', maxCount: 10 } // Para las imágenes de captación de inmuebles
+]);
+
+// Ruta unificada para manejar la carga de archivos y datos de ambos formularios
+app.post('/submit-cliente', uploadFields, (req, res) => {
+    try {
+        console.log(req.files);
+        if (!req.files || Object.keys(req.files).length === 0) {
+            return res.status(400).send('No se han subido archivos.');
+        }
+
+        // Procesar los datos del formulario
+        const data = req.body;
+        const timestamp = req.body.timestamp; // Obtener la marca de tiempo del formulario
+        console.log('Datos del formulario:', data);
+        console.log('Archivos subidos:', req.files);
+        console.log('Marca de tiempo:', timestamp);
+
+        // Guardar los datos en la base de datos 
+        // ...
+
+        res.send('Archivos y datos del formulario subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los archivos y datos del formulario.');
     }
 });
