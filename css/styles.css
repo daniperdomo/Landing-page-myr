@@ -122,49 +122,95 @@
   }
 }
 
-  
-  .contact-form::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+/*Formulario de contacto*/
+
+.contacto {
+  padding: 20px;
+}
+
+.contact-form {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.contact-form .form-control {
+  border: none;
+  color: black;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.contact-form .form-control:focus {
+  color: black;
+  border: 1px solid #00C7B1;
+  box-shadow: 0 0 0 0.2rem rgba(0, 199, 177, 0.25);
+}
+
+.contact-form .btn-primary {
+  background-color: #00C7B1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #009a8a;
+}
+
+.contact-form h5 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.static-message {
+  text-align: center;
+  padding: 20px;
+}
+
+.static-message h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.static-message p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-6 {
     width: 100%;
-    height: 100%;
-    background-image: url('../imagenes/Formulario1.png'); /* Cambié la ruta de la imagen de fondo */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.5;
-    z-index: -1;
-    border-radius: 10px;
-  }
-  
-  .contact-form .form-control {
-    border: none;
-    color: black;
-    border-radius: 5px;
-  }
-  
-  
-  .contact-form .form-control:focus {
-    color: black;
-    border: 1px solid #00C7B1;
-    box-shadow: 0 0 0 0.2rem rgba(0, 199, 177, 0.25);
-  }
-  
-  .contact-form .btn-primary {
-    background-color: #00C7B1;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .contact-form .btn-primary:hover {
-    background-color: #009a8a;
-  }
-  
-  .contact-form h5 {
     margin-bottom: 20px;
-    font-size: 1.5rem;
   }
+}
   
   .static-message {
     background-color: #c48bbf;
@@ -184,13 +230,6 @@
     }
   }
   
- /* Estilos para el botón de volver al inicio */
-.return-to-top {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
 
 /* Estilos de la sección de servicios */
 .services {
@@ -461,30 +500,6 @@
   .static-message {
     margin-top: 20px;
   }
-}
-  
- /* Estilos para el botón de volver al inicio */
-.return-to-top {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.return-to-top .btn {
-  width: 120px; /* Ancho del botón */
-  height: 50px; /* Alto del botón */
-  font-size: 20px;
-  line-height: 1;
-  background-color: #CA2C92; /* Color sólido */
-  color: #fff;
-  border: none;
-  border-radius: 5px; /* Rectángulo con bordes redondeados */
-  transition: background-color 0.3s ease;
-}
-
-.return-to-top .btn:hover {
-  background-color: #000000;
 }
 
 /* Estilos para el fondo de la página */
