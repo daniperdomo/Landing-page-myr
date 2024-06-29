@@ -139,6 +139,22 @@
                 <input type="tel" id="phone" name="phone" required>
               </div>
 
+              <!--Precio (USD)-->
+              <div class="field-row">
+                <label for="precio">Precio (USD):</label>
+                <input type="number" id="precio" name="precio" required>
+              </div>
+
+              <!--Tipo de oferta (venta o alquiler)-->
+              <div class="field-row">
+                <!--Seleccionar-->
+                <label for="tipo_oferta" class="mr-2">Tipo de oferta:</label>
+                <select class="form-control mr-sm-2" id="tipo_oferta" name="tipo_oferta">
+                  <option value="venta">Venta</option>
+                  <option value="alquiler">Alquiler</option>
+                </select>   
+              </div>
+
             </div>
           </div>
         </fieldset>
@@ -149,7 +165,6 @@
               <!--Tipo de inmueble-->
               <label for="tipo" class="mr-2">Tipo:</label>
               <select class="form-control mr-sm-2" id="tipo" name="tipo">
-                <option value="">Seleccionar</option>
                 <option value="apartamento">Apartamento</option>
                 <option value="townhouse">Townhouse</option>
                 <option value="quinta">Quinta</option>
@@ -174,12 +189,12 @@
 
               <!--Terreno-->
               <label for="tamano_terreno" class="mr-2">Terreno:</label>
-              <input type="number" min="1" class="form-control" id="tamano_terreno" name="tamaño-terreno" placeholder="m²">
+              <input type="number" min="1" class="form-control" id="tamano_terreno" name="tamano_terreno" placeholder="m²">
               <br>
 
               <!--Construccion-->
               <label for="tamano_const" class="mr-2">Construcción:</label>
-              <input type="number" min="1" class="form-control" id="tamano_const" name="tamañoconst" placeholder="m²">
+              <input type="number" min="1" class="form-control" id="tamano_const" name="tamanoconst" placeholder="m²">
               <br>
 
               <!--Habitaciones-->
@@ -423,7 +438,7 @@
                   Vigilancia
                 </label>
                 <label for="cerca_electrica">
-                  <input type="checkbox" id="cerca_electrica" name="cerca-electrica">
+                  <input type="checkbox" id="cerca_electrica" name="cerca_electrica">
                   Cerca Eléc.
                 </label>
                 <label for="monitor">
@@ -444,9 +459,10 @@
              <!-- Añadir campo de tipo file para subir imágenes -->
              <fieldset class="images">
               <legend>Subir Imágenes</legend>
-              <label class="input-images">
-                <input type="file" accept="image/png, image/jpeg, image/jpg" id="images" name="files" multiple>
-              </label>
+                <label class="input-images">
+                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="images" name="images" multiple />
+                </label>
+
             </fieldset>
 
             <!--Observaciones-->
@@ -471,7 +487,7 @@
   </form>
 
   <!--Time-stamp-->
-  <input type="hidden" id="timestamp" name="timestamp" value="">
+  <input type="hidden" id="timestamp" name="timestamp">
 </form>
 
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->

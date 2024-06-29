@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-purple">
     <a class="navbar-brand" href="#">
@@ -54,7 +55,7 @@
     </div>
   </nav>
 
-
+  <!--Seccion de bienvenida-->
   <div class="header-image-container" id="inicio">
     <div class="overlay-box fade-in">
       
@@ -67,7 +68,7 @@
     </div>
   </div>
 
-
+  <!--Sobre nosotros-->
   <div class="about-us-container">
     <div class="about-us-text">
         <h1>Acerca de Nosotros</h1>
@@ -79,6 +80,7 @@
     </div>
   </div>
 
+  <!--Servicios-->
   <div class="services" id="servicios">
     <div class="services-title-card">
       <h2 class="services-title">Nuestros Servicios</h2>
@@ -128,47 +130,95 @@
       </div>
     </div>
   </div>
+
+  <!--Formularios de consulta del cliente-->
   <div class="contacto" id="form-contacto">
     <div class="contact-form">
-      <div class="row">
-        <div class="col-md-6">
-          <form>
-            <div class="form-group">
-              <div id="name-container">
-                <div id="name-field">
-                  <label for="nombre">Nombre:</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                </div>
-                <div id="name-field">
-                  <label for="apellido">Apellido:</label>
-                  <input type="text" class="form-control" id="apellido" placeholder="Apellido">
-                </div>
-              </div>
-
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Email">
-              <label for="telefono">Teléfono:</label>
-              <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
-              <label for="tema">Selecciona el tema de tu interés:</label>
-              <select class="form-control" id="tema">
-                <option value="compra">Compra</option>
-                <option value="venta">Venta</option>
-                <option value="alquiler">Alquiler</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-          </form>
+      <h2 class="form-header">Comuníquese con nosotros</h2>
+      <form id="main-form">
+        <div class="form-group">
+          <label for="form-selection">¿Cuál es el motivo de la consulta?</label>
+          <select class="form-control" id="form-selection">
+            <option value="" disabled selected>Elige una opción</option>
+            <option value="oferta">Oferta tu inmueble</option>
+            <option value="consulta">Consulta</option>
+          </select>
         </div>
-        <div class="col-md-6 d-flex align-items-center">
-          <div class="static-message">
-            <h4>OBTENGA UNA CONSULTA GRATIS</h4>
-            <p>Deja tus datos y uno de nuestros asesores te contactaran de inmediato y te ayudaran con tus requerimientos inmobiliarios</p>
+
+        <!-- Oferta tu inmueble form -->
+        <div id="oferta-form" class="hidden">
+          <div class="grid-container">
+            <div class="form-group">
+              <label for="ubicacion">Ubicación:</label>
+              <input type="text" class="form-control" id="ubicacion" required>
+            </div>
+            <div class="form-group">
+              <label for="razon-venta">Razón de venta:</label>
+              <input type="text" class="form-control" id="razon-venta" required>
+            </div>
+            <div class="form-group">
+              <label for="habitaciones">Cantidad de habitaciones:</label>
+              <input type="number" class="form-control" id="habitaciones" required>
+            </div>
+            <div class="form-group">
+              <label for="banos">Cantidad de baños:</label>
+              <input type="number" class="form-control" id="banos" required>
+            </div>
+            <div class="form-group">
+              <label for="metros_cuadrados">Cantidad de m²:</label>
+              <input type="number" class="form-control" id="metros_cuadrados" required>
+            </div>
+            <div class="form-group">
+              <label for="sala">Cantidad de salas::</label>
+              <input type="text" class="form-control" id="sala" required>
+            </div>
+            <div class="form-group">
+              <label for="estacionamientos">Cantidad de puestos de estacionamiento:</label>
+              <input type="number" class="form-control" id="estacionamientos" required>
+            </div>
+            <div class="form-group">
+              <label for="archivo">Subir archivos de muestra del inmueble:</label>
+              <input type="file" class="form-control" id="archivo" multiple required>
+            </div>
           </div>
         </div>
-      </div>
+
+        <!-- Consulta form -->
+        <div id="consulta-form" class="hidden">
+          <div id="name-container">
+            <div id="name-field">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div id="name-field">
+              <label for="apellido">Apellido:</label>
+              <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+          </div>
+          <div class="form-group">
+            <label for="tema">Selecciona el tema de tu interés:</label>
+            <select class="form-control" id="tema">
+              <option value="compra">Compra</option>
+              <option value="venta">Venta</option>
+              <option value="alquiler">Alquiler</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+      </form>
     </div>
   </div>
     
+  <!--Footer-->
   <footer class="footer bg-purple text-white">
     <div class="container">
       <div class="row">
@@ -205,6 +255,7 @@
     </div>
   </footer>
 
+  <script src="js/despliegue-form-index.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

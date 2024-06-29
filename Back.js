@@ -111,7 +111,8 @@ const uploadFields = upload.fields([
     { name: 'registro', maxCount: 1 },
     { name: 'poder', maxCount: 1 },
     { name: 'captacion', maxCount: 1 },
-    { name: 'files', maxCount: 10 } // Para las imágenes de captación de inmuebles
+    { name: 'images', maxCount: 10 } // Para las imágenes de captación de inmuebles
+
 ]);
 
 // Ruta unificada para manejar la carga de archivos y datos de ambos formularios
