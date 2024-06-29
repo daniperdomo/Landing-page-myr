@@ -6,6 +6,7 @@
     <title>Propiedad</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/captacion.css">
     <link rel="stylesheet" href="css/detalle-propiedad.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
@@ -78,6 +79,82 @@
             </div>
         </div>
     </div>
+
+    <!--Formulario de reserva-->
+    <form action="" method="post">
+        <div class="form-container">
+            <h2>Realice una reserva</h2>
+                <fieldset>
+                    <legend>Datos Generales del Cliente</legend>
+                    <div class="form-grid">
+                        <!--Tipo de identificacion-->
+                        <label for="tipo_id_reserva">Tipo de Identificación:</label>
+                        <select id="tipo_id_reserva" name="tipo_id" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="V">V-</option>
+                            <option value="E">E-</option>
+                            <option value="P">P-</option>
+                            <option value="J">J-</option>
+                            <option value="G">G-</option>
+                            <option value="C">C-</option>
+                        </select>
+                        
+                        <!--Cedula-->
+                        <label for="cedula_reserva">Cédula de Identidad:</label>
+                        <input type="text" id="cedula_reserva" name="cedula" required>
+                        
+                        <!--RIF-->
+                        <label for="rif_reserva">Registro de Información Fiscal (R.I.F):</label>
+                        <input type="text" id="rif_reserva" name="rif" required>
+
+                        <!--Precio ofertado por la casa-->
+                        <label for="precio_ofertado_reserva">Precio ofertado:</label>
+                        <input type="text" id="precio_ofertado_reserva" name="precio_ofertado" required>
+
+                        <!--A nombre de quien la reserva-->
+                        <label for="nombre_apellido_reserva">Reserva realizada a nombre y apellido de:</label>
+                        <input type="text" id="nombre_apellido_reserva" name="nombre_apellido_reserva" required>
+
+                        <!--Firmante de la reserva-->
+                        <label for="firmante_reserva">Firmante de la reserva:</label>
+                        <input type="text" id="firmante_reserva" name="firmante_reserva" required>
+
+                        <!--Documento de propiedad-->
+                        <label for="propiedad">Documentos de Propiedad:</label>
+                        <input type="file" id="propiedad" name="propiedad" accept=".pdf" required>
+
+                        <!--Documento de liberacion de hipoteca-->
+                        <label for="liberacion">Documento de Liberación de Hipoteca:</label>
+                        <input type="file" id="liberacion" name="liberacion" accept=".pdf" required>
+
+                        <!--Ficha catastral-->
+                        <label for="catastral">Ficha Catastral:</label>
+                        <input type="file" id="catastral" name="catastral" accept=".pdf" required>
+
+                        <!--Solvencia municipal-->
+                        <label for="solvencia">Solvencia Municipal:</label>
+                        <input type="file" id="solvencia" name="solvencia" accept=".pdf" required>
+
+                        <!--Registro de Vivienda Principal-->
+                        <label for="registro">Registro de Vivienda Principal:</label>
+                        <input type="file" id="registro" name="registro" accept=".pdf" required>
+
+                        <!--Poder-->
+                        <label for="poder">Poder:</label>
+                        <input type="file" id="poder" name="poder" accept=".pdf" required>
+
+                        <!--Formato de captacion-->
+                        <label for="captacion">Formato de Captación:</label>
+                        <input type="file" id="captacion" name="captacion" accept=".pdf" required>
+
+                    </div>
+                </fieldset>
+
+                <!--Boton de enviar-->
+                <button id="submitbtn" type="submit">Enviar</button>
+        </div>
+    </form>
+
     <script src="js/detalle.js"></script>
 </div>
 
