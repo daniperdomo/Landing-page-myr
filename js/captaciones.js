@@ -15,7 +15,6 @@ function volver() {
   }
 }
 
-
 // Función para obtener la fecha y hora actual
 function getCurrentTimestamp() {
 var now = new Date();
@@ -24,14 +23,12 @@ return now.toISOString();
 
 // Asignar la fecha y hora actual al campo oculto antes de enviar el formulario
 document.getElementById('formulario').addEventListener('submit', function(e) {
-var timestampField = document.getElementById('timestamp');
-var timestamp = getCurrentTimestamp();
-timestampField.value = timestamp;
-
-// Imprimir la fecha y hora en la consola del navegador
-console.log('Fecha y hora de envío:', timestamp);
+  var timestampField = document.getElementById('timestamp');
+  var timestamp = getCurrentTimestamp();
+  console.log('Marca de tiempo generada:', timestamp);
+  timestampField.value = timestamp;
+  console.log('Campo oculto timestamp:', timestampField.value);
 });
-
 
 const input = document.getElementById('hab');
 const divsContainer = document.getElementById('divs_container');
