@@ -119,17 +119,31 @@
                         <label for="firmante_reserva">Firmante de la reserva:</label>
                         <input type="text" id="firmante_reserva" name="firmante_reserva" required>
 
-                        <!--Documento de propiedad-->
-                        <label for="propiedad">Documentos de Propiedad:</label>
-                        <input type="file" id="propiedad" name="propiedad" accept=".pdf" required>
+                        <!--Tiempo estimado para la conclusion de la operacion-->
+                        <label for="tiempo_operacion_reserva">Tiempo estimado para la conclusion de la operacion:</label>
+                        <input type="date" id="tiempo_operacion_reserva" name="tiempo_operacion" required>
 
-                        <!--Documento de liberacion de hipoteca-->
-                        <label for="liberacion">Documento de Liberación de Hipoteca:</label>
-                        <input type="file" id="liberacion" name="liberacion" accept=".pdf" required>
+                        <!--Método de pago-->
+                        <label for="metodo_pago_reserva" class="mr-2">Método de pago:</label>
+                        <select class="form-control mr-sm-2" id="metodo_pago_reserva" name="metodo_pago_reserva">
+                            <option value="cheque">Cheque</option>
+                            <option value="transf_exterior">Transferencia cuenta exterior</option>
+                            <option value="trans_interior">Transferencia cuenta interior</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="metodopago_otro">Otro</option>
+                        </select>
 
-                        <!--Ficha catastral-->
-                        <label for="catastral">Ficha Catastral:</label>
-                        <input type="file" id="catastral" name="catastral" accept=".pdf" required>
+                        <!--Origen de los fondos-->
+                        <label for="origen_fondos_reserva" class="mr-2">Origen de los fondos:</label>
+                        <select class="form-control mr-sm-2" id="origen_fondos_reserva" name="origen_fondos_reserva">
+                            <option value="ingresos_salariales">Ingresos salariales</option>
+                            <option value="ingresos_negocios">Ingresos por negocios o emprendimiento</option>
+                            <option value="prestamos">Préstamos o financiamiento</option>
+                            <option value="venta_activos">Venta de activos</option>
+                            <option value="herencia">Herencia o legado</option>
+                            <option value="origen_otro">Otro</option>
+                        </select>
+
 
                         <!--Solvencia municipal-->
                         <label for="solvencia">Solvencia Municipal:</label>
