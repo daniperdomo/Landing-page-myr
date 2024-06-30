@@ -334,7 +334,7 @@
                   Mesa
                 </label>
                 <label for="sillas_sala">
-
+                  <input type="checkbox" id="sillas_sala" name="sillas">
                   Sillas
                 </label>
                 <label for="aire_sala">
@@ -431,7 +431,23 @@
                   Reflector
                 </label>
               </div>
+          </div>
 
+          <!--Seguridad-->
+          <div class="form-group">
+              <label for="seguridad" class="checkbox-label">Seguridad:</label>
+              <div class="checkbox-group">
+                <label for="camara">
+                  <input type="checkbox" id="camara" name="camara">
+                  Cámara
+                </label>
+                <label for="dvr">
+                  <input type="checkbox" id="dvr" name="dvr">
+                  DVR
+                </label>
+                <label for="alarma">
+                  <input type="checkbox" id="alarma" name="alarma">
+                  Alarma
                 </label>
                 <label for="vigilancia">
                   <input type="checkbox" id="vigilancia" name="vigilancia">
@@ -456,13 +472,12 @@
               </div>
             </div>
 
-             <!-- Añadir campo de tipo file para subir imágenes -->
-             <fieldset class="images">
+            <!--Subir imagenes-->
+            <fieldset class="images">
               <legend>Subir Imágenes</legend>
                 <label class="input-images">
                   <input type="file" accept="image/png, image/jpeg, image/jpg" id="images" name="images" multiple />
                 </label>
-
             </fieldset>
 
             <!--Observaciones-->
@@ -480,11 +495,7 @@
         <!--Boton de enviar-->
         <button id="submitbtn" type="submit">Enviar</button>
       
-      
-      </div>
-       <!--Time-stamp-->
-        <input type="hidden" id="timestamp" name="timestamp">
-  </form>
+  </div>
 
   <!--Time-stamp-->
   <input type="hidden" id="timestamp" name="timestamp">
