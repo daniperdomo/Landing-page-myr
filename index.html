@@ -15,7 +15,7 @@
   
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-purple">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.html">
       <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
           <a class="nav-link nav-text" href="index.html">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-text" href="index.html#servicios">Servicios</a>
+          <a class="nav-link nav-text" href="#servicios">Servicios</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  nav-text" href="propiedades.html" id="navbarDropdown" role="button">
@@ -38,7 +38,7 @@
           <a class="nav-link nav-text" href="#nosotros">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-text" href="#contacto">Contacto</a>
+          <a class="nav-link nav-text" href="#form-contacto">Contacto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-text" href="#equipo">Equipo</a>
@@ -64,7 +64,7 @@
   </div>
 
   <!--Sobre nosotros-->
-  <div class="about-us-container">
+  <div class="about-us-container" id="nosotros">
     <div class="about-us-text">
         <h1>Acerca de Nosotros</h1>
         <p>Somos una organización innovadora dedicada a ofrecer servicios inmobiliarios de calidad y asesoramiento a nuestros clientes y empresas afines. Nos enorgullece brindar seguridad, bienestar y calidad de vida a través de un equipo de profesionales altamente calificados en el área.</p>
@@ -213,7 +213,7 @@
             <!--Precio (USD)-->
             <div class="form-group">
               <label for="precio_oferta">Precio de venta deseado (USD):</label>
-              <input type="number" id="precio_oferta" name="precio" required>
+              <input type="number" class="form-control" id="precio_oferta" name="precio" required>
             </div>
 
             <!--Tipo de oferta (venta o alquiler)-->
