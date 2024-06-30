@@ -184,6 +184,15 @@
   display: none;
 }
 
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
 /* Grid Styles for Oferta Form */
 .grid-container {
   display: grid;
@@ -517,14 +526,22 @@ body {
 }
 
 
-/* Estilos para el formulario de inicio de sesión */
-.login-container {
-  max-width: 400px;
+/* Contenedor principal */
+.login-wrapper {
+  display: flex;
+  max-width: 900px;
   margin: 50px auto;
-  padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Contenedor de inicio de sesión */
+.login-container {
+  flex: 1;
+  padding: 40px 30px;
+  background-color: #f9f9f9;
 }
 
 .login-container h2 {
@@ -541,6 +558,7 @@ body {
 .login-container form label {
   margin-bottom: 5px;
   font-weight: bold;
+  color: #333;
 }
 
 .login-container form input {
@@ -557,12 +575,33 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .login-container form button:hover {
   background-color: #923e8a;
 }
 
+/* Contenedor de descripción */
+.description-container {
+  flex: 1;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description-container h3 {
+  color: #AB5DA8;
+  margin-bottom: 10px;
+}
+
+.description-container p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
 /* Media Queries para dispositivos móviles */
 @media (max-width: 480px) {
   .login-container {
