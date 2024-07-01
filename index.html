@@ -12,9 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-purple">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.html">
       <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,14 +30,9 @@
           <a class="nav-link nav-text" href="#servicios">Servicios</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle nav-text" href="propiedades.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link  nav-text" href="propiedades.html" id="navbarDropdown" role="button">
             Propiedades
           </a>
-          <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item dropdown-text" href="propiedades.html">Venta</a>
-            <a class="dropdown-item dropdown-text" href="#">Alquiler</a>
-            <a class="dropdown-item dropdown-text" href="#">Todas</a>
-          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-text" href="#nosotros">Nosotros</a>
@@ -54,7 +50,7 @@
     </div>
   </nav>
 
-
+  <!--Seccion de bienvenida-->
   <div class="header-image-container" id="inicio">
     <div class="overlay-box fade-in">
       
@@ -66,9 +62,9 @@
       <button class="overlay-button">Nuestra oferta inmobiliaria</button>
     </div>
   </div>
-
-
-  <div class="about-us-container">
+  
+  <!--Sobre nosotros
+  <div class="about-us-container" id="nosotros">
     <div class="about-us-text">
         <h1>Acerca de Nosotros</h1>
         <p>Somos una organización innovadora dedicada a ofrecer servicios inmobiliarios de calidad y asesoramiento a nuestros clientes y empresas afines. Nos enorgullece brindar seguridad, bienestar y calidad de vida a través de un equipo de profesionales altamente calificados en el área.</p>
@@ -79,6 +75,7 @@
     </div>
   </div>
 
+  
   <div class="services" id="servicios">
     <div class="services-title-card">
       <h2 class="services-title">Nuestros Servicios</h2>
@@ -128,47 +125,159 @@
       </div>
     </div>
   </div>
+  -->
+
+  <!--Formularios de consulta del cliente-->
   <div class="contacto" id="form-contacto">
     <div class="contact-form">
-      <div class="row">
-        <div class="col-md-6">
-          <form>
-            <div class="form-group">
-              <div id="name-container">
-                <div id="name-field">
-                  <label for="nombre">Nombre:</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                </div>
-                <div id="name-field">
-                  <label for="apellido">Apellido:</label>
-                  <input type="text" class="form-control" id="apellido" placeholder="Apellido">
-                </div>
-              </div>
-
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Email">
-              <label for="telefono">Teléfono:</label>
-              <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
-              <label for="tema">Selecciona el tema de tu interés:</label>
-              <select class="form-control" id="tema">
-                <option value="compra">Compra</option>
-                <option value="venta">Venta</option>
-                <option value="alquiler">Alquiler</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-          </form>
+      <h2 class="form-header">Comuníquese con nosotros</h2>
+      <form id="main-form" action="/submit-oferta-consulta" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="form-selection">¿Desea ofertar su inmueble o realizar una consulta?</label>
+          <select class="form-control" id="form-selection">
+            <option value="" disabled selected>Elige una opción</option>
+            <option value="oferta">Oferta tu inmueble</option>
+            <option value="consulta">Consulta</option>
+          </select>
         </div>
-        <div class="col-md-6 d-flex align-items-center">
-          <div class="static-message">
-            <h4>OBTENGA UNA CONSULTA GRATIS</h4>
-            <p>Deja tus datos y uno de nuestros asesores te contactaran de inmediato y te ayudaran con tus requerimientos inmobiliarios</p>
+
+        <!-- Opcion 1: oferta tu inmueble -->
+        <div id="oferta-form" class="hidden">
+          <div class="grid-container">
+
+            <!-- Nombre y Apellido-->
+            <div class="form-group">
+              <label for="nombre_apellido_oferta">Nombre y Apellido:</label>
+              <input type="text" class="form-control" id="nombre_apellido_oferta" required>
+            </div>
+
+            <!--Numero de telefono-->
+            <div class="form-group">
+              <label for="num_tlf_oferta">Numero de telefono:</label>
+              <input type="number" class="form-control" id="num_tlf_oferta" require">
+            </div>
+
+            <!--Email-->
+          <div class="form-group">
+            <label for="email_oferta">Email:</label>
+            <input type="email" class="form-control" id="email_oferta" required>
+          </div>
+
+            <!--Ubicacion-->
+            <div class="form-group">
+              <label for="ubicacion_oferta">Ubicación de la propiedad:</label>
+              <input type="text" class="form-control" id="ubicacion_oferta" required>
+            </div>
+
+            <!--Razon de venta-->
+            <div class="form-group">
+              <label for="razon_venta_oferta">Razón de venta:</label>
+              <input type="text" class="form-control" id="razon-venta_oferta" required>
+            </div>
+            
+            <!--Cantidad de niveles-->
+            <div class="form-group">
+              <label for="niveles_oferta">Cantidad de niveles:</label>
+              <input type="number" class="form-control" id="niveles_oferta" required>
+            </div>
+
+            <!--Cantidad de habitaciones-->
+            <div class="form-group">
+              <label for="habitaciones_oferta">Cantidad de habitaciones:</label>
+              <input type="number" class="form-control" id="habitaciones_oferta" required>
+            </div>
+
+            <!--Cantidad de baños-->
+            <div class="form-group">
+              <label for="banos_oferta">Cantidad de baños:</label>
+              <input type="number" class="form-control" id="banos_oferta" required>
+            </div>
+
+            <!--Cantidad de m²-->
+            <div class="form-group">
+              <label for="metros_cuadrados_oferta">Cantidad de m²:</label>
+              <input type="number" class="form-control" id="metros_cuadrados_oferta" required>
+            </div>
+
+            <!--Cantidad de salas-->
+            <div class="form-group">
+              <label for="sala_oferta">Cantidad de salas:</label>
+              <input type="text" class="form-control" id="sala_oferta" required>
+            </div>
+
+            <!--Cantidad P/E-->
+            <div class="form-group">
+              <label for="estacionamientos_oferta">Cantidad de puestos de estacionamiento:</label>
+              <input type="number" class="form-control" id="estacionamientos_oferta" required>
+            </div>
+
+            <!--Precio (USD)-->
+            <div class="form-group">
+              <label for="precio_oferta">Precio de venta deseado (USD):</label>
+              <input type="number" class="form-control" id="precio_oferta" name="precio" required>
+            </div>
+
+            <!--Tipo de oferta (venta o alquiler)-->
+            <div class="form-group">
+              <!--Seleccionar-->
+              <label for="tipo_oferta_index" class="mr-2">Tipo de oferta:</label>
+              <select class="form-control mr-sm-2" id="tipo_oferta_index" name="tipo_oferta">
+                <option value="oferta_venta">Venta</option>
+                <option value="oferta_alquiler">Alquiler</option>
+              </select>   
+            </div>
+
+            <!--Subir archivos de muestra del inmueble-->
+            <div class="form-group">
+              <label for="archivo_oferta">Subir archivos de muestra del inmueble:</label>
+              <input type="file" class="form-control" id="archivo_oferta" multiple required>
+            </div>
           </div>
         </div>
-      </div>
+
+        <!-- Opcion 2: Consulta -->
+        <div id="consulta-form" class="hidden">
+
+          <!-- Nombre y Apellido-->
+          <div class="form-group">
+            <label for="nombre_apellido_consulta">Nombre y Apellido:</label>
+            <input type="text" class="form-control" id="nombre_apellido_consulta" required>
+          </div>
+
+          <!--Email-->
+          <div class="form-group">
+            <label for="email_consulta">Email:</label>
+            <input type="email" class="form-control" id="email_consulta" required>
+          </div>
+
+          <!--Telefono-->
+          <div class="form-group">
+            <label for="telefono_consulta">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefono_consulta" required>
+          </div>
+
+          <!--Seleccion de tema de interes-->
+          <div class="form-group">
+            <label for="tema">Selecciona el tema de tu interés:</label>
+            <select class="form-control" id="tema">
+              <option value="compra_consulta">Compra</option>
+              <option value="venta_consulta">Venta</option>
+              <option value="alquiler_consulta">Alquiler</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comentarios_consulta">Comentarios:</label>
+            <textarea id="comentarios_consulta" name="comentarios_consulta" rows="5" cols="50"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+      </form>
     </div>
   </div>
     
+  <!--Footer-->
   <footer class="footer bg-purple text-white">
     <div class="container">
       <div class="row">
@@ -205,6 +314,7 @@
     </div>
   </footer>
 
+  <script src="js/despliegue-form-index.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

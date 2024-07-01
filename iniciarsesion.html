@@ -52,17 +52,22 @@
         </div>
     </nav>
 
-    <div class="login-container">
-        <h2>Iniciar Sesión <br> Administrador</h2>
+    <div class="login-wrapper">
+      <div class="login-container">
+        <h2>Iniciar Sesión</h2>
         <form action="/login" method="post">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-            <button id="logbtn" type="submit">Iniciar Sesión</button>
+          <label for="username">Usuario:</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" required>
+          <button id="logbtn" type="submit">Iniciar Sesión</button>
         </form>
+      </div>
+      <div class="description-container">
+        <h3>Bienvenido</h3>
+        <p>Nuestro sistema de administración le permite gestionar sus propiedades de manera eficiente. Por favor, inicie sesión con sus credenciales para acceder al panel de administración.</p>
+      </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
