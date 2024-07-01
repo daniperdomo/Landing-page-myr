@@ -139,3 +139,24 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
         res.status(500).send('Error al subir los archivos y datos del formulario.');
     }
 });
+
+app.post('/submit-oferta-consulta', uploadOfertaConsulta, (req, res) => {
+    try {
+        console.log(req.files);
+        if (!req.files || Object.keys(req.files).length === 0) {
+            return res.status(400).send('No se han subido archivos.');
+        }
+
+        // Procesar los datos del formulario
+        const data = req.body;
+        console.log('Datos del formulario:', data);
+        console.log('Archivos subidos:', req.files);
+
+        // Guardar los datos en la base de datos 
+        // 
+        res.send('Archivos y datos del formulario subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los archivos y datos del formulario.');
+    }
+});
