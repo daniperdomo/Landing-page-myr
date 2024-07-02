@@ -520,12 +520,6 @@ body {
   }
 }
 
-/* Estilos para el fondo de la página */
-body {
-  background-color: #F3F1F6;
-}
-
-
 /* Contenedor principal */
 .login-wrapper {
   display: flex;

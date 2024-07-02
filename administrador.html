@@ -8,9 +8,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/administrador.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <!--Navbar apartado de administrador-->
@@ -44,49 +41,39 @@
         <div class="row">
             <!-- Primera fila de tarjetas -->
             <div class="col-md-6 mb-3">
-                <!-- Tarjeta de Ingresar Captación -->
+                <!-- Registrar captaciones -->
                 <a href="captacion.html?source=admin"><div class="card" id="card-ingresar-captacion">
-                    <h3>Solicitar carga de inmueble a la web</h3>
-                    <p>Registre captaciones de clientes e inmobiliarias</p>
+                    <h3>Registrar captaciones:</h3>
+                    <p>Automáticamente solicita su carga a la web.</p>
                 </div></a>
             </div>
         </div>
         
         <div class="row">
             <div class="col-md-6 mb-3">
-                <!-- Tarjeta de Ver Captaciones -->
-                <div class="card" id="card-ver-captaciones">
-                    <h3>Ver <br>Captaciones</h3>
-                    <p>Consulta las captaciones registradas</p>
-                </div>
+                <!-- Historico de captaciones -->
+                <a href="historico-captaciones.html"><div class="card" id="card-ver-captaciones">
+                    <h3>Histórico de captaciones:</h3>
+                    <p>Ver/editar/eliminar las captaciones registradas.</p>
+                </div></a>
             </div>
 
             <div class="col-md-6 mb-3">
-                <!-- Tarjeta de Ver Petición de carga a web de inmueble -->
+                <!-- Cargar inmueble a la web -->
                 <div class="card" id="card-ver-solicitudes">
-                    <h3>Ver solicitud de carga de inmueble</h3>
-                    <p>Acepta/rechaza la carga de un inmueble a la web</p>
+                    <h3>Cargar inmueble a la web:</h3>
+                    <p>Aceptar/rechazar la carga de un inmueble a la web.</p>
                 </div>
-
             </div>
         </div>
 
         <div class="row">
-          <!-- Segunda fila de tarjetas -->
           <div class="col-md-6 mb-3">
-            <!-- Tarjeta de Ver solicitudes de ventas/reservas de usuarios -->
-            <div class="card" id="card-ver-solicitudes-ventas">
-              <h3>Ver solicitudes de venta/reserva de usuarios</h3>
-              <p>Consulta las solicitudes de venta/reserva realizadas por los usuarios</p>
-            </div>
-          </div>
-        
-          <div class="col-md-6 mb-3">
-            <!-- Tarjeta de Asignar solicitud de venta/reserva a asesor -->
-            <div class="card" id="card-asignar-solicitud">
-              <h3>Gestionar solicitud de venta/reserva</h3>
-              <p>Gestiona o asigna una solicitud de venta/reserva</p>
-            </div>
+            <!-- Historico de solicitudes -->
+            <a href="historico-solicitudes.html"><div class="card" id="card-asignar-solicitud">
+              <h3>Histórico de solicitudes:</h3>
+              <p>Ofertas de inmueble/consultas/reservas.</p>
+            </div></a>
           </div>
         </div>
 
