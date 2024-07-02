@@ -1,0 +1,82 @@
+/* Contenedor principal */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título */
+  .container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Lista de captaciones */
+  .historico-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  /* Elementos de captaciones */
+  .historico-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .historico-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Contenido de captación */
+  .historico-content {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    max-width: calc(100% - 200px); /* Ajusta el ancho para dejar espacio para los botones */
+  }
+  
+  .historico-content h3 {
+    margin: 0 0 5px 0;
+    color: #AB5DA8;
+  }
+  
+  .historico-content p {
+    margin: 0;
+    color: #666;
+  }
+  
+  /* Acciones de captación */
+  .historico-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .historico-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #AB5DA8;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .historico-actions button:hover {
+    background-color: #8e4d8a;
+  }

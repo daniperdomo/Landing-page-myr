@@ -117,7 +117,7 @@
   <div class="contacto" id="form-contacto">
     <div class="contact-form">
       <h2 class="form-header">Comuníquese con nosotros</h2>
-      <form id="main-form">
+      <form id="main-form" action="/submit-oferta-consulta" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="form-selection">¿Desea ofertar su inmueble o realizar una consulta?</label>
           <select class="form-control" id="form-selection">
@@ -140,7 +140,7 @@
             <!--Numero de telefono-->
             <div class="form-group">
               <label for="num_tlf_oferta">Numero de telefono:</label>
-              <input type="number" class="form-control" id="num_tlf_oferta" require">
+              <input type="number" class="form-control" id="num_tlf_oferta" required>
             </div>
 
             <!--Email-->
