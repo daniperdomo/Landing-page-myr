@@ -140,6 +140,11 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
     }
 });
 
+// Configurar Multer para aceptar los campos de archivos del formulario de oferta y consulta
+const uploadOfertaConsulta = upload.fields([
+    { name: 'archivo_oferta', maxCount: 10 }
+]);
+
 app.post('/submit-oferta-consulta', uploadOfertaConsulta, (req, res) => {
     try {
         console.log(req.files);
