@@ -165,3 +165,20 @@ app.post('/submit-oferta-consulta', uploadOfertaConsulta, (req, res) => {
         res.status(500).send('Error al subir los archivos y datos del formulario.');
     }
 });
+
+// Nueva ruta para manejar la carga de datos del formulario de reserva
+app.post('/submit-reserva', (req, res) => {
+    try {
+        // Procesar los datos del formulario
+        const data = req.body;
+        console.log('Datos del formulario de reserva:', data);
+        console.log('Marca de tiempo:', timestamp);
+
+        // Guardar los datos en la base de datos 
+        // 
+        res.send('Datos del formulario de reserva subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los datos del formulario de reserva.');
+    }
+});
