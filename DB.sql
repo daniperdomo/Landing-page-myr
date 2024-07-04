@@ -2,7 +2,6 @@
 CREATE DATABASE Inmobiliaria
 
 USE Inmobiliaria
-
 CREATE TABLE Propiedad(
     tipo_id ENUM('V','P','J','E','G','C'),
     cedula VARCHAR(20) not NULL,
@@ -18,17 +17,17 @@ CREATE TABLE Propiedad(
     precio VARCHAR(25) not NULL,
     tipo_oferta ENUM('alquiler','venta') NOT NULL,
     tipo ENUM('apartamento',"townhouse","quinta","casa","galpon","oficina","fcomercio","otros"),
-    niveles varchar(1) NOT NULL,
-    tamano_terreno VARCHAR(1) NOT NULL,
-    tamanoconst VARCHAR(1) NOT NULL,
-    hab VARCHAR(1) NOT NULL,
-    bano VARCHAR(1) NOT NULL,
-    mediobano VARCHAR(1) NOT NULL,
-    servicio VARCHAR(1) NOT NULL,
-    maletero VARCHAR(1) NOT NULL,
-    terraza VARCHAR(1) NOT NULL,
-    oficina ENUM('Si','No') NOT NULL,
-    pe VARCHAR(1) NOT NULL,
+    niveles varchar(10) NOT NULL,
+    tamano_terreno VARCHAR(100) NOT NULL,
+    tamanoconst VARCHAR(100) NOT NULL,
+    hab VARCHAR(10) NOT NULL,
+    bano VARCHAR(10) NOT NULL,
+    mediobano VARCHAR(10) NOT NULL,
+    servicio VARCHAR(10) NOT NULL,
+    maletero VARCHAR(10) NOT NULL,
+    terraza VARCHAR(10) NOT NULL,
+    oficina ENUM('oficina_no','oficina_si') NOT NULL,
+    pe VARCHAR(10) NOT NULL,
     escaleras ENUM("no-tiene","granito","marmol","madera","concreto","baranda","calentador") NOT NULL,
     piso ENUM("madera","porcelanato","granito","ceramica","cemento","caico") NOT NULL,
     observaciones VARCHAR(250) NOT NULL,
@@ -42,6 +41,75 @@ CREATE TABLE Propiedad(
     poder VARCHAR(250) NOT NULL,
     captacion VARCHAR(250) NOT NULL,
     PRIMARY KEY(idPropiedad)
+)
+
+CREATE TABLE Sala(
+    vitroceramica BOOLEAN,
+    electrica BOOLEAN,
+    gas BOOLEAN,
+    encimera BOOLEAN,
+    mamposteria BOOLEAN,
+    horno BOOLEAN,
+    microondas BOOLEAN,
+    salpicadero BOOLEAN,
+    filtro_agua BOOLEAN,
+    campana BOOLEAN,
+    freezer BOOLEAN,
+    nevera BOOLEAN,
+    lavadora BOOLEAN,
+    secadora BOOLEAN,
+    idPropiedad INT,
+    PRIMARY KEY (idPropiedad),
+    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
+)
+
+CREATE TABLE Cuartos(
+    idPropiedad INT,
+    cuarto varchar(20),
+    cama_cu BOOLEAN,
+    colchon_cu BOOLEAN,
+    peinadora_cu BOOLEAN,
+    vestier_cu BOOLEAN,
+    aire_cu BOOLEAN,
+    tv_cu BOOLEAN,
+    mesa_noche_cu BOOLEAN,
+    poltrona_cu BOOLEAN,
+    directv_cu BOOLEAN,
+    closet_cu BOOLEAN,
+    lamparas_cu BOOLEAN,
+    espejo_cu BOOLEAN,
+    perchero_cu BOOLEAN,
+    PRIMARY KEY (idPropiedad, cuarto),
+    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
+)
+
+CREATE TABLE AreaExterna(
+    idPropiedad INT,
+    patio_externa BOOLEAN,
+    piscina_externa BOOLEAN,
+    parrillera_externa BOOLEAN,
+    jardinera_externa BOOLEAN,
+    gimnasio_externa BOOLEAN,
+    fuente_externa BOOLEAN,
+    tanque_agua_externa BOOLEAN,
+    lavandero_externa BOOLEAN,
+    reflector_externa BOOLEAN,
+    PRIMARY KEY (idPropiedad),
+    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
+)
+
+CREATE TABLE Seguridad(
+    idPropiedad INT,
+    camara BOOLEAN,
+    dvr BOOLEAN,
+    alarma BOOLEAN,
+    vigilancia BOOLEAN,
+    cerca_electrica BOOLEAN,
+    monitor BOOLEAN,
+    boton_panico BOOLEAN,
+    sirena BOOLEAN,
+    PRIMARY KEY (idPropiedad),
+    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
 )
 
 
