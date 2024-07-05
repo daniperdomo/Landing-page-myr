@@ -165,3 +165,10 @@ GRANT INSERT,SELECT ON areaexterna TO 'WebPage'@'%'
 GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
 
 GRANT INSERT,SELECT ON cuartos TO 'WebPage'@'%'
+
+
+CREATE VIEW PropiedadesWeb AS
+SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe
+FROM propiedad
+
+GRANT SELECT ON PropiedadesWeb TO 'WebPage'@'%'
