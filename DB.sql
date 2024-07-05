@@ -152,7 +152,7 @@ CREATE USER 'WebPage'@'%' IDENTIFIED BY 'Stalin25-10'
 
 GRANT SELECT ON Usuario TO 'WebPage'@'%'
 
-GRANT SELECT,SELECT ON Propiedad TO 'WebPage'@'%'
+GRANT SELECT,INSERT ON Propiedad TO 'WebPage'@'%'
 
 GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
 
