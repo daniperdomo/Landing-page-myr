@@ -2,8 +2,10 @@
 CREATE DATABASE Inmobiliaria
 
 USE Inmobiliaria
+
 CREATE TABLE Propiedad(
     tipo_id ENUM('V','P','J','E','G','C'),
+    ref_catastral VARCHAR(100)NOT NULL UNIQUE,
     cedula VARCHAR(20) not NULL,
     rif VARCHAR(20) NOT NULL,
     asiento VARCHAR(20) NOT NULL,
@@ -42,6 +44,8 @@ CREATE TABLE Propiedad(
     captacion VARCHAR(250) NOT NULL,
     PRIMARY KEY(idPropiedad)
 )
+
+
 
 CREATE TABLE Sala(
     vitroceramica BOOLEAN,
@@ -98,6 +102,8 @@ CREATE TABLE AreaExterna(
     FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
 )
 
+
+
 CREATE TABLE Seguridad(
     idPropiedad INT,
     camara BOOLEAN,
@@ -120,3 +126,7 @@ VALUES('admin','admin','Administrador'),
 CREATE USER 'WebPage'@'%' IDENTIFIED BY 'Stalin25-10'
 
 GRANT SELECT ON Usuario TO 'WebPage'@'%'
+
+GRANT SELECT ON Propiedad TO 'WebPage'@'%'
+
+GRANT INSERT ON Sala TO 'WebPage'@'%'
