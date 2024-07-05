@@ -152,14 +152,16 @@ CREATE USER 'WebPage'@'%' IDENTIFIED BY 'Stalin25-10'
 
 GRANT SELECT ON Usuario TO 'WebPage'@'%'
 
-GRANT SELECT ON Propiedad TO 'WebPage'@'%'
+GRANT SELECT,SELECT ON Propiedad TO 'WebPage'@'%'
 
-GRANT INSERT ON Cocina TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
 
-GRANT INSERT ON Sala TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON Sala TO 'WebPage'@'%'
 
-GRANT INSERT ON seguridad TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON seguridad TO 'WebPage'@'%'
 
-GRANT INSERT ON areaexterna TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON areaexterna TO 'WebPage'@'%'
 
-GRANT INSERT ON Cocina TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON cuartos TO 'WebPage'@'%'
