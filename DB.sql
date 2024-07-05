@@ -168,7 +168,7 @@ GRANT INSERT,SELECT ON cuartos TO 'WebPage'@'%'
 
 
 CREATE VIEW PropiedadesWeb AS
-SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe
+SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno
 FROM propiedad
 
 GRANT SELECT ON PropiedadesWeb TO 'WebPage'@'%'
