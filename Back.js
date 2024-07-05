@@ -134,7 +134,7 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
             BD.query(`SELECT idPropiedad FROM propiedad WHERE ref_catastral= '${data.ref_catastral}'`, (err,result) =>{
                 id=(result[0].idPropiedad)
                 console.log(id)
-                query = 'INSERT INTO Sala(idPropiedad,'
+                query = 'INSERT INTO cocina(idPropiedad,'
                 let Values = `Values(${id},`
                 if(data.hasOwnProperty('vitroceramica')){
                     query = query.concat('vitroceramica')
