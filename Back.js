@@ -96,6 +96,10 @@ app.post('/login', (req, res) => {
     acceso(usuario, contraseña, res)
 })
 
+app.get('/detalle-propiedad.html', (req,res) => {
+    res.sendFile(path.join(__dirname, "detalle-propiedad.html"));
+})
+
 //Pagina de captacion inmueble
 app.get("/captacion.html", (req, res) => {
     res.sendFile(path.join(__dirname, "captacion.html"));
