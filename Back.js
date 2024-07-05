@@ -134,6 +134,8 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
             BD.query(`SELECT idPropiedad FROM propiedad WHERE ref_catastral= '${data.ref_catastral}'`, (err,result) =>{
                 id=(result[0].idPropiedad)
                 console.log(id)
+                
+                //Cocina
                 query = 'INSERT INTO cocina(idPropiedad,'
                 let Values = `Values(${id},`
                 if(data.hasOwnProperty('vitroceramica')){
@@ -190,6 +192,157 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
                 }
                 if(data.hasOwnProperty('secadora')){
                     query = query.concat(',secadora')
+                    Values = Values.concat(',true')
+                }
+                query = query.concat(')')
+                Values = Values.concat(')')
+                query = query.concat(' ',Values)
+                BD.query(query,(err,result)=>{
+                })
+
+                //Sala
+                query = 'INSERT INTO Sala(idPropiedad,'
+                let Values = `Values(${id},`
+                if(data.hasOwnProperty('mesa_sala')){
+                    query = query.concat('mesa_sala')
+                    Values = Values.concat('true')
+                }
+                if(data.hasOwnProperty('sillas')){
+                    query = query.concat(',sillas')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('aire_sala')){
+                    query = query.concat(',aire_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('vitrina_sala')){
+                    query = query.concat(',vitrina_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('cantv_sala')){
+                    query = query.concat(',cantv_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('internet_sala')){
+                    query = query.concat(',internet_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('tv_sala')){
+                    query = query.concat(',tv_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('directv_sala')){
+                    query = query.concat(',directv_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('sofa_sala')){
+                    query = query.concat(',sofa_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('poltrona_sala')){
+                    query = query.concat(',poltrona_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('biblioteca_sala')){
+                    query = query.concat(',biblioteca_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('ceibo_sala')){
+                    query = query.concat(',ceibo_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('htheater_sala')){
+                    query = query.concat(',htheater_sala')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('lamparas_sala')){
+                    query = query.concat(',lamparas_sala')
+                    Values = Values.concat(',true')
+                }
+                query = query.concat(')')
+                Values = Values.concat(')')
+                query = query.concat(' ',Values)
+                BD.query(query,(err,result)=>{
+                })
+
+                //Area externa
+                query = 'INSERT INTO AreaExterna(idPropiedad,'
+                let Values = `Values(${id},`
+                if(data.hasOwnProperty('patio_externa')){
+                    query = query.concat('patio_externa')
+                    Values = Values.concat('true')
+                }
+                if(data.hasOwnProperty('piscina_externa')){
+                    query = query.concat(',piscina_externa')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('parrillera_externa')){
+                    query = query.concat(',parrillera_externa')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('jardinera_externa')){
+                    query = query.concat(',jardinera_externa')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('gimnasio_externa')){
+                    query = query.concat(',gimnasio_externa')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('fuente_externa')){
+                    query = query.concat(',fuente_externa')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('tanque_agua_externa')){
+                    query = query.concat(',tanque_agua_externa')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('lavandero_externa')){
+                    query = query.concat(',lavandero_externa')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('reflector_externa')){
+                    query = query.concat(',reflector_externa')
+                    Values = Values.concat(',true')
+                }
+                query = query.concat(')')
+                Values = Values.concat(')')
+                query = query.concat(' ',Values)
+                BD.query(query,(err,result)=>{
+                })
+
+                //Seguridad
+                query = 'INSERT INTO Seguridad(idPropiedad,'
+                let Values = `Values(${id},`
+                if(data.hasOwnProperty('camara')){
+                    query = query.concat('camara')
+                    Values = Values.concat('true')
+                }
+                if(data.hasOwnProperty('dvr')){
+                    query = query.concat(',dvr')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('alarma')){
+                    query = query.concat(',alarma')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('vigilancia')){
+                    query = query.concat(',vigilancia')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('cerca_electrica')){
+                    query = query.concat(',cerca_electrica')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('monitor')){
+                    query = query.concat(',monitor')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('boton-panico')){
+                    query = query.concat(',boton-panico')
+                    Values = Values.concat(',true')
+                }
+                if(data.hasOwnProperty('sirena')){
+                    query = query.concat(',sirena')
                     Values = Values.concat(',true')
                 }
                 query = query.concat(')')
