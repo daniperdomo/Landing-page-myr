@@ -136,11 +136,11 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
                 console.log(id)
                 
                 //Cocina
-                query = 'INSERT INTO cocina(idPropiedad,'
-                let Values = `Values(${id},`
+                query = 'INSERT INTO cocina(idPropiedad'
+                let Values = `Values(${id}`
                 if(data.hasOwnProperty('vitroceramica')){
-                    query = query.concat('vitroceramica')
-                    Values = Values.concat('true')
+                    query = query.concat(',vitroceramica')
+                    Values = Values.concat(',true')
                 }
                 if(data.hasOwnProperty('electrica')){
                     query = query.concat(',electrica')
@@ -201,11 +201,11 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
                 })
 
                 //Sala
-                query = 'INSERT INTO Sala(idPropiedad,'
-                let Values = `Values(${id},`
+                query = 'INSERT INTO Sala(idPropiedad'
+                Values = `Values(${id}`
                 if(data.hasOwnProperty('mesa_sala')){
-                    query = query.concat('mesa_sala')
-                    Values = Values.concat('true')
+                    query = query.concat(',mesa_sala')
+                    Values = Values.concat(',true')
                 }
                 if(data.hasOwnProperty('sillas')){
                     query = query.concat(',sillas')
@@ -262,15 +262,17 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
                 query = query.concat(')')
                 Values = Values.concat(')')
                 query = query.concat(' ',Values)
+                console.log(query)
                 BD.query(query,(err,result)=>{
+                    
                 })
 
                 //Area externa
-                query = 'INSERT INTO AreaExterna(idPropiedad,'
-                let Values = `Values(${id},`
+                query = 'INSERT INTO AreaExterna(idPropiedad'
+                Values = `Values(${id}`
                 if(data.hasOwnProperty('patio_externa')){
-                    query = query.concat('patio_externa')
-                    Values = Values.concat('true')
+                    query = query.concat(',patio_externa')
+                    Values = Values.concat(',true')
                 }
                 if(data.hasOwnProperty('piscina_externa')){
                     query = query.concat(',piscina_externa')
@@ -311,11 +313,11 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
                 })
 
                 //Seguridad
-                query = 'INSERT INTO Seguridad(idPropiedad,'
-                let Values = `Values(${id},`
+                query = 'INSERT INTO Seguridad(idPropiedad'
+                Values = `Values(${id}`
                 if(data.hasOwnProperty('camara')){
-                    query = query.concat('camara')
-                    Values = Values.concat('true')
+                    query = query.concat(',camara')
+                    Values = Values.concat(',true')
                 }
                 if(data.hasOwnProperty('dvr')){
                     query = query.concat(',dvr')

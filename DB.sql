@@ -155,3 +155,11 @@ GRANT SELECT ON Usuario TO 'WebPage'@'%'
 GRANT SELECT ON Propiedad TO 'WebPage'@'%'
 
 GRANT INSERT ON Cocina TO 'WebPage'@'%'
+
+GRANT INSERT ON Sala TO 'WebPage'@'%'
+
+GRANT INSERT ON seguridad TO 'WebPage'@'%'
+
+GRANT INSERT ON areaexterna TO 'WebPage'@'%'
+
+GRANT INSERT ON Cocina TO 'WebPage'@'%'
