@@ -17,10 +17,19 @@ var BD = mysql.createConnection({
 //Creacion del Socket del lado del servidor en el puerto 8080
 const wss = new WebSocketServer({ port: 8080 });
 
-// Configuración de multer
+// Función para determinar el directorio de destino
+const determineDestination = (req, file, cb) => {
+    if (file.fieldname === 'images' || file.mimetype.startsWith('image')) {
+        cb(null, 'uploads/images');
+    } else {
+        cb(null, 'uploads');
+    }
+};
+
+// Configuración de Multer para manejar la subida de archivos con directorios personalizados
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/');
+        determineDestination(req, file, cb);
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + '-' + file.originalname);
@@ -42,10 +51,16 @@ const port = 3000
 //directorio actual
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-// Crear la carpeta 'uploads' si no existe
-if (!fs.existsSync('uploads')) {
-    fs.mkdirSync('uploads');
-}
+// Crear las carpetas 'uploads' y 'uploads/images' si no existen
+const createUploadsDirectories = () => {
+    const uploadPaths = ['uploads', 'uploads/images'];
+    uploadPaths.forEach(dir => {
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+    });
+};
+createUploadsDirectories();
 
 // creacion de conexion
 async function acceso(username, contraseña, res) {
