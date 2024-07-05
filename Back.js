@@ -96,6 +96,7 @@ app.post('/login', (req, res) => {
     acceso(usuario, contraseña, res)
 })
 
+//Detalle de propiedad
 app.get('/detalle-propiedad.html', (req,res) => {
     res.sendFile(path.join(__dirname, "detalle-propiedad.html"));
 })
