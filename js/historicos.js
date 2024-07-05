@@ -30,3 +30,7 @@ function eliminarCaptacion(id) {
     //   });
   }
 }
+
+function cargarCaptacion(id) {
+  alert(`Cargar captación ${id}`);
+}
