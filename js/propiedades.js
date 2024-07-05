@@ -3,6 +3,7 @@ var propiedadesweb
 
 ws.onopen = () => {
   console.log('Conectado al servidor');
+  ws.send('propiedades')
 };
 
 ws.onmessage = (event) => {
@@ -10,3 +11,4 @@ ws.onmessage = (event) => {
   console.log(data)
   propiedadesweb = data
 };
+

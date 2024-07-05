@@ -171,4 +171,11 @@ CREATE VIEW PropiedadesWeb AS
 SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno
 FROM propiedad
 
+
+CREATE VIEW historico AS
+SELECT contactname,sector,residentialcomplex
+FROM propiedad
+
 GRANT SELECT ON PropiedadesWeb TO 'WebPage'@'%'
+
+GRANT SELECT ON historico to 'WebPage'@'%'

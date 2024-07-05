@@ -1,3 +1,19 @@
+const ws = new WebSocket('ws://localhost:8080');
+var captaciones
+
+ws.onopen = () => {
+  console.log('Conectado al servidor');
+  ws.send('historico')
+};
+
+ws.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+  console.log(data)
+  captaciones = data
+};
+
+
+
 function verCaptacion(id) {
   // Lógica para ver la captación
   alert(`Ver captación ${id}`);
