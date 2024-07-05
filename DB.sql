@@ -45,9 +45,28 @@ CREATE TABLE Propiedad(
     PRIMARY KEY(idPropiedad)
 )
 
-
-
 CREATE TABLE Sala(
+    idPropiedad INT,
+    PRIMARY KEY (idPropiedad),
+    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad),
+    mesa_sala BOOLEAN,
+    sillas BOOLEAN,
+    aire_sala BOOLEAN,
+    vitrina_sala BOOLEAN,
+    cantv_sala BOOLEAN,
+    internet_sala BOOLEAN,
+    tv_sala BOOLEAN,
+    directv_sala BOOLEAN,
+    sofa_sala BOOLEAN,
+    poltrona_sala BOOLEAN,
+    biblioteca_sala BOOLEAN,
+    ceibo_sala BOOLEAN,
+    htheater_sala BOOLEAN,
+    lamparas_sala BOOLEAN
+)
+
+
+CREATE TABLE Cocina(
     vitroceramica BOOLEAN,
     electrica BOOLEAN,
     gas BOOLEAN,
@@ -118,6 +137,12 @@ CREATE TABLE Seguridad(
     FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
 )
 
+CREATE TABLE Usuario(
+    IdUsuario INT AUTO_INCREMENT PRIMARY KEY,
+    Usuario VARCHAR(50) NOT NULL,
+    Contraseña VARCHAR(50) NOT NULL,
+    TipoUsuario ENUM('Administrador','Asesor')
+)
 
 INSERT INTO Usuario(Usuario,Contraseña,TipoUsuario)
 VALUES('admin','admin','Administrador'),
@@ -127,6 +152,16 @@ CREATE USER 'WebPage'@'%' IDENTIFIED BY 'Stalin25-10'
 
 GRANT SELECT ON Usuario TO 'WebPage'@'%'
 
-GRANT SELECT ON Propiedad TO 'WebPage'@'%'
+GRANT SELECT,SELECT ON Propiedad TO 'WebPage'@'%'
 
-GRANT INSERT ON Sala TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON Sala TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON seguridad TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON areaexterna TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON cuartos TO 'WebPage'@'%'
