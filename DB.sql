@@ -118,6 +118,12 @@ CREATE TABLE Seguridad(
     FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
 )
 
+CREATE TABLE Usuario(
+    IdUsuario INT AUTO_INCREMENT PRIMARY KEY,
+    Usuario VARCHAR(50) NOT NULL,
+    Contraseña VARCHAR(50) NOT NULL,
+    TipoUsuario ENUM('Administrador','Asesor')
+)
 
 INSERT INTO Usuario(Usuario,Contraseña,TipoUsuario)
 VALUES('admin','admin','Administrador'),
