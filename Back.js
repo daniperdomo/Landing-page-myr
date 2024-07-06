@@ -142,7 +142,7 @@ propiedad.idPropiedad=cocina.idPropiedad AND
 propiedad.idPropiedad=areaexterna.idPropiedad AND
 propiedad.idPropiedad=sala.idPropiedad AND
 propiedad.idPropiedad=seguridad.idPropiedad`
-console.log(query)
+    console.log(query)
 })
 
 

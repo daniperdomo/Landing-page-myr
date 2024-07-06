@@ -23,10 +23,10 @@ ws.onmessage = (event) => {
         <p>${captacion.sector}, ${captacion.residentialcomplex}</p>
       </div>
       <div class="historico-actions">
-        <button onclick="verCaptacion('${captacion.contactname}')">Ver</button>
-        <button onclick="editarCaptacion('${captacion.contactname}')">Editar</button>
-        <button onclick="eliminarCaptacion('${captacion.contactname}')">Eliminar</button>
-        <button onclick="cargarCaptacion('${captacion.contactname}')">Cargar</button>
+        <button onclick="verCaptacion('${captacion.ref_catastral}')">Ver</button>
+        <button onclick="editarCaptacion('${captacion.ref_catastral}')">Editar</button>
+        <button onclick="eliminarCaptacion('${captacion.ref_catastral}')">Eliminar</button>
+        <button onclick="cargarCaptacion('${captacion.ref_catastral}')">Cargar</button>
       </div>
     `;
 
