@@ -134,80 +134,80 @@
             <!-- Nombre y Apellido-->
             <div class="form-group">
               <label for="nombre_apellido_oferta">Nombre y Apellido:</label>
-              <input type="text" class="form-control" id="nombre_apellido_oferta" required>
+              <input type="text" class="form-control" id="nombre_apellido_oferta" name="nombre_apellido_oferta" required>
             </div>
 
             <!--Numero de telefono-->
             <div class="form-group">
               <label for="num_tlf_oferta">Numero de telefono:</label>
-              <input type="number" class="form-control" id="num_tlf_oferta" required>
+              <input type="number" class="form-control" id="num_tlf_oferta" name="num_tlf_oferta" required>
             </div>
 
             <!--Email-->
           <div class="form-group">
             <label for="email_oferta">Email:</label>
-            <input type="email" class="form-control" id="email_oferta" required>
+            <input type="email" class="form-control" id="email_oferta" name="email_oferta" required>
           </div>
 
             <!--Ubicacion-->
             <div class="form-group">
               <label for="ubicacion_oferta">Ubicación de la propiedad:</label>
-              <input type="text" class="form-control" id="ubicacion_oferta" required>
+              <input type="text" class="form-control" id="ubicacion_oferta" name="ubicacion_oferta" required>
             </div>
 
             <!--Razon de venta-->
             <div class="form-group">
               <label for="razon_venta_oferta">Razón de venta:</label>
-              <input type="text" class="form-control" id="razon-venta_oferta" required>
+              <input type="text" class="form-control" id="razon_venta_oferta" name="razon_venta_oferta" required>
             </div>
             
             <!--Cantidad de niveles-->
             <div class="form-group">
               <label for="niveles_oferta">Cantidad de niveles:</label>
-              <input type="number" class="form-control" id="niveles_oferta" required>
+              <input type="number" class="form-control" id="niveles_oferta" name="niveles_oferta" required>
             </div>
 
             <!--Cantidad de habitaciones-->
             <div class="form-group">
               <label for="habitaciones_oferta">Cantidad de habitaciones:</label>
-              <input type="number" class="form-control" id="habitaciones_oferta" required>
+              <input type="number" class="form-control" id="habitaciones_oferta" name="habitaciones_oferta" required>
             </div>
 
             <!--Cantidad de baños-->
             <div class="form-group">
               <label for="banos_oferta">Cantidad de baños:</label>
-              <input type="number" class="form-control" id="banos_oferta" required>
+              <input type="number" class="form-control" id="banos_oferta" name="banos_oferta" required>
             </div>
 
             <!--Cantidad de m²-->
             <div class="form-group">
               <label for="metros_cuadrados_oferta">Cantidad de m²:</label>
-              <input type="number" class="form-control" id="metros_cuadrados_oferta" required>
+              <input type="number" class="form-control" id="metros_cuadrados_oferta" name="metros_cuadrados_oferta" required>
             </div>
 
             <!--Cantidad de salas-->
             <div class="form-group">
               <label for="sala_oferta">Cantidad de salas:</label>
-              <input type="text" class="form-control" id="sala_oferta" required>
+              <input type="text" class="form-control" id="sala_oferta" name="sala_oferta" required>
             </div>
 
             <!--Cantidad P/E-->
             <div class="form-group">
               <label for="estacionamientos_oferta">Cantidad de puestos de estacionamiento:</label>
-              <input type="number" class="form-control" id="estacionamientos_oferta" required>
+              <input type="number" class="form-control" id="estacionamientos_oferta" name="estacionamientos_oferta" required>
             </div>
 
             <!--Precio (USD)-->
             <div class="form-group">
               <label for="precio_oferta">Precio de venta deseado (USD):</label>
-              <input type="number" class="form-control" id="precio_oferta" name="precio" required>
+              <input type="number" class="form-control" id="precio_oferta" name="precio_oferta" required>
             </div>
 
             <!--Tipo de oferta (venta o alquiler)-->
             <div class="form-group">
               <!--Seleccionar-->
               <label for="tipo_oferta_index" class="mr-2">Tipo de oferta:</label>
-              <select class="form-control mr-sm-2" id="tipo_oferta_index" name="tipo_oferta">
+              <select class="form-control mr-sm-2" id="tipo_oferta_index" name="tipo_oferta_index">
                 <option value="oferta_venta">Venta</option>
                 <option value="oferta_alquiler">Alquiler</option>
               </select>   
@@ -216,7 +216,7 @@
             <!--Subir archivos de muestra del inmueble-->
             <div class="form-group">
               <label for="archivo_oferta">Subir archivos de muestra del inmueble:</label>
-              <input type="file" class="form-control" id="archivo_oferta" multiple required>
+              <input type="file" class="form-control" id="archivo_oferta" name="archivo_oferta" multiple required>
             </div>
           </div>
         </div>
@@ -227,28 +227,29 @@
           <!-- Nombre y Apellido-->
           <div class="form-group">
             <label for="nombre_apellido_consulta">Nombre y Apellido:</label>
-            <input type="text" class="form-control" id="nombre_apellido_consulta" required>
+            <input type="text" class="form-control" id="nombre_apellido_consulta" name="nombre_apellido_consulta required>
           </div>
 
           <!--Email-->
           <div class="form-group">
             <label for="email_consulta">Email:</label>
-            <input type="email" class="form-control" id="email_consulta" required>
+            <input type="email" class="form-control" id="email_consulta" name="email_consulta" required>
           </div>
 
           <!--Telefono-->
           <div class="form-group">
             <label for="telefono_consulta">Teléfono:</label>
-            <input type="tel" class="form-control" id="telefono_consulta" required>
+            <input type="tel" class="form-control" id="telefono_consulta" name="telefono_consulta" required>
           </div>
 
           <!--Seleccion de tema de interes-->
           <div class="form-group">
             <label for="tema">Selecciona el tema de tu interés:</label>
-            <select class="form-control" id="tema">
+            <select class="form-control" id="tema_consulta" name="tema_consulta">
               <option value="compra_consulta">Compra</option>
               <option value="venta_consulta">Venta</option>
               <option value="alquiler_consulta">Alquiler</option>
+              <option value="otro_consulta">Otro</option>
             </select>
           </div>
 
