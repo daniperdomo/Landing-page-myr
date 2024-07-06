@@ -137,12 +137,17 @@ app.get("/captacion.html", (req, res) => {
 app.get('/captacion', (req, res) => {
     console.log(req.query.ref)
     let query = `SELECT * FROM propiedad,cuartos,cocina,areaexterna,sala,seguridad
-WHERE propiedad.idPropiedad=${req.query.ref} propiedad.idPropiedad=cuartos.idPropiedad AND
+WHERE propiedad.ref_catastral='${req.query.ref}' AND propiedad.idPropiedad=cuartos.idPropiedad AND
 propiedad.idPropiedad=cocina.idPropiedad AND
 propiedad.idPropiedad=areaexterna.idPropiedad AND
 propiedad.idPropiedad=sala.idPropiedad AND
 propiedad.idPropiedad=seguridad.idPropiedad`
     console.log(query)
+    BD.query(query, (err, result) => {
+        if (err) throw err;
+        console.log(result)
+    })
+
 })
 
 

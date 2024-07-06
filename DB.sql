@@ -1,4 +1,4 @@
--- Active: 1720145332788@@127.0.0.1@3306@inmobiliaria
+-- Active: 1717970931403@@127.0.0.1@3306@inmobiliaria
 CREATE DATABASE Inmobiliaria
 
 USE Inmobiliaria
@@ -152,7 +152,7 @@ CREATE TABLE Oferta(
     estacionamientos_oferta varchar(10) NOT NULL,
     precio_oferta VARCHAR(25) not NULL,
     tipo_oferta_index ENUM('oferta_venta','oferta_alquiler') NOT NULL,
-    
+    idPropiedad INT,
     PRIMARY KEY (idPropiedad),
     FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
 )
@@ -164,12 +164,12 @@ CREATE TABLE Consulta(
     telefono_consulta VARCHAR(20) NOT NULL,
     tema_consulta ENUM('compra_consulta','venta_consulta', 'alquiler_consulta', 'otro_consulta') NOT NULL,
     comentarios_consulta VARCHAR(250) NOT NULL,
-    
+    idPropiedad INT,
     PRIMARY KEY (idPropiedad),
     FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
 )
 
-CREATE TABLE Oferta(
+CREATE TABLE Reserva(
     tipo_id_reserva ENUM('V','P','J','E','G','C'),
     cedula_reserva VARCHAR(20) not NULL,
     rif_reserva VARCHAR(20) NOT NULL,
@@ -178,11 +178,12 @@ CREATE TABLE Oferta(
     precio_ofertado_reserva VARCHAR(25) not NULL,
     nombre_apellido_reserva VARCHAR(50) NOT NULL,
     firmante_reserva VARCHAR(50) NOT NULL,
-    tiempo_operacion_reserva
+    tiempo_operacion_reserva VARCHAR(50) NOT NULL,
     metodo_pago_reserva ENUM('cheque','transf_exterior', 'transf_interior', 'efectivo', 'metodopago_otro') NOT NULL,
     origen_fondos_reserva ENUM('ingresos_salariales',"ingresos_negocios","prestamos","venta_activos","herencia","origen_otro") NOT NULL,
-    
-    PRIMARY KEY(idPropiedad)
+    idPropiedad INT,
+    PRIMARY KEY(idPropiedad),
+    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
 )
 
 CREATE TABLE Usuario(
