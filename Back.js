@@ -446,9 +446,6 @@ wss.on('connection', (ws) => {
                                         Values = Values.concat(')')
                                         query = query.concat(' ', Values)
                                         BD.query(query, (err, result) => {
-                                            BD.query(`Select * from cuartos where idPropiedad=${id}`, (err, result) => {
-                                                console.log(result)
-                                            })
                                         })
                                     }
                                 })
@@ -464,7 +461,7 @@ wss.on('connection', (ws) => {
             })
             // ...
 
-            res.send('Archivos y datos del formulario subidos con éxito.');
+            res.sendFile(path.join(__dirname, "exito-captacion.html"));
         } catch (error) {
             console.error(error);
             res.status(500).send('Error al subir los archivos y datos del formulario.');
