@@ -38,8 +38,9 @@ ws.onmessage = (event) => {
 
 function verCaptacion(nombre) {
   // Lógica para ver la captación
-  alert(`Ver captación ${nombre}`);
   // Aquí podrías redirigir a una página de detalles, por ejemplo:
+  fetch(`/captacion?ref=${nombre}`)
+  .then()
   // location.href = `/captacion/${id}`;
 }
 
