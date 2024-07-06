@@ -19,14 +19,14 @@ ws.onmessage = (event) => {
     item.classList.add("historico-item")
     item.innerHTML = `
       <div class="historico-content">
-        <h3>${captacion.contactname}</h3>
+        <h3>${captacion.ref_catastral}</h3>
         <p>${captacion.sector}, ${captacion.residentialcomplex}</p>
       </div>
       <div class="historico-actions">
-        <button onclick="verCaptacion(${captacion.contactname})">Ver</button>
-        <button onclick="editarCaptacion(${captacion.contactname})">Editar</button>
-        <button onclick="eliminarCaptacion(${captacion.contactname})">Eliminar</button>
-        <button onclick="cargarCaptacion(${captacion.contactname})">Cargar</button>
+        <button onclick="verCaptacion('${captacion.contactname}')">Ver</button>
+        <button onclick="editarCaptacion('${captacion.contactname}')">Editar</button>
+        <button onclick="eliminarCaptacion('${captacion.contactname}')">Eliminar</button>
+        <button onclick="cargarCaptacion('${captacion.contactname}')">Cargar</button>
       </div>
     `;
 

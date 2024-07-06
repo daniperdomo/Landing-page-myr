@@ -173,7 +173,7 @@ FROM propiedad
 
 
 CREATE VIEW historico AS
-SELECT contactname,sector,residentialcomplex
+SELECT contactname,sector,residentialcomplex,ref_catastral
 FROM propiedad
 
 GRANT SELECT ON PropiedadesWeb TO 'WebPage'@'%'
