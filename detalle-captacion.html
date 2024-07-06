@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/captacion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <!--Navbar apartado de administrador-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+      <a class="navbar-brand" href="#">
+        <img src="imagenes/logomyr.png" alt="Logo" height="90px" width="200px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="#" onclick="volver()">Menú</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="index.html">Cerrar sesion</a>
+          </li>
+
+        </ul>
+      </div>
+  </nav>
+
+  <form action="/submit-cliente" method="post" id="formulario" enctype="multipart/form-data">
+    <!--Formulario de captacion de cliente-->
+    <div class="form-container">
+        <h2>Formato de Captación de Cliente</h2>
+            <fieldset>
+                <legend>Datos Generales del Cliente</legend>
+                <div class="form-grid">
+                    <!--Tipo de identificacion-->
+                    <label for="tipo_id">Tipo de Identificación:</label>
+                    <select id="tipo_id" name="tipo_id" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="V">V-</option>
+                        <option value="E">E-</option>
+                        <option value="P">P-</option>
+                        <option value="J">J-</option>
+                        <option value="G">G-</option>
+                        <option value="C">C-</option>
+                    </select>
+                    
+                    <!--Cedula-->
+                    <label for="cedula">Cédula de Identidad:</label>
+                    <input type="text" id="cedula" name="cedula" required>
+                    
+                    <!--RIF-->
+                    <label for="rif">Registro de Información Fiscal (R.I.F):</label>
+                    <input type="text" id="rif" name="rif" required>
+
+                    <!--Asiento registral-->
+                    <label for="a_registral">Asiento registral:</label>
+                    <input type="text" id="a_registral" name="asiento" required>
+
+                    <!--Numero de protocolo-->
+                    <label for="n_protocolo">Número de protocolo:</label>
+                    <input type="text" id="n_protocolo" name="n_protocolo" required>
+
+                    <!--Folio real-->
+                    <label for="f_real">Folio real:</label>
+                    <input type="text" id="f_real" name="f_real" required>
+
+                    <!--Referencia Catastral-->
+                    <label for="ref_catastral">Referencia Catastral:</label>
+                    <input type="text" id="ref_catastral" name="ref_catastral" required>
+
+                    <!--Documento de propiedad-->
+                    <label for="propiedad">Documentos de Propiedad:</label>
+                    <input type="file" id="propiedad" name="propiedad" accept=".pdf" required>
+    
+                    <!--Documento de liberacion de hipoteca-->
+                    <label for="liberacion">Documento de Liberación de Hipoteca:</label>
+                    <input type="file" id="liberacion" name="liberacion" accept=".pdf" required>
+    
+                    <!--Ficha catastral-->
+                    <label for="catastral">Ficha Catastral:</label>
+                    <input type="file" id="catastral" name="catastral" accept=".pdf" required>
+    
+                    <!--Solvencia municipal-->
+                    <label for="solvencia">Solvencia Municipal:</label>
+                    <input type="file" id="solvencia" name="solvencia" accept=".pdf" required>
+    
+                    <!--Registro de Vivienda Principal-->
+                    <label for="registro">Registro de Vivienda Principal:</label>
+                    <input type="file" id="registro" name="registro" accept=".pdf" required>
+    
+                    <!--Poder-->
+                    <label for="poder">Poder:</label>
+                    <input type="file" id="poder" name="poder" accept=".pdf" required>
+    
+                    <!--Formato de captacion-->
+                    <label for="captacion">Formato de Captación:</label>
+                    <input type="file" id="captacion" name="captacion" accept=".pdf" required>
+
+                </div>
+
+            </fieldset>
+    </div>
+
+    <!--Formulario de captacion de inmueble-->
+    <div class="form-container">
+      <h2>Formato de Captación de Inmuebles</h2>
+        <fieldset>
+          <legend>Datos Generales del Inmueble</legend>
+          <div class="info">
+            <div class="field-group">
+
+              <!--Sector-->
+              <div class="field-row">
+                <label for="sector">Sector:</label>
+                <input type="text" id="sector" name="sector" required>
+              </div>
+
+              <!--Conjunto residencial-->
+              <div class="field-row">
+                <label for="residential_complex">Conjunto Residencial:</label>
+                <input type="text" id="residential_complex" name="residentialcomplex" required>
+              </div>
+
+              <!--Nombre de contacto-->
+              <div class="field-row">
+                <label for="contact_name">Nombre de Contacto:</label>
+                <input type="text" id="contact_name" name="contactname" required>
+              </div>
+
+              <!--Telefono-->
+              <div class="field-row">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+
+              <!--Precio (USD)-->
+              <div class="field-row">
+                <label for="precio">Precio (USD):</label>
+                <input type="number" id="precio" name="precio" required>
+              </div>
+
+              <!--Tipo de oferta (venta o alquiler)-->
+              <div class="field-row">
+                <!--Seleccionar-->
+                <label for="tipo_oferta" class="mr-2">Tipo de oferta:</label>
+                <select class="form-control mr-sm-2" id="tipo_oferta" name="tipo_oferta">
+                  <option value="venta">Venta</option>
+                  <option value="alquiler">Alquiler</option>
+                </select>   
+              </div>
+
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="info form-inline">
+
+              <!--Tipo de inmueble-->
+              <label for="tipo" class="mr-2">Tipo:</label>
+              <select class="form-control mr-sm-2" id="tipo" name="tipo">
+                <option value="apartamento">Apartamento</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="quinta">Quinta</option>
+                <option value="casa">Casa</option>
+                <option value="galpon">Galpón</option>
+                <option value="oficina">Oficina</option>
+                <option value="comercial">Local Comercial</option>
+                <option value="otros">Otros</option>
+              </select>
+              <br>
+
+              <!--Niveles de inmueble-->
+              <label for="niveles" class="mr-2">Niveles:</label>
+              <select class="form-control mr-sm-2" id="niveles" name="niveles">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+              </select>
+              <br>
+
+              <!--Terreno-->
+              <label for="tamano_terreno" class="mr-2">Terreno:</label>
+              <input type="number" min="1" class="form-control" id="tamano_terreno" name="tamano_terreno" placeholder="m²">
+              <br>
+
+              <!--Construccion-->
+              <label for="tamano_const" class="mr-2">Construcción:</label>
+              <input type="number" min="1" class="form-control" id="tamano_const" name="tamanoconst" placeholder="m²">
+              <br>
+
+              <!--Habitaciones-->
+              <label for="hab" class="mr-2">Hab:</label>
+              <input type="number" min="0" class="form-control mr-sm-2 small-input" id="hab" name="hab">
+              <br>
+
+              <!--Baños-->
+              <label for="bano" class="mr-2">Baños:</label>
+              <input type="number" min="1" class="form-control mr-sm-2 small-input" id="bano" name="bano">
+
+              <!--Medio baño-->
+              <label for="mediobano" class="mr-2">1/2 Baños:</label>
+              <input type="number" min="0" class="form-control mr-sm-2 small-input" id="mediobano" name="mediobano">
+
+              <!--Servicio-->
+              <label for="servicio" class="mr-2">Servicio:</label>
+              <input type="number" min="0" class="form-control mr-sm-2 small-input" id="servicio" name="servicio">
+
+              <!--Maletero-->
+              <label for="maletero" class="mr-2">Maletero:</label>
+              <input type="number" min="0" class="form-control mr-sm-2 small-input" id="maletero" name="maletero">
+
+              <!--Terraza-->
+              <label for="terraza" class="mr-2">Terraza:</label>
+              <input type="number" class="form-control mr-sm-2 small-input" id="terraza" name="terraza">
+
+              <!--Oficina-->
+              <label for="oficina" class="mr-2">Oficina:</label>
+              <select class="form-control mr-sm-2" id="oficina" name="oficina">
+                <option value="oficina_no">Seleccionar</option>
+                <option value="oficina_si">Si</option>
+                <option value="oficina_no">No</option>
+              </select>                
+
+              <!--Puestos de estacionamiento-->
+              <label for="pe" class="mr-2">P/E:</label>
+              <input type="number" min="0" class="form-control small-input" id="pe" name="pe">
+          </div>
+
+          <br>
+
+          <!--Tipo de escaleras-->
+          <div class="form-group form-inline">
+            <label for="escaleras" class="mr-2">Escaleras:</label>
+            <select class="form-control mr-sm-2" id="escaleras" name="escaleras">
+              <option value="no-tiene">No tiene</option>
+              <option value="granito">Granito</option>
+              <option value="marmol">Marmol</option>
+              <option value="madera">Madera</option>
+              <option value="concreto">Concreto</option>
+              <option value="baranda">Baranda</option>
+              <option value="calentador">Calentador</option>
+            </select>
+       
+            <!--Tipo de piso-->
+            <label for="piso" class="mr-2">Piso:</label>
+            <select class="form-control mr-sm-2" id="piso" name="piso">
+              <option value="madera">Madera</option>
+              <option value="porcelanato">Porcelanato</option>
+              <option value="granito">Granito</option>
+              <option value="ceramica">Cerámica</option>
+              <option value="cemento">Cemento</option>
+              <option value="caico">Caico</option>
+            </select>
+        </div>
+
+          <!--Cocina/servicio-->
+          <div class="form-group">
+              <label for="cocina-servicio" class="checkbox-label">Cocina/Servicio:</label>
+              <div class="checkbox-group">
+                <label for="vitroceramica">
+                  <input type="checkbox" id="vitroceramica" name="vitroceramica">
+                  Vitrocerámica
+                </label>
+                <label for="electrica">
+                  <input type="checkbox" id="electrica" name="electrica">
+                  Eléctrica
+                </label>
+                <label for="gas">
+                  <input type="checkbox" id="gas" name="gas">
+                  Gas
+                </label>
+                <label for="encimera">
+                  <input type="checkbox" id="encimera" name="encimera">
+                  Encimera
+                </label>
+                <label for="mamposteria">
+                  <input type="checkbox" id="mamposteria" name="mamposteria">
+                  Mampostería
+                </label>
+                <label for="horno">
+                  <input type="checkbox" id="horno" name="horno">
+                  Horno
+                </label>
+                <label for="microondas">
+                  <input type="checkbox" id="microondas" name="microondas">
+                  Microondas
+                </label>
+                <label for="salpicadero">
+                  <input type="checkbox" id="salpicadero" name="salpicadero">
+                  Salpicadero
+                </label>
+                <label for="filtro_agua">
+                  <input type="checkbox" id="filtro_agua" name="filtro_agua">
+                  Filtro/agua
+                </label>
+                <label for="campana">
+                  <input type="checkbox" id="campana" name="campana">
+                  Campana
+                </label>
+                <label for="freezer">
+                  <input type="checkbox" id="freezer" name="freezer">
+                  Freezer
+                </label>
+                <label for="nevera">
+                  <input type="checkbox" id="nevera" name="nevera">
+                  Nevera
+                </label>
+                <label for="lavadora">
+                  <input type="checkbox" id="lavadora" name="lavadora">
+                  Lavadora
+                </label>
+                <label for="secadora">
+                  <input type="checkbox" id="secadora" name="secadora">
+                  Secadora
+                </label>
+              </div>
+          </div>
+
+          <!--Sala/comedor-->
+          <div class="form-group">
+              <label for="sala-comedor" class="checkbox-label">Sala/Comedor:</label>
+              <div class="checkbox-group">
+                <label for="mesa_sala">
+                  <input type="checkbox" id="mesa_sala" name="mesa_sala">
+                  Mesa
+                </label>
+                <label for="sillas_sala">
+                  <input type="checkbox" id="sillas_sala" name="sillas">
+                  Sillas
+                </label>
+                <label for="aire_sala">
+                  <input type="checkbox" id="aire_sala" name="aire_sala">
+                  A/A
+                </label>
+                <label for="vitrina_sala">
+                  <input type="checkbox" id="vitrina_sala" name="vitrina_sala">
+                  Vitrina
+                </label>
+                <label for="cantv_sala">
+                  <input type="checkbox" id="cantv_sala" name="cantv_sala">
+                  Cantv
+                </label>
+                <label for="internet_sala">
+                  <input type="checkbox" id="internet_sala" name="internet_sala">
+                  Internet
+                </label>
+                <label for="tv_sala">
+                  <input type="checkbox" id="tv_sala" name="tv_sala">
+                  Televisor
+                </label>
+                <label for="directv_sala">
+                  <input type="checkbox" id="directv_sala" name="directv_sala">
+                  Directv
+                </label>
+                <label for="sofa_sala">
+                  <input type="checkbox" id="sofa_sala" name="sofa_sala">
+                  Sofá
+                </label>
+                <label for="poltrona_sala">
+                  <input type="checkbox" id="poltrona_sala" name="poltrona_sala">
+                  Poltrona
+                </label>
+                <label for="biblioteca_sala">
+                  <input type="checkbox" id="biblioteca_sala" name="biblioteca_sala">
+                  Biblioteca
+                </label>
+                <label for="ceibo_sala">
+                  <input type="checkbox" id="ceibo_sala" name="ceibo_sala">
+                  Ceibo
+                </label>
+                <label for="htheater_sala">
+                  <input type="checkbox" id="htheater_sala" name="htheater_sala">
+                  Cine
+                </label>
+                <label for="lamparas_sala">
+                  <input type="checkbox" id="lamparas_sala" name="lamparas_sala">
+                  Lámparas
+                </label>
+              </div>
+          </div>
+
+          <div id="divs_container"></div>
+
+          <!--Area externa-->
+          <div class="form-group">
+              <label for="area-externa" class="checkbox-label">Área externa:</label>
+              <div class="checkbox-group">
+                <label for="patio_externa">
+                  <input type="checkbox" id="patio_externa" name="patio_externa">
+                  Patio
+                </label>
+                <label for="piscina_externa">
+                  <input type="checkbox" id="piscina_externa" name="piscina_externa">
+                  Piscina
+                </label>
+                <label for="parrillera_externa">
+                  <input type="checkbox" id="parrillera_externa" name="parrillera_externa">
+                  Parrillera
+                </label>
+                <label for="jardinera_externa">
+                  <input type="checkbox" id="jardinera_externa" name="jardinera_externa">
+                  Jardinera
+                </label>
+                <label for="gimnasio_externa">
+                  <input type="checkbox" id="gimnasio_externa" name="gimnasio_externa">
+                  Gimnasio
+                </label>
+                <label for="fuente_externa">
+                  <input type="checkbox" id="fuente_externa" name="fuente_externa">
+                  Fuente
+                </label>
+                <label for="tanque_agua_externa">
+                  <input type="checkbox" id="tanque_agua_externa" name="tanque_agua_externa">
+                  Tanq/Agua
+                </label>
+                <label for="lavandero_externa">
+                  <input type="checkbox" id="lavandero_externa" name="lavandero_externa">
+                  Lavandero
+                </label>
+                <label for="reflector_externa">
+                  <input type="checkbox" id="reflector_externa" name="reflector_externa">
+                  Reflector
+                </label>
+              </div>
+          </div>
+
+          <!--Seguridad-->
+          <div class="form-group">
+              <label for="seguridad" class="checkbox-label">Seguridad:</label>
+              <div class="checkbox-group">
+                <label for="camara">
+                  <input type="checkbox" id="camara" name="camara">
+                  Cámara
+                </label>
+                <label for="dvr">
+                  <input type="checkbox" id="dvr" name="dvr">
+                  DVR
+                </label>
+                <label for="alarma">
+                  <input type="checkbox" id="alarma" name="alarma">
+                  Alarma
+                </label>
+                <label for="vigilancia">
+                  <input type="checkbox" id="vigilancia" name="vigilancia">
+                  Vigilancia
+                </label>
+                <label for="cerca_electrica">
+                  <input type="checkbox" id="cerca_electrica" name="cerca_electrica">
+                  Cerca Eléc.
+                </label>
+                <label for="monitor">
+                  <input type="checkbox" id="monitor" name="monitor">
+                  Monitor
+                </label>
+                <label for="boton_panico">
+                  <input type="checkbox" id="boton_panico" name="boton-panico">
+                  B/Pánico
+                </label>
+                <label for="sirena">
+                  <input type="checkbox" id="sirena" name="sirena">
+                  Sirena
+                </label>
+              </div>
+            </div>
+
+            <!--Subir imagenes-->
+            <fieldset class="images">
+              <legend>Subir Imágenes</legend>
+                <label class="input-images">
+                  <input type="file" accept="image/png, image/jpeg, image/jpg" id="images" name="images" multiple />
+                </label>
+            </fieldset>
+
+            <!--Observaciones-->
+            <div>
+              <label for="observaciones">Observaciones:</label>
+              <textarea id="observaciones" name="observaciones" rows="5" cols="50"></textarea>
+            </div>
+            
+            <!--Referido-->
+            <div>
+              <label for="referido">Referido:</label>
+              <input type="text" id="referido" name="referido">
+            </div>
+
+        <!--Boton de enviar-->
+        <button id="submitbtn" type="submit">Enviar</button>
+      
+  </div>
+
+  <!--Time-stamp-->
+  <input type="hidden" id="timestamp" name="timestamp">
+</form>
+
+    <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+    <script src="js/captaciones.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
