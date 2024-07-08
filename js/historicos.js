@@ -36,6 +36,18 @@ ws.onmessage = (event) => {
   if(data[0] == 'detalle'){
     data.shift()  
     console.log(data)
+    //En esta seccion haces la tarjeta con la informacion en data
+    //Es un arreglo de objetos como el anterior, donde cada objeto
+    //es una tabla de la BD, organizados casi como en captacion
+    //La informacion que no esta en propiedad son unicamente de las que usan check
+    //La primera es Propiedad (data[0]), la segunda Cocina(data[1])
+    //La tercera es Sala(data[2]), la cuarta es AreaExterna(data[3])
+    //Y por ultimo seguridad(data[4])
+    //Antes de usar la informacion dentro de cada campo
+    //Verifica es es distinto a null, no todas las propiedades van a tener checks
+    //Entonces es probable que ese campo sea null (data[0] != null)
+
+
   }
 };
 
