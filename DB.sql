@@ -1,4 +1,4 @@
--- Active: 1717970931403@@127.0.0.1@3306@inmobiliaria
+-- Active: 1718322730538@@127.0.0.1@3306@Inmobiliaria
 CREATE DATABASE Inmobiliaria
 
 USE Inmobiliaria
@@ -199,6 +199,8 @@ VALUES('admin','admin','Administrador'),
 
 CREATE USER 'WebPage'@'%' IDENTIFIED BY 'Stalin25-10'
 
+
+
 GRANT SELECT ON Usuario TO 'WebPage'@'%'
 
 GRANT SELECT,INSERT ON Propiedad TO 'WebPage'@'%'
@@ -207,24 +209,26 @@ GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
 
 GRANT INSERT,SELECT ON Sala TO 'WebPage'@'%'
 
-GRANT INSERT,SELECT ON seguridad TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON Seguridad TO 'WebPage'@'%'
 
-GRANT INSERT,SELECT ON areaexterna TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON AreaExterna TO 'WebPage'@'%'
 
 GRANT INSERT,SELECT ON Cocina TO 'WebPage'@'%'
 
-GRANT INSERT,SELECT ON cuartos TO 'WebPage'@'%'
+GRANT INSERT,SELECT ON Cuartos TO 'WebPage'@'%'
 
 
 CREATE VIEW PropiedadesWeb AS
 SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno
-FROM propiedad
+FROM Propiedad
 
 
 CREATE VIEW historico AS
 SELECT contactname,sector,residentialcomplex,ref_catastral
-FROM propiedad
+FROM Propiedad
 
 GRANT SELECT ON PropiedadesWeb TO 'WebPage'@'%'
 
 GRANT SELECT ON historico to 'WebPage'@'%'
+
+SELECT * FROM Sala WHERE idPropiedad=3

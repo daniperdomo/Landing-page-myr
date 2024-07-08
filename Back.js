@@ -39,21 +39,53 @@ const storage = multer.diskStorage({
 wss.on('connection', (ws) => {
 
     ws.on('message', (message) => {
-        console.log('%s', message)
-        if (message == 'propiedades') {
-            let query = 'SELECT * FROM propiedadesweb'
+        let data = JSON.parse(message)
+        console.log(data[0])
+        if (data[0] == 'propiedades') {
+            let query = 'SELECT * FROM PropiedadesWeb'
             BD.query(query, (err, result) => {
                 if (err) throw result
                 ws.send(JSON.stringify(result));
             })
         }
-        if (message == 'historico') {
+        if (data[0] == 'historico') {
             let query = 'SELECT * FROM historico'
             BD.query(query, (err, result) => {
                 if (err) throw result
-                ws.send(JSON.stringify(result));
+                ws.send(JSON.stringify(['historico',result]));
             })
         }
+
+        if (data[0] == 'detalle'){
+            let ref = data[1]
+            let query = `SELECT idPropiedad FROM Propiedad WHERE ref_catastral='${ref}'`
+            BD.query(query, (err, result) => {
+                let id = result[0].idPropiedad
+                query = `SELECT * FROM Propiedad WHERE idPropiedad='${id}'`
+                BD.query(query,(err,result) => {
+                    let datos = result
+                    query = `SELECT * FROM Cocina WHERE idPropiedad='${id}'`
+                    BD.query(query,(err,result) => {
+                        datos.push(result[0])
+                        query = `SELECT * FROM Sala WHERE idPropiedad='${id}'`
+                        BD.query(query,(err,result)=>{
+                            datos.push(result[0])
+                            query = `SELECT * FROM AreaExterna WHERE idPropiedad='${id}'`
+                            BD.query(query, (err,result) =>{
+                                datos.push(result[0])
+                                query = `SELECT * FROM Seguridad WHERE idPropiedad = '${id}'`
+                                BD.query(query, (err,result) =>{
+                                    datos.push(result[0])
+                                    datos.unshift(['detalle'])
+                                    ws.send(JSON.stringify(datos))
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        }
+
     })
 })
 const upload = multer({ storage });
@@ -134,23 +166,6 @@ app.get("/captacion.html", (req, res) => {
     res.sendFile(path.join(__dirname, "captacion.html"));
 });
 
-app.get('/captacion', (req, res) => {
-    console.log(req.query.ref)
-    let query = `SELECT * FROM propiedad,cuartos,cocina,areaexterna,sala,seguridad
-WHERE propiedad.ref_catastral='${req.query.ref}' AND propiedad.idPropiedad=cuartos.idPropiedad AND
-propiedad.idPropiedad=cocina.idPropiedad AND
-propiedad.idPropiedad=areaexterna.idPropiedad AND
-propiedad.idPropiedad=sala.idPropiedad AND
-propiedad.idPropiedad=seguridad.idPropiedad`
-    console.log(query)
-    BD.query(query, (err, result) => {
-        if (err) throw err;
-        console.log(result)
-    })
-
-})
-
-
 
 // Configurar Multer para aceptar todos los posibles campos de archivos de ambos formularios
 const uploadFields = upload.fields([
@@ -177,11 +192,11 @@ app.post('/submit-cliente', uploadFields, (req, res) => {
         const timestamp = req.body.timestamp; // Obtener la marca de tiempo del formulario
         var id
         // Guardar los datos en la base de datos
-        let query = `INSERT INTO propiedad(ref_catastral,tipo_id,cedula,rif,asiento,n_protocolo,f_real,phone,sector,residentialcomplex,contactname,precio,tipo_oferta,tipo,niveles,tamano_terreno,tamanoconst,hab,bano,mediobano,servicio,maletero,terraza,oficina,pe,escaleras,piso,observaciones,referido,timestamp,propiedad,liberacion,catastral,solvencia,registro,poder,captacion) VALUES('${data.ref_catastral}','${data.tipo_id}','${data.cedula}','${data.rif}','${data.asiento}','${data.n_protocolo}','${data.f_real}','${data.phone}','${data.sector}','${data.residentialcomplex}','${data.contactname}','${data.precio}','${data.tipo_oferta}','${data.tipo}','${data.niveles}','${data.tamano_terreno}','${data.tamanoconst}','${data.hab}','${data.bano}','${data.mediobano}','${data.servicio}','${data.maletero}','${data.terraza}','${data.oficina}','${data.pe}','${data.escaleras}','${data.piso}','${data.observaciones}','${data.referido}','${data.timestamp}','${req.files.propiedad[0].path.replace("\\", "\\\\")}','${req.files.liberacion[0].path.replace("\\", "\\\\")}','${req.files.catastral[0].path.replace("\\", "\\\\")}','${req.files.solvencia[0].path.replace("\\", "\\\\")}','${req.files.registro[0].path.replace("\\", "\\\\")}','${req.files.poder[0].path.replace("\\", "\\\\")}','${req.files.captacion[0].path.replace("\\", "\\\\")}')`
+        let query = `INSERT INTO Propiedad(ref_catastral,tipo_id,cedula,rif,asiento,n_protocolo,f_real,phone,sector,residentialcomplex,contactname,precio,tipo_oferta,tipo,niveles,tamano_terreno,tamanoconst,hab,bano,mediobano,servicio,maletero,terraza,oficina,pe,escaleras,piso,observaciones,referido,timestamp,propiedad,liberacion,catastral,solvencia,registro,poder,captacion) VALUES('${data.ref_catastral}','${data.tipo_id}','${data.cedula}','${data.rif}','${data.asiento}','${data.n_protocolo}','${data.f_real}','${data.phone}','${data.sector}','${data.residentialcomplex}','${data.contactname}','${data.precio}','${data.tipo_oferta}','${data.tipo}','${data.niveles}','${data.tamano_terreno}','${data.tamanoconst}','${data.hab}','${data.bano}','${data.mediobano}','${data.servicio}','${data.maletero}','${data.terraza}','${data.oficina}','${data.pe}','${data.escaleras}','${data.piso}','${data.observaciones}','${data.referido}','${data.timestamp}','${req.files.propiedad[0].path.replace("\\", "\\\\")}','${req.files.liberacion[0].path.replace("\\", "\\\\")}','${req.files.catastral[0].path.replace("\\", "\\\\")}','${req.files.solvencia[0].path.replace("\\", "\\\\")}','${req.files.registro[0].path.replace("\\", "\\\\")}','${req.files.poder[0].path.replace("\\", "\\\\")}','${req.files.captacion[0].path.replace("\\", "\\\\")}')`
         //Carga de informacion de cliente e informacion general de inmueble
         BD.query(query, (err, result) => {
             console.log('Cargado con exito')
-            BD.query(`SELECT idPropiedad FROM propiedad WHERE ref_catastral= '${data.ref_catastral}'`, (err, result) => {
+            BD.query(`SELECT idPropiedad FROM Propiedad WHERE ref_catastral= '${data.ref_catastral}'`, (err, result) => {
                 id = (result[0].idPropiedad)
                 console.log(id)
 

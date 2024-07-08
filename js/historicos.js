@@ -3,35 +3,40 @@ var captaciones = []
 
 ws.onopen = () => {
   console.log('Conectado al servidor');
-  ws.send('historico');
+  ws.send(JSON.stringify(["historico"]));
 };
 
 ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
-  captaciones = data;
-  console.log(captaciones)
+  if (data[0]== 'historico'){
+    captaciones = data[1];
 
-  const historicoList = document.getElementById("historico-list")
-  historicoList.innerHTML = ''
+     historicoList = document.getElementById("historico-list")
+    historicoList.innerHTML = ''
 
-  captaciones.forEach(captacion => {
-    const item = document.createElement("div")
-    item.classList.add("historico-item")
-    item.innerHTML = `
-      <div class="historico-content">
-        <h3>${captacion.ref_catastral}</h3>
-        <p>${captacion.sector}, ${captacion.residentialcomplex}</p>
-      </div>
-      <div class="historico-actions">
-        <button onclick="verCaptacion('${captacion.ref_catastral}')">Ver</button>
-        <button onclick="editarCaptacion('${captacion.ref_catastral}')">Editar</button>
-        <button onclick="eliminarCaptacion('${captacion.ref_catastral}')">Eliminar</button>
-        <button onclick="cargarCaptacion('${captacion.ref_catastral}')">Cargar</button>
-      </div>
-    `;
+    captaciones.forEach(captacion => {
+      const item = document.createElement("div")
+      item.classList.add("historico-item")
+      item.innerHTML = `
+        <div class="historico-content">
+          <h3>${captacion.ref_catastral}</h3>
+          <p>${captacion.sector}, ${captacion.residentialcomplex}</p>
+        </div>
+        <div class="historico-actions">
+          <button onclick="verCaptacion('${captacion.ref_catastral}')">Ver</button>
+          <button onclick="editarCaptacion('${captacion.ref_catastral}')">Editar</button>
+          <button onclick="eliminarCaptacion('${captacion.ref_catastral}')">Eliminar</button>
+          <button onclick="cargarCaptacion('${captacion.ref_catastral}')">Cargar</button>
+        </div>
+      `;
 
-    historicoList.appendChild(item)
-  });
+      historicoList.appendChild(item)
+    });
+  }
+  if(data[0] == 'detalle'){
+    data.shift()  
+    console.log(data)
+  }
 };
 
 
@@ -39,8 +44,7 @@ ws.onmessage = (event) => {
 function verCaptacion(nombre) {
   // Lógica para ver la captación
   // Aquí podrías redirigir a una página de detalles, por ejemplo:
-  fetch(`/captacion?ref=${nombre}`)
-  .then()
+  ws.send(JSON.stringify(['detalle',nombre]))
   // location.href = `/captacion/${id}`;
 }
 
