@@ -87,5 +87,5 @@ function eliminarCaptacion(nombre) {
 }
 
 function cargarCaptacion(nombre) {
-  alert(`Cargar captación ${nombre}`);
+  ws.send(JSON.stringify(['carga',nombre]))
 }

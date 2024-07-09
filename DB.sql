@@ -219,7 +219,7 @@ GRANT INSERT,SELECT ON Cuartos TO 'WebPage'@'%'
 
 
 CREATE VIEW PropiedadesWeb AS
-SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno
+SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno,cargado
 FROM Propiedad
 
 
@@ -232,3 +232,8 @@ GRANT SELECT ON PropiedadesWeb TO 'WebPage'@'%'
 GRANT SELECT ON historico to 'WebPage'@'%'
 
 SELECT * FROM Sala WHERE idPropiedad=3
+
+ALTER TABLE Propiedad ADD cargado BOOLEAN DEFAULT FALSE NOT NULL
+
+DROP VIEW PropiedadesWeb
+
