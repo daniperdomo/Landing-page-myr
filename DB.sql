@@ -138,7 +138,7 @@ CREATE TABLE Seguridad(
 )
 
 CREATE TABLE Oferta(
-    idOferta INT,
+    idOferta INT AUTO_INCREMENT,
     nombre_apellido_oferta VARCHAR(50) NOT NULL,
     num_tlf_oferta VARCHAR(20) NOT NULL,
     email_oferta VARCHAR(50) NOT NULL,
@@ -152,21 +152,17 @@ CREATE TABLE Oferta(
     estacionamientos_oferta varchar(10) NOT NULL,
     precio_oferta VARCHAR(25) not NULL,
     tipo_oferta_index ENUM('oferta_venta','oferta_alquiler') NOT NULL,
-    idPropiedad INT,
-    PRIMARY KEY (idPropiedad),
-    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
+    PRIMARY KEY (idOferta)
 )
 
 CREATE TABLE Consulta(
-    idConsulta INT,
+    idConsulta INT AUTO_INCREMENT,
     nombre_apellido_consulta VARCHAR(50) NOT NULL,
     email_consulta VARCHAR(50) NOT NULL,
     telefono_consulta VARCHAR(20) NOT NULL,
     tema_consulta ENUM('compra_consulta','venta_consulta', 'alquiler_consulta', 'otro_consulta') NOT NULL,
     comentarios_consulta VARCHAR(250) NOT NULL,
-    idPropiedad INT,
-    PRIMARY KEY (idPropiedad),
-    FOREIGN KEY (idPropiedad) REFERENCES Propiedad(idPropiedad)
+    PRIMARY KEY (idConsulta)
 )
 
 CREATE TABLE Reserva(
@@ -243,3 +239,11 @@ SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terr
 FROM Propiedad
 
 GRANT UPDATE ON Propiedad TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON Consulta TO 'WebPage'@'%'
+
+GRANT INSERT,SELECT ON Oferta TO 'WebPage'@'%'
+
+DROP TABLE `Consulta`
+
+DROP TABLE `Oferta`
