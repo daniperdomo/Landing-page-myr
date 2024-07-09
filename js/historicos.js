@@ -49,6 +49,17 @@ ws.onmessage = (event) => {
 
 
   }
+
+  if(data[0]== 'carga'){
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      toast: true,
+      title: "Propiedad cargada",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 };
 
 

@@ -90,7 +90,7 @@ wss.on('connection', (ws) => {
             let query = `UPDATE Propiedad SET cargado=1 WHERE ref_catastral='${ref}'`
             console.log(query)
             BD.query(query, (err,result) =>{
-                console.log('cargado')
+                ws.send(JSON.stringify(['carga']))
                 if(err)
                     console.log(err)
             })
