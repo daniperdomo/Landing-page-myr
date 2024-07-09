@@ -231,9 +231,15 @@ GRANT SELECT ON PropiedadesWeb TO 'WebPage'@'%'
 
 GRANT SELECT ON historico to 'WebPage'@'%'
 
-SELECT * FROM Sala WHERE idPropiedad=3
 
+-- Comandos para actualizar la base de datos
+-- Estos cambios corresponden a la carga de propiedades
 ALTER TABLE Propiedad ADD cargado BOOLEAN DEFAULT FALSE NOT NULL
 
 DROP VIEW PropiedadesWeb
 
+CREATE VIEW PropiedadesWeb AS
+SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno,cargado
+FROM Propiedad
+
+GRANT UPDATE ON Propiedad TO 'WebPage'@'%'

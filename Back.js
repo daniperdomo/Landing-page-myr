@@ -88,9 +88,13 @@ wss.on('connection', (ws) => {
         if(data[0] == 'carga'){
             let ref = data[1]
             let query = `UPDATE Propiedad SET cargado=1 WHERE ref_catastral='${ref}'`
+            console.log(query)
             BD.query(query, (err,result) =>{
-                
+                console.log('cargado')
+                if(err)
+                    console.log(err)
             })
+            
         }
 
     })
