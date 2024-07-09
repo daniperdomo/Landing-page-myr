@@ -517,7 +517,22 @@ const uploadOfertaConsulta = upload.fields([
     { name: 'archivo_oferta', maxCount: 10 }
 ]);
 
-app.post('/submit-oferta-consulta', uploadOfertaConsulta, (req, res) => {
+app.post('/submit-consulta', (req, res) => {
+    try {
+
+        // Procesar los datos del formulario
+        const data = JSON.parse(JSON.stringify(req.body));
+        console.log(data)
+        // Guardar los datos en la base de datos 
+        // 
+        res.send('Archivos y datos del formulario subidos con éxito.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al subir los archivos y datos del formulario.');
+    }
+});
+
+app.post('/submit-oferta', uploadOfertaConsulta, (req, res) => {
     try {
         console.log(req.files);
         if (!req.files || Object.keys(req.files).length === 0) {
@@ -526,6 +541,7 @@ app.post('/submit-oferta-consulta', uploadOfertaConsulta, (req, res) => {
 
         // Procesar los datos del formulario
         const data = JSON.parse(JSON.stringify(req.body));
+        console.log(data)
         // Guardar los datos en la base de datos 
         // 
         res.send('Archivos y datos del formulario subidos con éxito.');
