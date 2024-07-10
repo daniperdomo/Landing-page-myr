@@ -30,6 +30,14 @@ document.getElementById('formulario').addEventListener('submit', function(e) {
   console.log('Campo oculto timestamp:', timestampField.value);
 });
 
+function getParameterByName(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    // Obtener el valor del parámetro 'source' de la URL
+    const source = getParameterByName('source');
+
 const input = document.getElementById('hab');
 const divsContainer = document.getElementById('divs_container');
 

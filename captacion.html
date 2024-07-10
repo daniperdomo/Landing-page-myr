@@ -505,19 +505,6 @@
   <input type="hidden" id="timestamp" name="timestamp">
 </form>
 
-    <script>
-      // Función para obtener el valor de un parámetro de la URL
-      function getParameterByName(name) {
-        const url = new URL(window.location.href);
-        return url.searchParams.get(name);
-      }
-
-      // Obtener el valor del parámetro 'source' de la URL
-      const source = getParameterByName('source');
-      // Asignar el valor adecuado al campo oculto
-      document.getElementById("roleInput").value = source;
-    </script>
-
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
     <script src="js/captaciones.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
