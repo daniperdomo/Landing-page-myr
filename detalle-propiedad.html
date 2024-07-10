@@ -133,14 +133,23 @@
       </div>
 
       <!--Obtener catastral a traves del source-->
-      <input type="hidden" id="source" name="source">
+      <input type="hidden" id="catastral" name="catastral">
     </form>
 
 </div>
 
 
 
+ <script>
+    function getParameterByName(name) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name);
+    }
+    // Obtener el valor del parámetro 'source' de la URL
+    const source = getParameterByName('source');
 
+
+ </script>
 
 
 

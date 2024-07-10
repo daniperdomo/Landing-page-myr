@@ -25,6 +25,7 @@ ws.onmessage = (event) => {
         </div>
         <div class="historico-actions">
           <button onclick="verCaptacion('${captacion.ref_catastral}')">Ver</button>
+          <button onclick="eliminarCaptacion('${captacion.ref_catastral}')">Eliminar</button>
           <button onclick="cargarCaptacion('${captacion.ref_catastral}')">Cargar</button>
         </div>
       `;
@@ -327,6 +328,16 @@ ws.onmessage = (event) => {
       timer: 1500
     });
   }
+  if(data[0]== 'eliminar'){
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      toast: true,
+      title: "Propiedad eliminada",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 };
 
 
@@ -338,32 +349,10 @@ function verCaptacion(ref_catastral) {
   // location.href = `/captacion/${id}`;
 }
 
-function editarCaptacion(ref_catastral) {
-  // Lógica para editar la captación
-  alert(`Editar captación ${ref_catastral}`);
-  // Aquí podrías redirigir a una página de edición, por ejemplo:
-  // location.href = `/captacion/editar/${id}`;
+function cargarCaptacion(ref_catastral) {
+  ws.send(JSON.stringify(['carga',ref_catastral]))
 }
 
 function eliminarCaptacion(ref_catastral) {
-  // Lógica para eliminar la captación
-  const confirmacion = confirm(`¿Estás seguro de que deseas eliminar la captación ${ref_catastral}?`);
-  if (confirmacion) {
-    alert(`Captación ${ref_catastral} eliminada`);
-    // Aquí podrías hacer una llamada a la API para eliminar la captación, por ejemplo:
-     fetch(`/api/captaciones/${id}`, { method: 'DELETE' })
-       .then(response => {
-         if (response.ok) {
-           alert('Captación eliminada');
-           // Elimina el elemento del DOM si es necesario
-           document.querySelector(`.captacion-item[data-id="${id}"]`).remove();
-         } else {
-           alert('Error al eliminar la captación');
-         }
-       });
-  }
-}
-
-function cargarCaptacion(ref_catastral) {
-  ws.send(JSON.stringify(['carga',ref_catastral]))
+  ws.send(JSON.stringify(['eliminar',ref_catastral]))
 }

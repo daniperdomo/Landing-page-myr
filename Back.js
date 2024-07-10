@@ -93,6 +93,15 @@ wss.on("connection", (ws) => {
         if (err) console.log(err);
       });
     }
+    if (data[0] == "eliminar") {
+      let ref = data[1];
+      let query = `UPDATE Propiedad SET cargado=0 WHERE ref_catastral='${ref}'`;
+      console.log(query);
+      BD.query(query, (err, result) => {
+        ws.send(JSON.stringify(["eliminar"]));
+        if (err) console.log(err);
+      });
+    }
   });
 });
 const upload = multer({ storage });
@@ -608,7 +617,6 @@ app.post("/submit-reserva", (req, res) => {
     // Procesar los datos del formulario
     const data = req.body;
     console.log("Datos del formulario de reserva:", data);
-    console.log("Marca de tiempo:", timestamp);
 
     // Guardar los datos en la base de datos
     //

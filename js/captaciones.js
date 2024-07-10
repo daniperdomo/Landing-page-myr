@@ -30,13 +30,13 @@ document.getElementById('formulario').addEventListener('submit', function(e) {
   console.log('Campo oculto timestamp:', timestampField.value);
 });
 
-function getParameterByName(name) {
-      const url = new URL(window.location.href);
-      return url.searchParams.get(name);
-    }
+// Obtener el valor del parámetro 'source' de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const source = urlParams.get('source');
 
-    // Obtener el valor del parámetro 'source' de la URL
-    const source = getParameterByName('source');
+console.log(source)
+document.querySelector("#formulario").action = `/submit-cliente?role=${source}`
+
 
 const input = document.getElementById('hab');
 const divsContainer = document.getElementById('divs_container');
