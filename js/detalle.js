@@ -1,5 +1,4 @@
 
-document.getElementById('prev').addEventListener('click', () => {});
 // Para empezar no existe algun elemento con id 'prev' en el DOM.
 // Ahora bien, si la dejo la pagina se ejecuta pero da un error de 'Cannot read properties of null'
 // (lo que no permite mostrar la info del inmueble).
@@ -15,7 +14,7 @@ const refCatastral = urlParams.get('source');
 
 ws.onopen = () => {
   console.log('Conectado al servidor');
-  ws.send('propiedades')
+  ws.send(JSON.stringify(['propiedades']))
 };
 
 ws.onmessage = (event) => {
