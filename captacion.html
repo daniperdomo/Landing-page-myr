@@ -495,7 +495,7 @@
               <label for="referido">Referido:</label>
               <input type="text" id="referido" name="referido">
             </div>
-
+        <input type="hidden" id="roleInput" name="role" value="">
         <!--Boton de enviar-->
         <button id="submitbtn" type="submit">Enviar</button>
       
@@ -504,6 +504,19 @@
   <!--Time-stamp-->
   <input type="hidden" id="timestamp" name="timestamp">
 </form>
+
+    <script>
+      // Función para obtener el valor de un parámetro de la URL
+      function getParameterByName(name) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name);
+      }
+
+      // Obtener el valor del parámetro 'source' de la URL
+      const source = getParameterByName('source');
+      // Asignar el valor adecuado al campo oculto
+      document.getElementById("roleInput").value = source;
+    </script>
 
     <!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
     <script src="js/captaciones.js"></script>

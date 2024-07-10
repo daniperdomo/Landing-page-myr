@@ -535,7 +535,17 @@ app.post("/submit-cliente", uploadFields, (req, res) => {
     });
     // ...
 
-    res.sendFile(path.join(__dirname, "exito-captacion.html"));
+    const role = req.query.role; // Leer el parámetro 'role' de la URL
+
+    console.log(role)
+
+    if (role === 'asesor') {
+      res.sendFile(path.join(__dirname, "exito-captacion-asesor.html"));
+    } else if (role === 'admin') {
+      res.sendFile(path.join(__dirname, "exito-captacion.html"));
+    } else {
+      res.status(400).send('Rol no especificado o inválido');
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send("Error al subir los archivos y datos del formulario.");

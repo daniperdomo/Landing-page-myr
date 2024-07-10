@@ -20,13 +20,12 @@ ws.onmessage = (event) => {
       item.classList.add("historico-item")
       item.innerHTML = `
         <div class="historico-content">
-          <h3>Ref. Catastral: ${captacion.ref_catastral} / Cliente:${captacion.contactname}</h3>
+          <h3>Ref. Catastral: ${captacion.ref_catastral} / Cliente: ${captacion.contactname}</h3>
           <p>${captacion.sector}, ${captacion.residentialcomplex}</p>
         </div>
         <div class="historico-actions">
           <button onclick="verCaptacion('${captacion.ref_catastral}')">Ver</button>
           <button onclick="cargarCaptacion('${captacion.ref_catastral}')">Cargar</button>
-          //************************elimine editar y eliminar porque no di como hacerlo****************************************
         </div>
       `;
 
