@@ -1,0 +1,22 @@
+.text {
+    margin-right: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.box {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    background-color: white;
+}
+
+.contenedor {
+    width: 10%;
+}
+
+#container {
+    width: 40%;
+    display: inline-flex;
+}

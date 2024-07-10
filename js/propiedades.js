@@ -10,6 +10,7 @@ ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
   console.log(data);
   propiedadesweb = data;
+  console.log(propiedadesweb)
 
   const container = document.getElementById("container");
   container.innerHTML = "";
@@ -45,7 +46,7 @@ ws.onmessage = (event) => {
                 </div>
               </div>
               <br>
-              <center><a class="btn btn-primary" href="detalle-propiedad.html">Ver Propiedad</a></center>
+              <center><a class="btn btn-primary" href="detalle-propiedad.html?source=${propiedad.ref_catastral}">Ver Propiedad</a></center>
             </div>`;
 
       container.appendChild(card);

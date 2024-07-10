@@ -1,4 +1,4 @@
--- Active: 1718322730538@@127.0.0.1@3306@Inmobiliaria
+-- Active: 1720134170979@@127.0.0.1@3306@inmobiliaria
 CREATE DATABASE Inmobiliaria
 
 USE Inmobiliaria
@@ -235,7 +235,7 @@ ALTER TABLE Propiedad ADD cargado BOOLEAN DEFAULT FALSE NOT NULL
 DROP VIEW PropiedadesWeb
 
 CREATE VIEW PropiedadesWeb AS
-SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno,cargado
+SELECT hab,precio,bano,sector,residentialcomplex,tipo_oferta,tipo,pe,tamano_terreno,cargado,ref_catastral
 FROM Propiedad
 
 GRANT UPDATE ON Propiedad TO 'WebPage'@'%'

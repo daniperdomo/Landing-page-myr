@@ -1,6 +1,6 @@
 .form-container {
     width: 90%;
-    max-width: 800px;
+    min-width: 1100px;
     margin: 20px auto;
     background: #fff;
     padding: 20px;
