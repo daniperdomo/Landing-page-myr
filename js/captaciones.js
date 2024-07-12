@@ -1,8 +1,4 @@
 function volver() {
-  // Obtener el valor del parámetro "source" de la URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const source = urlParams.get('source');
-
   if (source === 'admin') {
     // Redireccionar a la página de admin
     window.location.href = 'administrador.html';

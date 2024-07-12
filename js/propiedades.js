@@ -8,9 +8,7 @@ ws.onopen = () => {
 
 ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
-  console.log(data);
   propiedadesweb = data;
-  console.log(propiedadesweb)
 
   const container = document.getElementById("container");
   container.innerHTML = "";

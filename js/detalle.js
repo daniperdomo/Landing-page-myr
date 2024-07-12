@@ -1,11 +1,3 @@
-
-// Para empezar no existe algun elemento con id 'prev' en el DOM.
-// Ahora bien, si la dejo la pagina se ejecuta pero da un error de 'Cannot read properties of null'
-// (lo que no permite mostrar la info del inmueble).
-// Sin embargo, si lo quito da el error que te pase por WhatsApp y todo deja de funcionar
-
-
-
 const ws = new WebSocket('ws://localhost:8080');
 var propiedadesweb = []
 
@@ -20,7 +12,6 @@ ws.onopen = () => {
 ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
   propiedadesweb = data
-  console.log(propiedadesweb)
 
   const container = document.getElementById("property-container")
   container.innerHTML = ''
@@ -44,6 +35,32 @@ ws.onmessage = (event) => {
 
       container.appendChild(detalles)
     }
+  });
+
+  const form = document.getElementById('reserva-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar que se envíe el formulario de forma predeterminada
+
+    // Obtener los datos del formulario
+    const formData = new FormData(form);
+
+    // Agregar el valor de 'source' al objeto formData
+    formData.append('source', refCatastral);
+
+    // Enviar los datos al servidor utilizando fetch
+    fetch('/submit-reserva', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.text())
+      .then(data => {
+        console.log('Respuesta del servidor:', data);
+        // Realizar cualquier acción adicional después de enviar los datos
+      })
+      .catch(error => {
+        console.error('Error al enviar los datos:', error);
+        // Manejar el error de envío de datos
+      });
   });
 
 };

@@ -1,4 +1,4 @@
--- Active: 1720134170979@@127.0.0.1@3306@inmobiliaria
+-- Active: 1720739395842@@127.0.0.1@3306@inmobiliaria
 CREATE DATABASE Inmobiliaria
 
 USE Inmobiliaria
