@@ -45,7 +45,7 @@ ws.onmessage = (event) => {
     const formData = new FormData(form);
 
     // Agregar el valor de 'source' al objeto formData
-    formData.append('source', refCatastral);
+    formData.append('refCatastral', refCatastral);
 
     // Enviar los datos al servidor utilizando fetch
     fetch('/submit-reserva', {

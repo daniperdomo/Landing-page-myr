@@ -570,6 +570,7 @@ app.post("/submit-consulta", (req, res) => {
   try {
     // Procesar los datos del formulario
     const data = JSON.parse(JSON.stringify(req.body));
+    console.log(data)
     // Guardar los datos en la base de datos
     let query = `INSERT INTO Consulta(nombre_apellido_consulta,email_consulta,telefono_consulta,tema_consulta,comentarios_consulta)`;
     let values = `VALUES('${data.nombre_apellido_consulta}','${data.email_consulta}','${data.telefono_consulta}','${data.tema_consulta}','${data.comentarios_consulta}')`;
@@ -596,6 +597,7 @@ app.post("/submit-oferta", uploadOfertaConsulta, (req, res) => {
 
     // Procesar los datos del formulario
     const data = JSON.parse(JSON.stringify(req.body));
+    console.log(data)
     let query = `INSERT INTO Oferta(nombre_apellido_oferta,num_tlf_oferta,email_oferta,ubicacion_oferta,razon_venta_oferta,niveles_oferta,habitaciones_oferta,banos_oferta,metros_cuadrados_oferta,sala_oferta,estacionamientos_oferta,precio_oferta,tipo_oferta_index)`;
     let Values = `VALUES('${data.nombre_apellido_oferta}','${data.num_tlf_oferta}','${data.email_oferta}','${data.ubicacion_oferta}','${data.razon_venta_oferta}','${data.niveles_oferta}','${data.habitaciones_oferta}','${data.banos_oferta}','${data.metros_cuadrados_oferta}','${data.sala_oferta}','${data.estacionamientos_oferta}','${data.precio_oferta}','${data.tipo_oferta}')`;
     query = query.concat(Values);
@@ -612,10 +614,10 @@ app.post("/submit-oferta", uploadOfertaConsulta, (req, res) => {
 });
 
 // Nueva ruta para manejar la carga de datos del formulario de reserva
-app.post("/submit-reserva", (req, res) => {
+app.post("/submit-reserva", upload.none(), (req, res) => {
   try {
     // Procesar los datos del formulario
-    const data = req.body;
+    const data = JSON.parse(JSON.stringify(req.body));
     console.log("Datos del formulario de reserva:", data);
 
     // Guardar los datos en la base de datos
